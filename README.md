@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Report and API pages
 
+**[See what this step changed: diff against step 23](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/0d53db0ed5618be264642b7e8cd9186ea3678c60...eaca5e814811db5829879d79d2b2a91869ec0dc8)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Add a bound action bookShipment to CRF Shipment API that books an open shipment.
 ## In this branch
 
 - [Notes for this step](docs/steps/24-bound-action-and-scale-out.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/23-report-and-api-pages/api-pages-for-the-webshop...24-report-and-api-pages/an-odata-action-and-read-scale-out)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/0d53db0ed5618be264642b7e8cd9186ea3678c60...eaca5e814811db5829879d79d2b2a91869ec0dc8): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/bound-action-and-scale-out
 
 ---
