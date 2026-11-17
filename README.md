@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Report and API pages
 
+**[See what this step changed: diff against step 22](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/10b24b7ee3528dd7a2a8b29dc21cef7ef41cee27...0d53db0ed5618be264642b7e8cd9186ea3678c60)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -26,7 +28,7 @@ Create two API pages that the webshop can call. CRF Shipment API (page 50105) ex
 ## In this branch
 
 - [Notes for this step](docs/steps/23-api-pages.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/22-report-and-api-pages/the-shipment-report-for-the-warehouse...23-report-and-api-pages/api-pages-for-the-webshop)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/10b24b7ee3528dd7a2a8b29dc21cef7ef41cee27...0d53db0ed5618be264642b7e8cd9186ea3678c60): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/api-pages
 
 ---
