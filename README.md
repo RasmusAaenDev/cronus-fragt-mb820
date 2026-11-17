@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Carriers and the outbound API
 
+**[See what this step changed: diff against step 18](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/e35cd612de9c4ca42daff955b30e194bfc218528...e73c96dc1ade2ddba5d7bf2ea3253592abc616b2)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Replace the placeholder GetStatus in CRF Carrier A with a call to Carrier A's st
 ## In this branch
 
 - [Notes for this step](docs/steps/19-carrier-http.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/18-carriers-and-the-outbound-api/a-facade-codeunit...19-carriers-and-the-outbound-api/call-the-carrier-s-service)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/e35cd612de9c4ca42daff955b30e194bfc218528...e73c96dc1ade2ddba5d7bf2ea3253592abc616b2): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/http-client
 
 ---
