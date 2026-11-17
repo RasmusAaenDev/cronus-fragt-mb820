@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Environment and tools
 
+**[See what this step changed: diff against step 1](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/e67f95f61cc6fa1273ca8efc61b1b64bb30b712a...dbf1a298da76f57791e9d90940180f30cd09aafd)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -24,7 +26,7 @@ Install Visual Studio Code and the AL Language extension. Create a new AL projec
 ## In this branch
 
 - [Notes for this step](docs/steps/02-dev-environment.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/01-environment-and-tools/create-a-sandbox-environment...02-environment-and-tools/set-up-the-al-development-environment)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/e67f95f61cc6fa1273ca8efc61b1b64bb30b712a...dbf1a298da76f57791e9d90940180f30cd09aafd): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/dev-environment
 
 ---
