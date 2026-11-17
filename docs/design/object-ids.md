@@ -1,0 +1,92 @@
+# Object id allocation
+
+Range 50100-50149 (`app/app.json`, `idRanges`). Ids are unique per object type, so table 50100 and page 50100 can coexist. "Step" is the workbook step that builds the object. Status: `built` means the file exists in `app/`; `planned` means it is only designed.
+
+When an object is built, change its status here and nowhere else. An id is never reused for another purpose.
+
+## Tables
+
+| Id | Name | Step | Status |
+|---|---|---|---|
+| 50100 | CRF Freight Setup | 08 | planned |
+| 50101 | CRF Shipment Header | 11 | planned |
+| 50102 | CRF Shipment Line | 11 | planned |
+| 50103 | CRF Carrier Rate | 15 | planned |
+| 50104 | CRF Freight Cue | 16 | planned |
+
+## Table extensions
+
+| Id | Name | Extends | Step | Status |
+|---|---|---|---|---|
+| 50100 | CRF Customer | Customer | 26 | planned |
+
+## Enums
+
+| Id | Name | Step | Status |
+|---|---|---|---|
+| 50100 | CRF Carrier | 08 (made to implement CRF ICarrier in 17) | planned |
+| 50101 | CRF Shipment Status | 11 (finished in 12) | planned |
+
+## Interfaces (no id)
+
+| Name | Step | Status |
+|---|---|---|
+| CRF ICarrier | 17 | planned |
+
+## Codeunits
+
+| Id | Name | Step | Status |
+|---|---|---|---|
+| 50100 | CRF Freight Mgt | 18 | planned |
+| 50101 | CRF Carrier A | 17 | planned |
+| 50102 | CRF Carrier B | 17 | planned |
+| 50103 | CRF Update Status | 21 | planned |
+| 50104 | CRF Sales Post Subs | 27 | planned |
+| 50105 | CRF Assisted Setup Subs | 10 | planned |
+| 50106 | CRF No Carrier | 17 | planned |
+| 50107 | (free, reserve) | - | free |
+| 50108 | CRF Install | 31 | planned |
+| 50109 | CRF Upgrade | 31 | planned |
+| 50110 | CRF Upgrade Tags | 31 | planned |
+| 50140 | CRF Freight Tests | 30, in the test app | planned |
+
+50111-50139 and 50141-50149 are free.
+
+## Pages
+
+| Id | Name | Type | Step | Status |
+|---|---|---|---|---|
+| 50100 | CRF Freight Setup | Card | 09 | planned |
+| 50101 | CRF Shipment List | List | 13 | planned |
+| 50102 | CRF Shipment Card | Card | 13 | planned |
+| 50103 | CRF Shipment Subform | ListPart | 13 | planned |
+| 50104 | CRF Freight Setup Guide | NavigatePage | 10 | planned |
+| 50105 | CRF Shipment API | API | 23 | planned |
+| 50106 | CRF Shipment Line API | API | 23 | planned |
+| 50107 | CRF Carrier Rates | List | 15 | planned |
+| 50108 | CRF Freight Activities | CardPart | 16 | planned |
+| 50109 | CRF Shipment Status API | API, read-only | 24 | planned |
+
+## Page extensions
+
+| Id | Name | Extends | Step | Status |
+|---|---|---|---|---|
+| 50100 | CRF Customer List | Customer List | 03 | built |
+| 50101 | CRF Customer Card | Customer Card | 26 | planned |
+| 50102 | CRF Order Processor RC | Order Processor Role Center | 16 | planned |
+
+## Reports, XMLports, queries, permission sets
+
+| Type | Id | Name | Step | Status |
+|---|---|---|---|---|
+| Report | 50100 | CRF Warehouse Shipment List | 22 | planned |
+| XMLport | 50100 | CRF Import Carrier Rates | 15 | planned |
+| Query | 50100 | CRF Shipments by Carrier | 16 | planned |
+| Permission set | 50100 | CRF Freight | 14 | planned |
+
+## Not objects
+
+- Telemetry events `CRF-0001` (step 19), `CRF-0002` and `CRF-0003` (step 28 and 21) are event ids in code, not object ids.
+- The report layout is a file, not an object.
+- The Danish translation (step 32) is an `.xlf` file.
+- Field ids in `CRF Customer` start at 50100 (field ids of an extension table share the same range).
