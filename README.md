@@ -1,15 +1,33 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 11: Create the shipment tables
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that books shipments with freight carriers for the fictional distributor Cronus. It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`. They are stacked: a branch starts from the previous step's branch, so its diff shows exactly what that step adds. `main` points at the last step.
+> Now we need the shipments themselves. A shipment goes to one customer and needs the delivery address, the
+> carrier, a status, the tracking number and a date. A shipment can consist of several packages, and for each
+> package we need to know the weight and the dimensions, otherwise the carrier won't accept it.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Build the shipment as a document, the way Business Central builds sales orders: a header table and a line table. Create CRF Shipment Header (table 50101) with No., Customer No. (related to Customer), Ship-to Name, Ship-to Address, Ship-to City, Ship-to Post Code, Carrier (enum CRF Carrier from module 3a), Status (enum CRF Shipment Status, 50101), Tracking No. and Posting Date. Create the status enum now with only the value Open, so the table compiles; the next step finishes it. When a user picks a customer, copy the customer's name and address into the ship-to fields. Create CRF Shipment Line (table 50102) with Shipment No. (related to the header), Line No., Description, Weight and Length, Width and Height, one line per package. Deleting a shipment must delete its lines. Compile and publish.
+
+## Checklist
+
+- [ ] Table 50101 CRF Shipment Header has the listed fields, and No. is its primary key.
+- [ ] Customer No. has a table relation to Customer, and validating it fills the ship-to name and address.
+- [ ] Table 50102 CRF Shipment Line has a Shipment No. field with a table relation to CRF Shipment Header and a Line No. field.
+- [ ] Deleting a shipment header also deletes its lines.
+- [ ] The extension compiles and publishes to the sandbox without errors.
+
+## In this branch
+
+- [Notes for this step](docs/steps/11-shipment-tables.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/10-setup-and-assisted-setup/add-an-assisted-setup-guide...11-shipment/create-the-shipment-tables)
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/shipment-tables
+
+---
+
+[← Step 10](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/10-setup-and-assisted-setup/add-an-assisted-setup-guide/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 12 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/12-shipment/enums-and-number-series/README.md)
