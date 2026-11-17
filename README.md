@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
+**[See what this step changed: diff against step 12](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/a834401bd58f66bd26a2bc00de64173abf03c786...c581d425cb5638f4f0c40be2027b96a6ecd5cf58)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Create the pages for the shipment document. CRF Shipment List (page 50101) is a 
 ## In this branch
 
 - [Notes for this step](docs/steps/13-shipment-pages.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/12-shipment/enums-and-number-series...13-shipment/card-list-and-subform-pages)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/a834401bd58f66bd26a2bc00de64173abf03c786...c581d425cb5638f4f0c40be2027b96a6ecd5cf58): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/shipment-pages
 
 ---
