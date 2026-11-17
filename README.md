@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Solution design
 
+**[See what this step changed: diff against step 5](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/bc8fa24db1a7c4995a0a4577bfb16a6349c94c2f...f5c7dbe99fda10fe3ce774c64e7bff8e8157a247)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Add a section on how Cronus Fragt plugs into Business Central. First explain the
 ## In this branch
 
 - [Notes for this step](docs/steps/06-events-not-modifications.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/05-solution-design/extend-standard-or-build-your-own...06-solution-design/hook-in-with-events-do-not-change-standard-code)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/bc8fa24db1a7c4995a0a4577bfb16a6349c94c2f...f5c7dbe99fda10fe3ce774c64e7bff8e8157a247): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/events-not-modifications
 
 ---
