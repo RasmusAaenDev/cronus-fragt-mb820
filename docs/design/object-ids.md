@@ -11,7 +11,7 @@ When an object is built, change its status here and nowhere else. An id is never
 | 50100 | CRF Freight Setup | 08 | built |
 | 50101 | CRF Shipment Header | 11 | built |
 | 50102 | CRF Shipment Line | 11 | built |
-| 50103 | CRF Carrier Rate | 15 | planned |
+| 50103 | CRF Carrier Rate | 15 | built |
 | 50104 | CRF Freight Cue | 16 | planned |
 
 ## Table extensions
@@ -63,7 +63,7 @@ When an object is built, change its status here and nowhere else. An id is never
 | 50104 | CRF Freight Setup Guide | NavigatePage | 10 | built |
 | 50105 | CRF Shipment API | API | 23 | planned |
 | 50106 | CRF Shipment Line API | API | 23 | planned |
-| 50107 | CRF Carrier Rates | List | 15 | planned |
+| 50107 | CRF Carrier Rates | List | 15 | built |
 | 50108 | CRF Freight Activities | CardPart | 16 | planned |
 | 50109 | CRF Shipment Status API | API, read-only | 24 | planned |
 
@@ -80,7 +80,7 @@ When an object is built, change its status here and nowhere else. An id is never
 | Type | Id | Name | Step | Status |
 |---|---|---|---|---|
 | Report | 50100 | CRF Warehouse Shipment List | 22 | planned |
-| XMLport | 50100 | CRF Import Carrier Rates | 15 | planned |
+| XMLport | 50100 | CRF Import Carrier Rates | 15 | built |
 | Query | 50100 | CRF Shipments by Carrier | 16 | planned |
 | Permission set | 50100 | CRF Freight | 14 | built |
 
