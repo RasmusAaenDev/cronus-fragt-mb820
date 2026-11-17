@@ -37,7 +37,7 @@ When an object is built, change its status here and nowhere else. An id is never
 
 | Id | Name | Step | Status |
 |---|---|---|---|
-| 50100 | CRF Freight Mgt | 18 | planned |
+| 50100 | CRF Freight Mgt | 18 | built |
 | 50101 | CRF Carrier A | 17 | built |
 | 50102 | CRF Carrier B | 17 | built |
 | 50103 | CRF Update Status | 21 | planned |

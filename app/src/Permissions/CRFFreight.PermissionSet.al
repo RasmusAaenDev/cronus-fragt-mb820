@@ -24,6 +24,7 @@ permissionset 50100 "CRF Freight"
         query "CRF Shipments by Carrier" = X,
         xmlport "CRF Import Carrier Rates" = X,
         codeunit "CRF Assisted Setup Subs" = X,
+        codeunit "CRF Freight Mgt" = X,
         codeunit "CRF Carrier A" = X,
         codeunit "CRF Carrier B" = X,
         codeunit "CRF No Carrier" = X,
