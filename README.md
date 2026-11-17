@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Quality and deploy
 
+**[See what this step changed: diff against step 34](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/28f983ae2eb8f45a13a5f45027ecd28b02052096...02cb39ae607166dafe4eb7ef8fdd05242e8fcd76)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -26,7 +28,7 @@ First release Cronus Fragt to Cronus's production environment: upload the .app o
 ## In this branch
 
 - [Notes for this step](docs/steps/35-appsource-and-release.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/34-quality-and-deploy/run-your-tests-and-the-standard-tests...35-quality-and-deploy/prepare-for-appsource-and-release)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/28f983ae2eb8f45a13a5f45027ecd28b02052096...02cb39ae607166dafe4eb7ef8fdd05242e8fcd76): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/appsource-and-release
 
 ---
