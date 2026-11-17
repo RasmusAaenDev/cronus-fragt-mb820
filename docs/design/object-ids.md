@@ -31,19 +31,19 @@ When an object is built, change its status here and nowhere else. An id is never
 
 | Name | Step | Status |
 |---|---|---|
-| CRF ICarrier | 17 | planned |
+| CRF ICarrier | 17 | built |
 
 ## Codeunits
 
 | Id | Name | Step | Status |
 |---|---|---|---|
 | 50100 | CRF Freight Mgt | 18 | planned |
-| 50101 | CRF Carrier A | 17 | planned |
-| 50102 | CRF Carrier B | 17 | planned |
+| 50101 | CRF Carrier A | 17 | built |
+| 50102 | CRF Carrier B | 17 | built |
 | 50103 | CRF Update Status | 21 | planned |
 | 50104 | CRF Sales Post Subs | 27 | planned |
 | 50105 | CRF Assisted Setup Subs | 10 | built |
-| 50106 | CRF No Carrier | 17 | planned |
+| 50106 | CRF No Carrier | 17 | built |
 | 50107 | (free, reserve) | - | free |
 | 50108 | CRF Install | 31 | planned |
 | 50109 | CRF Upgrade | 31 | planned |
