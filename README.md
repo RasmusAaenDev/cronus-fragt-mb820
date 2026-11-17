@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Environment and tools
 
+**[See what this step changed: diff against the start](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/a73afd0f1aedd3d9844aeb094bb040d6af87e4cd...e67f95f61cc6fa1273ca8efc61b1b64bb30b712a)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -24,7 +26,7 @@ In the Business Central admin center, create a sandbox environment for the Cronu
 ## In this branch
 
 - [Notes for this step](docs/steps/01-sandbox-environment.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the start](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/main...01-environment-and-tools/create-a-sandbox-environment)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/a73afd0f1aedd3d9844aeb094bb040d6af87e4cd...e67f95f61cc6fa1273ca8efc61b1b64bb30b712a): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/sandbox-environment
 
 ---
