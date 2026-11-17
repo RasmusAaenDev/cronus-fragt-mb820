@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
+**[See what this step changed: diff against step 14](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/09a55ed63a3737ac6bd878413510726043d1a025...4ff8dbebff7466f9931eb748f1081bc274108abf)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Create the table CRF Carrier Rate (table 50103) with Carrier (enum CRF Carrier),
 ## In this branch
 
 - [Notes for this step](docs/steps/15-rates-xmlport.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/14-shipment/permission-sets-and-entitlements...15-shipment/import-carrier-rates-with-an-xmlport)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/09a55ed63a3737ac6bd878413510726043d1a025...4ff8dbebff7466f9931eb748f1081bc274108abf): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/rates-xmlport
 
 ---
