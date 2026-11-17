@@ -49,24 +49,4 @@ page 50101 "CRF Shipment List"
             }
         }
     }
-
-    actions
-    {
-        area(Processing)
-        {
-            // Temporary: lets the polling round be tested by hand until the job queue entry exists (step 29)
-            action(UpdateAllStatuses)
-            {
-                Caption = 'Update All Statuses';
-                ToolTip = 'Asks the carriers for the status of all booked and in-transit shipments with a tracking number. Shipments where the carrier fails are skipped.';
-                Image = Refresh;
-
-                trigger OnAction()
-                begin
-                    Codeunit.Run(Codeunit::"CRF Update Status");
-                    CurrPage.Update(false);
-                end;
-            }
-        }
-    }
 }
