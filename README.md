@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Link to standard Business Central
 
+**[See what this step changed: diff against step 25](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/cc71bd0efe2fdd5d44df2523c098bb929724ab57...2807552a1a279764f38d26a2c60e4594c9a5ea78)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -26,7 +28,7 @@ Add the field CRF Default Carrier (enum CRF Carrier from module 3a) to the stand
 ## In this branch
 
 - [Notes for this step](docs/steps/26-customer-extension.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/25-report-and-api-pages/tell-the-webshop-when-a-shipment-changes...26-link-to-standard-business-central/give-customers-a-default-carrier)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/cc71bd0efe2fdd5d44df2523c098bb929724ab57...2807552a1a279764f38d26a2c60e4594c9a5ea78): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/customer-extension
 
 ---
