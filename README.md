@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Link to standard Business Central
 
+**[See what this step changed: diff against step 28](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/9f27fec21908cbaa61d9910289bba5e4a1984118...b81eaa0c011b07551b4086ad22830df0669d3728)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -26,7 +28,7 @@ Schedule CRF Update Status (codeunit 50103 from module 3c) with a recurring job 
 ## In this branch
 
 - [Notes for this step](docs/steps/29-job-queue.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/28-link-to-standard-business-central/log-what-happens...29-link-to-standard-business-central/poll-carriers-with-a-job-queue-entry)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/9f27fec21908cbaa61d9910289bba5e4a1984118...b81eaa0c011b07551b4086ad22830df0669d3728): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/job-queue
 
 ---
