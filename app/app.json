@@ -33,6 +33,9 @@
     "includeSourceInSymbolFile": true
   },
   "applicationInsightsConnectionString": "InstrumentationKey=00000000-0000-0000-0000-000000000000",
+  "features": [
+    "TranslationFile"
+  ],
   "runtime": "17.0",
   "target": "Cloud"
 }
