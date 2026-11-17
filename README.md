@@ -1,15 +1,33 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 13: Card, list and subform pages
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that books shipments with freight carriers for the fictional distributor Cronus. It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`. They are stacked: a branch starts from the previous step's branch, so its diff shows exactly what that step adds. `main` points at the last step.
+> The warehouse needs to be able to see all shipments in a list, open a shipment and see the packages
+> underneath, like on a sales order. I'd also like to see the total weight of the shipment without adding up the
+> packages myself. And a package can't weigh zero or less, so the system should object to that.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Create the pages for the shipment document. CRF Shipment List (page 50101) is a read-only list that opens CRF Shipment Card and can be found in search. CRF Shipment Card (page 50102) shows the header fields and, below them, the lines in CRF Shipment Subform (page 50103), a list part on CRF Shipment Line that numbers new lines by itself. Add a FlowField Total Weight to CRF Shipment Header that sums the weight of the shipment's lines, show it on the card and the list, and make it update when a line's weight changes. In CRF Shipment Line, reject a weight of zero or less with a clear error. Publish, create a shipment with two packages and show Mette the total weight.
+
+## Checklist
+
+- [ ] Page 50101 CRF Shipment List is a List page with CardPageId set to CRF Shipment Card, is not editable and is found in search.
+- [ ] Page 50102 CRF Shipment Card has a part for CRF Shipment Subform with SubPageLink from Shipment No. to the header's No.
+- [ ] Page 50103 CRF Shipment Subform is a ListPart that doesn't show Shipment No. or Line No. and numbers new lines automatically.
+- [ ] Total Weight is a FlowField with CalcFormula = sum over the lines of the shipment, and it updates when a line's weight changes.
+- [ ] Entering a weight of 0 or less on a line fails with an error that says the weight must be positive.
+
+## In this branch
+
+- [Notes for this step](docs/steps/13-shipment-pages.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/12-shipment/enums-and-number-series...13-shipment/card-list-and-subform-pages)
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/shipment-pages
+
+---
+
+[← Step 12](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/12-shipment/enums-and-number-series/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 14 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/14-shipment/permission-sets-and-entitlements/README.md)
