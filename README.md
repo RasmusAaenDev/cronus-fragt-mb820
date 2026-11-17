@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
+**[See what this step changed: diff against step 15](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/4ff8dbebff7466f9931eb748f1081bc274108abf...351c3f9cca393942eef60611a494070c52d86fd5)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Create the query CRF Shipments by Carrier (query 50100) on CRF Shipment Header t
 ## In this branch
 
 - [Notes for this step](docs/steps/16-shipments-per-carrier-query.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/15-shipment/import-carrier-rates-with-an-xmlport...16-shipment/a-query-for-shipments-per-carrier)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/4ff8dbebff7466f9931eb748f1081bc274108abf...351c3f9cca393942eef60611a494070c52d86fd5): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/shipments-per-carrier-query
 
 ---
