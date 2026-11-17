@@ -18,7 +18,7 @@ When an object is built, change its status here and nowhere else. An id is never
 
 | Id | Name | Extends | Step | Status |
 |---|---|---|---|---|
-| 50100 | CRF Customer | Customer | 26 | planned |
+| 50100 | CRF Customer | Customer | 26 | built |
 
 ## Enums
 
@@ -72,7 +72,7 @@ When an object is built, change its status here and nowhere else. An id is never
 | Id | Name | Extends | Step | Status |
 |---|---|---|---|---|
 | 50100 | CRF Customer List | Customer List | 03 | built |
-| 50101 | CRF Customer Card | Customer Card | 26 | planned |
+| 50101 | CRF Customer Card | Customer Card | 26 | built |
 | 50102 | CRF Order Processor RC | Order Processor Role Center | 16 | built |
 
 ## Reports, XMLports, queries, permission sets

@@ -28,6 +28,7 @@ table 50101 "CRF Shipment Header"
             trigger OnValidate()
             var
                 Customer: Record Customer;
+                CustomerFreightSetup: Record "CRF Freight Setup";
             begin
                 if not Customer.Get(Rec."Customer No.") then
                     exit;
@@ -35,6 +36,10 @@ table 50101 "CRF Shipment Header"
                 Rec."Ship-to Address" := Customer.Address;
                 Rec."Ship-to City" := Customer.City;
                 Rec."Ship-to Post Code" := Customer."Post Code";
+                // The customer's regular carrier wins; a blank one falls back to the freight setup
+                Rec.Carrier := Customer."CRF Default Carrier";
+                if (Rec.Carrier = Rec.Carrier::" ") and CustomerFreightSetup.Get() then
+                    Rec.Carrier := CustomerFreightSetup."Default Carrier";
             end;
         }
         field(3; "Ship-to Name"; Text[100])
