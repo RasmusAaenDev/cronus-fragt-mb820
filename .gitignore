@@ -1,0 +1,4 @@
+.alpackages/
+.snapshots/
+*.app
+.vscode/*.local.json
