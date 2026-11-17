@@ -1,6 +1,6 @@
 # Object id allocation
 
-Range 50100-50149 (`app/app.json`, `idRanges`). Ids are unique per object type, so table 50100 and page 50100 can coexist. "Step" is the workbook step that builds the object. Status: `built` means the file exists in `app/`; `planned` means it is only designed.
+Range 50100-50149 (`app/app.json`, `idRanges`). Ids are unique per object type, so table 50100 and page 50100 can coexist. "Step" is the workbook step that builds the object. Status: `built` means the file exists in `app/`; `planned` means it is only designed. At the last step (39) every row is `built` except the reserved codeunit id 50107 and the free ranges, which are listed as such.
 
 When an object is built, change its status here and nowhere else. An id is never reused for another purpose.
 
@@ -50,7 +50,7 @@ When an object is built, change its status here and nowhere else. An id is never
 | 50104 | CRF Sales Post Subs | 27 | built |
 | 50105 | CRF Assisted Setup Subs | 10 | built |
 | 50106 | CRF No Carrier | 17 | built |
-| 50107 | (free, reserve) | - | free |
+| 50107 | (not used: kept free as a reserve between the carrier codeunits and the install codeunits) | - | not built, on purpose |
 | 50108 | CRF Install | 31 | built |
 | 50109 | CRF Upgrade | 31 | built |
 | 50110 | CRF Upgrade Tags | 31 | built |

@@ -21,7 +21,7 @@ Before this, the sandbox runs from steps 30-34 must have been done (they have no
 | App id | `d28d7ba0-b08e-4f0a-bec1-e06bb9f39ced` | A new GUID; a marketplace app and a per-tenant extension cannot share an id | open |
 | Name / publisher / version | Cronus Fragt / Cronus / 1.2.0.0 | The combination must not exist as a per-tenant extension in the same service | decision |
 | ID range | 50100-50149 (per-tenant range; AS0084 in the trial build) | A range assigned by Microsoft to the publisher (for a new publisher 70000000-74999999); every object id changes | open |
-| Affix | `CRF` used on all 37 objects | Must be registered for the publisher with Microsoft; if it cannot be, objects are renamed | open |
+| Affix | `CRF` used on all objects | Must be registered for the publisher with Microsoft; if it cannot be, objects are renamed | open |
 | Cronus's own data | Lives in the per-tenant tables | Not available to the new app (different id, different tables). Options: run both side by side without shared object names/ids, and a third per-tenant extension that depends on both and moves the data | decision |
 | Namespaces | Not used (AA0247 hidden in the ruleset) | Recommended; do it together with the id change | open |
 | Signing | none | The `.app` must be signed (step 37) | open |

@@ -20,7 +20,7 @@
     {
       "id": "AA0247",
       "action": "Hidden",
-      "justification": "The project does not use namespaces: all 37 objects carry the CRF affix, which already isolates them, and the extension is installed for Cronus only. Moving everything into a namespace is a rename of every object reference and has to be done together with the AppSource decision (step 35)."
+      "justification": "The project does not use namespaces: all objects carry the CRF affix, which already isolates them, and the extension is installed for Cronus only. Moving everything into a namespace is a rename of every object reference and has to be done together with the AppSource decision (step 35)."
     }
   ]
 }

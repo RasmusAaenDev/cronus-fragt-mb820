@@ -19,6 +19,7 @@ Every object of the extension. Names carry the `CRF` affix, ids are in 50100-501
 |---|---|---|---|
 | Enum | 50100 | CRF Carrier | One value per carrier plus a blank value; implements `CRF ICarrier`; extensible. |
 | Enum | 50101 | CRF Shipment Status | Open, Booked, In Transit, Delivered; extensible. |
+| Enum extension | 50100 | CRF Event Category | Extends the standard `EventCategory` enum with `CRF Freight`, the category of the external business event (step 38). |
 | Interface | - | CRF ICarrier | The carrier contract: `GetRate`, `GetStatus`. |
 
 ## Codeunits

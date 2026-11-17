@@ -31,7 +31,7 @@ Also standard objects we use through their public API and not through events: Gu
 | Event | Publisher | Raised when | For whom |
 |---|---|---|---|
 | `OnAfterCreateShipmentFromSalesShipment` (integration event, parameters: `var CRFShipmentHeader`, `SalesShipmentHeader` number) | `CRF Freight Mgt` (50100) | After a shipment was created from a posted sales shipment | Another extension that wants to add data to the shipment without changing Cronus Fragt |
-| External business event "Shipment status changed" | `CRF Freight Mgt` | Status of a shipment changes (compared with API webhooks in step 25) | Power Automate and similar (step 38) |
+| External business event `shipmentstatuschanged` "Shipment status changed" (preview; parameters shipment id, status, tracking number; category `CRF Freight` from enum extension 50100) | `CRF Freight Mgt` (local procedure `ShipmentStatusChanged`) | After a status is saved in `UpdateStatusNoError` and `BookShipment`; delivered after the transaction commits | Power Automate and similar. Built in step 38; compared with API webhooks in step 25 |
 
 ## Public surface and internal objects
 

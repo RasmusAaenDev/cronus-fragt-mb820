@@ -13,3 +13,5 @@ This step produces documentation only; no AL object was added or changed, and th
 The page `CRF Shipment API` already uses `ODataKeyFields = SystemId` (no composite key), so it is webhook-capable without changes.
 
 Could not be done here: the test receiver was not set up, no subscription was created, no status change was made and no notification was received. That needs a sandbox, a public HTTPS endpoint and a REST client. The runbook is written from the workbook text and has not been checked against Learn or a live environment from this machine. `scripts/compile.sh app`: 0 errors (no code change).
+
+Update (step 38): the external business event was built after all, because the Power Automate flow of step 38 needs it (enum extension 50100 `CRF Event Category` and procedure `ShipmentStatusChanged` in `CRF Freight Mgt`). The recommendation to the webshop (use the webhook) is unchanged; the object list and `object-ids.md` now include the enum extension.
