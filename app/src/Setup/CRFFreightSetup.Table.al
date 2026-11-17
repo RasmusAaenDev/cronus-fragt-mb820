@@ -36,4 +36,37 @@ table 50100 "CRF Freight Setup"
             Clustered = true;
         }
     }
+
+    /// <summary>
+    /// Stores the carrier API key in isolated storage (encrypted, per company). An empty key deletes the stored one.
+    /// </summary>
+    procedure SetApiKey(NewApiKey: SecretText)
+    begin
+        if NewApiKey.IsEmpty() then begin
+            if IsolatedStorage.Contains(ApiKeyStorageKeyTok, DataScope::Company) then
+                IsolatedStorage.Delete(ApiKeyStorageKeyTok, DataScope::Company);
+            exit;
+        end;
+        IsolatedStorage.SetEncrypted(ApiKeyStorageKeyTok, NewApiKey, DataScope::Company);
+    end;
+
+    /// <summary>
+    /// Returns the stored API key as a SecretText, or an empty one if no key is stored.
+    /// </summary>
+    procedure GetApiKey() ApiKey: SecretText
+    begin
+        if IsolatedStorage.Get(ApiKeyStorageKeyTok, DataScope::Company, ApiKey) then
+            exit(ApiKey);
+    end;
+
+    /// <summary>
+    /// Tells whether an API key is stored, without reading it.
+    /// </summary>
+    procedure HasApiKey(): Boolean
+    begin
+        exit(IsolatedStorage.Contains(ApiKeyStorageKeyTok, DataScope::Company));
+    end;
+
+    var
+        ApiKeyStorageKeyTok: Label 'CRF-CarrierApiKey', Locked = true;
 }
