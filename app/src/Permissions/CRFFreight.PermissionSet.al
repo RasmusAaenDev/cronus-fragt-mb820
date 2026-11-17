@@ -22,6 +22,7 @@ permissionset 50100 "CRF Freight"
         page "CRF Carrier Rates" = X,
         page "CRF Freight Activities" = X,
         query "CRF Shipments by Carrier" = X,
+        report "CRF Warehouse Shipment List" = X,
         xmlport "CRF Import Carrier Rates" = X,
         codeunit "CRF Assisted Setup Subs" = X,
         codeunit "CRF Freight Mgt" = X,
