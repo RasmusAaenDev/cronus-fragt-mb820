@@ -8,7 +8,7 @@ When an object is built, change its status here and nowhere else. An id is never
 
 | Id | Name | Step | Status |
 |---|---|---|---|
-| 50100 | CRF Freight Setup | 08 | planned |
+| 50100 | CRF Freight Setup | 08 | built |
 | 50101 | CRF Shipment Header | 11 | planned |
 | 50102 | CRF Shipment Line | 11 | planned |
 | 50103 | CRF Carrier Rate | 15 | planned |
@@ -24,7 +24,7 @@ When an object is built, change its status here and nowhere else. An id is never
 
 | Id | Name | Step | Status |
 |---|---|---|---|
-| 50100 | CRF Carrier | 08 (made to implement CRF ICarrier in 17) | planned |
+| 50100 | CRF Carrier | 08 (made to implement CRF ICarrier in 17) | built |
 | 50101 | CRF Shipment Status | 11 (finished in 12) | planned |
 
 ## Interfaces (no id)
