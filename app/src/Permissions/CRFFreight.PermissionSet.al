@@ -21,6 +21,8 @@ permissionset 50100 "CRF Freight"
         page "CRF Shipment Subform" = X,
         page "CRF Carrier Rates" = X,
         page "CRF Freight Activities" = X,
+        page "CRF Shipment API" = X,
+        page "CRF Shipment Line API" = X,
         query "CRF Shipments by Carrier" = X,
         report "CRF Warehouse Shipment List" = X,
         xmlport "CRF Import Carrier Rates" = X,
