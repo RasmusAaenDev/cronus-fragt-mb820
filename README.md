@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Bonus: CI/CD and notifications · bonus
 
+**[See what this step changed: diff against step 38](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/095bc3bf0db330e68dc92cfbb14faca22cc3118a...1c15aa2a0ba63103ce468f40e800fb3eb6f976d8)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Make sure someone hears about it when the status polling from module 3e goes wro
 ## In this branch
 
 - [Notes for this step](docs/steps/39-job-queue-monitoring.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/38-bonus-ci-cd-and-notifications/notify-when-a-shipment-is-late...39-bonus-ci-cd-and-notifications/watch-the-job-queue)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/095bc3bf0db330e68dc92cfbb14faca22cc3118a...1c15aa2a0ba63103ce468f40e800fb3eb6f976d8): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/job-queue-monitoring
 
 ---
