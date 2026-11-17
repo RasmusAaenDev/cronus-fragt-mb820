@@ -8,7 +8,7 @@ A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn
 
 ## Branches
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`. They are stacked: a branch starts from the previous step's branch, so its diff shows exactly what that step adds. `main` points at the last step.
+Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`, and its `README.md` is the task description for that step (see `STEPS.md` for links). The branches are stacked: a branch starts from the previous step's code, so the compare view between two neighbouring steps shows what the step adds, plus the swapped README. `main` holds the finished solution (the last step's code) and this project README.
 
 ## What is verified
 
