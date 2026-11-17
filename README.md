@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
+**[See what this step changed: diff against step 10](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/017985cc48132aa15bf6a5be625d8921b4d36466...156acdbf41bc75d8c0235f42eae97d8851c53ab0)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Build the shipment as a document, the way Business Central builds sales orders: 
 ## In this branch
 
 - [Notes for this step](docs/steps/11-shipment-tables.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/10-setup-and-assisted-setup/add-an-assisted-setup-guide...11-shipment/create-the-shipment-tables)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/017985cc48132aa15bf6a5be625d8921b4d36466...156acdbf41bc75d8c0235f42eae97d8851c53ab0): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/shipment-tables
 
 ---
