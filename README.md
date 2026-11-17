@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Carriers and the outbound API
 
+**[See what this step changed: diff against step 17](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/711304ebb77567a39b050d9ec5783f7554696848...e35cd612de9c4ca42daff955b30e194bfc218528)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Create CRF Freight Mgt (codeunit 50100) as the one public entry point to the car
 ## In this branch
 
 - [Notes for this step](docs/steps/18-carrier-facade.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/17-carriers-and-the-outbound-api/one-interface-for-every-carrier...18-carriers-and-the-outbound-api/a-facade-codeunit)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/711304ebb77567a39b050d9ec5783f7554696848...e35cd612de9c4ca42daff955b30e194bfc218528): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/carrier-facade
 
 ---
