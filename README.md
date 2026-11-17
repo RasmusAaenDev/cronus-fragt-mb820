@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Link to standard Business Central
 
+**[See what this step changed: diff against step 26](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/2807552a1a279764f38d26a2c60e4594c9a5ea78...5897e3c3ab420b956583fce018b5dd73c4942842)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -27,7 +29,7 @@ In CRF Sales Post Subs (codeunit 50104 from the phase 2 design), subscribe to th
 ## In this branch
 
 - [Notes for this step](docs/steps/27-shipment-event.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/26-link-to-standard-business-central/give-customers-a-default-carrier...27-link-to-standard-business-central/create-a-shipment-when-a-sales-shipment-is-posted)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/2807552a1a279764f38d26a2c60e4594c9a5ea78...5897e3c3ab420b956583fce018b5dd73c4942842): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/shipment-event
 
 ---
