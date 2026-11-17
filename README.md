@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Link to standard Business Central
 
+**[See what this step changed: diff against step 30](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/31cebcd89b3a38399dded3e76cd301eb9380692b...45c9278af27571933733335ccd136ce0b6e7583f)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -26,7 +28,7 @@ Write the install and upgrade code of Cronus Fragt. The install codeunit CRF Ins
 ## In this branch
 
 - [Notes for this step](docs/steps/31-install-and-upgrade.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/30-link-to-standard-business-central/test-it-with-the-test-framework...31-link-to-standard-business-central/install-and-upgrade-code)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/31cebcd89b3a38399dded3e76cd301eb9380692b...45c9278af27571933733335ccd136ce0b6e7583f): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/install-and-upgrade
 
 ---
