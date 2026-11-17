@@ -6,10 +6,10 @@ Status legend: **done** (exists in this repository), **open** (needs a person, a
 
 Nothing was uploaded: there is no admin center access here, so the checklist item "Operations page shows success" is **open**. Procedure for a person with admin rights:
 
-1. Build `Cronus Fragt` 1.1.0.0 (or higher) and take the `.app` of the app only. Not the test app (tests are not allowed in online production).
+1. Build `Cronus Fragt` 1.2.0.0 (the version at step 37; 1.1.0.0 was the version of module 3e) and take the `.app` of the app only. Not the test app (tests are not allowed in online production).
 2. Admin center, Environments, Production, Apps, Manage Apps, Install Extension; select the `.app`. Business Central decides itself whether it is a new extension or an update.
 3. Choose the schedule agreed with Mette (new extension: immediately or the next update window; update: also possible with the next minor/major update) and the sync mode.
-4. Follow the Operations page until it says Succeeded. For 1.0.0.0 to 1.1.0.0 the upgrade code (`CRF Upgrade`, step 31) runs; check that the default-carrier backfill tag was set.
+4. Follow the Operations page until it says Succeeded. For an update from 1.0.0.0 the upgrade code (`CRF Upgrade`, step 31) runs; check that the default-carrier backfill tag was set.
 5. After installation: run the setup guide (assisted setup) in each company so `Shipment Nos.` is set; until then posting works but creates no shipments.
 
 Before this, the sandbox runs from steps 30-34 must have been done (they have not).
@@ -19,7 +19,7 @@ Before this, the sandbox runs from steps 30-34 must have been done (they have no
 | Area | Per-tenant Cronus Fragt now | AppSource version | Status |
 |---|---|---|---|
 | App id | `d28d7ba0-b08e-4f0a-bec1-e06bb9f39ced` | A new GUID; a marketplace app and a per-tenant extension cannot share an id | open |
-| Name / publisher / version | Cronus Fragt / Cronus / 1.1.0.0 | The combination must not exist as a per-tenant extension in the same service | decision |
+| Name / publisher / version | Cronus Fragt / Cronus / 1.2.0.0 | The combination must not exist as a per-tenant extension in the same service | decision |
 | ID range | 50100-50149 (per-tenant range; AS0084 in the trial build) | A range assigned by Microsoft to the publisher (for a new publisher 70000000-74999999); every object id changes | open |
 | Affix | `CRF` used on all 37 objects | Must be registered for the publisher with Microsoft; if it cannot be, objects are renamed | open |
 | Cronus's own data | Lives in the per-tenant tables | Not available to the new app (different id, different tables). Options: run both side by side without shared object names/ids, and a third per-tenant extension that depends on both and moves the data | decision |

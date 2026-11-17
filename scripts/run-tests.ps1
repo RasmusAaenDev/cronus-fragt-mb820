@@ -3,7 +3,7 @@
   Runs the Cronus Fragt tests and the standard sales posting tests in a BC container (BcContainerHelper).
   NOT RUN from the repository's author environment (no Docker/Windows host); see docs/runbooks/run-tests.md.
 .EXAMPLE
-  ./scripts/run-tests.ps1 -AppFile ./out/Cronus_Cronus Fragt_1.1.0.0.app -TestAppFile ./out/Cronus_Cronus Fragt Tests_1.0.0.0.app
+  ./scripts/run-tests.ps1 -AppFile ./out/Cronus_Cronus Fragt_1.2.0.0.app -TestAppFile ./out/Cronus_Cronus Fragt Tests_1.0.0.0.app
 #>
 param(
     [Parameter(Mandatory)][string]$AppFile,
