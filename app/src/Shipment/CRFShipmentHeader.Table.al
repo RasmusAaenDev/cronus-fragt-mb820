@@ -84,6 +84,14 @@ table 50101 "CRF Shipment Header"
             Editable = false;
             TableRelation = "No. Series";
         }
+        field(12; "Total Weight"; Decimal)
+        {
+            Caption = 'Total Weight (kg)';
+            FieldClass = FlowField;
+            CalcFormula = sum("CRF Shipment Line".Weight where("Shipment No." = field("No.")));
+            DecimalPlaces = 0 : 5;
+            Editable = false;
+        }
     }
 
     keys

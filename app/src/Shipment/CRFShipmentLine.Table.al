@@ -26,6 +26,14 @@ table 50102 "CRF Shipment Line"
             Caption = 'Weight (kg)';
             DataClassification = CustomerContent;
             DecimalPlaces = 0 : 5;
+
+            trigger OnValidate()
+            var
+                WeightMustBePositiveErr: Label 'The weight of a package must be greater than zero.';
+            begin
+                if Rec.Weight <= 0 then
+                    Error(WeightMustBePositiveErr);
+            end;
         }
         field(5; Length; Decimal)
         {

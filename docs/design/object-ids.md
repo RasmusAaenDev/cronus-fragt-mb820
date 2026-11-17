@@ -57,9 +57,9 @@ When an object is built, change its status here and nowhere else. An id is never
 | Id | Name | Type | Step | Status |
 |---|---|---|---|---|
 | 50100 | CRF Freight Setup | Card | 09 | built |
-| 50101 | CRF Shipment List | List | 13 | planned |
-| 50102 | CRF Shipment Card | Card | 13 | planned |
-| 50103 | CRF Shipment Subform | ListPart | 13 | planned |
+| 50101 | CRF Shipment List | List | 13 | built |
+| 50102 | CRF Shipment Card | Card | 13 | built |
+| 50103 | CRF Shipment Subform | ListPart | 13 | built |
 | 50104 | CRF Freight Setup Guide | NavigatePage | 10 | built |
 | 50105 | CRF Shipment API | API | 23 | planned |
 | 50106 | CRF Shipment Line API | API | 23 | planned |
