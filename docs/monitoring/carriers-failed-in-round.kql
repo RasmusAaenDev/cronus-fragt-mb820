@@ -1,0 +1,12 @@
+// Run on the Application Insights resource from app/app.json (Cronus Fragt's own telemetry, TelemetryScope::ExtensionPublisher).
+// A polling round finished (CRF-0004, step 28) in which at least one shipment failed. The job queue entry itself stays green.
+// In this repository the round event is CRF-0004; the workbook's text calls it CRF-0003, which here is "shipment created".
+traces
+| where timestamp > ago(1h)
+| where tostring(customDimensions.eventId) == 'CRF-0004'
+| where toint(customDimensions.alFailed) > 0
+| project timestamp, message,
+    succeeded = toint(customDimensions.alSucceeded),
+    failed = toint(customDimensions.alFailed),
+    companyName = tostring(customDimensions.companyName)
+| order by timestamp desc

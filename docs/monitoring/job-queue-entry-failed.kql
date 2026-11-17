@@ -1,0 +1,12 @@
+// Run on the Application Insights resource of the ENVIRONMENT (set in the admin center), not the one in app.json.
+// The CRF Update Status entry (codeunit 50103) failed (AL0000HE7, might be retried) or failed for the last time (AL0000JRG).
+traces
+| where timestamp > ago(1d)
+| where customDimensions.eventId in ('AL0000HE7', 'AL0000JRG')
+| where tostring(customDimensions.alJobQueueObjectId) == '50103'
+| project timestamp,
+    eventId = tostring(customDimensions.eventId),
+    companyName = tostring(customDimensions.companyName),
+    jobQueueEntryId = tostring(customDimensions.alJobQueueId),
+    attempts = tostring(customDimensions.alJobQueueNumberOfAttemptsToRun)
+| order by timestamp desc
