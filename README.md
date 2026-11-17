@@ -1,15 +1,34 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 26: Give customers a default carrier
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that books shipments with freight carriers for the fictional distributor Cronus. It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Build the solution › Link to standard Business Central
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`. They are stacked: a branch starts from the previous step's branch, so its diff shows exactly what that step adds. `main` points at the last step.
+> Hi! We almost always ship with the same carrier to the same customer. When I'm on the customer card, I'd like
+> to be able to pick the customer's regular carrier right there, along with name and address. And when we create
+> a new shipment for the customer, the carrier should simply already be there. If the customer has no regular
+> carrier, we should get the one we chose in the freight setup.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Add the field CRF Default Carrier (enum CRF Carrier from module 3a) to the standard Customer table with the table extension CRF Customer (tableextension 50100), and show it on the Customer Card with the page extension CRF Customer Card (pageextension 50101), both from the phase 2 design. Give the field an id from the project range, a caption and a data classification, and place it at the end of the General FastTab. Then make a new shipment take the customer's default carrier when Customer No. is validated on CRF Shipment Header, and fall back to Default Carrier in CRF Freight Setup when the customer has none. Publish, choose a default carrier on a customer and create a shipment for that customer.
+
+## Checklist
+
+- [ ] tableextension 50100 CRF Customer extends Customer with field 50100 CRF Default Carrier of type Enum "CRF Carrier", with a Caption and DataClassification = CustomerContent.
+- [ ] pageextension 50101 CRF Customer Card extends Customer Card and adds the field with addlast(General), with ApplicationArea and a ToolTip set on the field.
+- [ ] The new field and the new page control carry the CRF affix, because Customer and Customer Card belong to another publisher.
+- [ ] Validating Customer No. on a shipment fills Carrier from the customer's default carrier, or from CRF Freight Setup when the customer has none.
+- [ ] The field appears on the General FastTab of the Customer Card, and a new shipment for that customer gets its carrier.
+
+## In this branch
+
+- [Notes for this step](docs/steps/26-customer-extension.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/25-report-and-api-pages/tell-the-webshop-when-a-shipment-changes...26-link-to-standard-business-central/give-customers-a-default-carrier)
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/customer-extension
+
+---
+
+[← Step 25](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/25-report-and-api-pages/tell-the-webshop-when-a-shipment-changes/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 27 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/27-link-to-standard-business-central/create-a-shipment-when-a-sales-shipment-is-posted/README.md)
