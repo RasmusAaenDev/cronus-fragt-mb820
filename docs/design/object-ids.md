@@ -45,9 +45,9 @@ When an object is built, change its status here and nowhere else. An id is never
 | 50105 | CRF Assisted Setup Subs | 10 | built |
 | 50106 | CRF No Carrier | 17 | built |
 | 50107 | (free, reserve) | - | free |
-| 50108 | CRF Install | 31 | planned |
-| 50109 | CRF Upgrade | 31 | planned |
-| 50110 | CRF Upgrade Tags | 31 | planned |
+| 50108 | CRF Install | 31 | built |
+| 50109 | CRF Upgrade | 31 | built |
+| 50110 | CRF Upgrade Tags | 31 | built |
 | 50140 | CRF Freight Tests | 30, in the test app | built |
 
 50111-50139 and 50141-50149 are free.
