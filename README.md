@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Setup and assisted setup
 
+**[See what this step changed: diff against step 8](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/c79fed0bbb91939ac6a78bc8459ca3ced07e4c2f...d6be7661a289b3bdba2c39380e9273d80f767ce1)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -24,7 +26,7 @@ Create the card page CRF Freight Setup (page 50100) on the CRF Freight Setup tab
 ## In this branch
 
 - [Notes for this step](docs/steps/09-setup-page.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/08-setup-and-assisted-setup/create-the-freight-setup-table...09-setup-and-assisted-setup/create-the-setup-page-and-open-it-from-search)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/c79fed0bbb91939ac6a78bc8459ca3ced07e4c2f...d6be7661a289b3bdba2c39380e9273d80f767ce1): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/setup-page
 
 ---
