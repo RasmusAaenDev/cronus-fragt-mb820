@@ -1,15 +1,32 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 9: Create the setup page and open it from search
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that books shipments with freight carriers for the fictional distributor Cronus. It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Build the solution › Setup and assisted setup
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`. They are stacked: a branch starts from the previous step's branch, so its diff shows exactly what that step adds. `main` points at the last step.
+> When I need to change our regular carrier, I can't be bothered to hunt around the menus. Can't I just search
+> for the freight setup, like I do with everything else? And nobody must be able to delete the setup or create a
+> second one by accident.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Create the card page CRF Freight Setup (page 50100) on the CRF Freight Setup table. Group the fields sensibly (general settings and numbering), leave out the Primary Key field, and make sure users can't insert or delete records on the page. When the page opens and no setup record exists, it must create one. Make the page available in search under Administration, publish, and show Mette that she finds it by searching for "Cronus Freight Setup" (or another search term you add).
+
+## Checklist
+
+- [ ] Page 50100 CRF Freight Setup is a Card page on the CRF Freight Setup table and doesn't show the Primary Key field.
+- [ ] The page sets InsertAllowed and DeleteAllowed to false.
+- [ ] OnOpenPage inserts the setup record when it doesn't exist, so the page never opens empty.
+- [ ] The page sets ApplicationArea and UsageCategory = Administration, and searching for its caption in the web client finds it.
+
+## In this branch
+
+- [Notes for this step](docs/steps/09-setup-page.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/08-setup-and-assisted-setup/create-the-freight-setup-table...09-setup-and-assisted-setup/create-the-setup-page-and-open-it-from-search)
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/setup-page
+
+---
+
+[← Step 8](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/08-setup-and-assisted-setup/create-the-freight-setup-table/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 10 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/10-setup-and-assisted-setup/add-an-assisted-setup-guide/README.md)
