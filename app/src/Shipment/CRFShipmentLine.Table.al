@@ -60,6 +60,7 @@ table 50102 "CRF Shipment Line"
         key(PK; "Shipment No.", "Line No.")
         {
             Clustered = true;
+            SumIndexFields = Weight;
         }
     }
 }

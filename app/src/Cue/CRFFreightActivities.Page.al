@@ -22,17 +22,21 @@ page 50108 "CRF Freight Activities"
                 {
                     ToolTip = 'Specifies the number of open shipments that go with the default carrier of the freight setup.';
                 }
+            }
+        }
+    }
 
-                actions
-                {
-                    action(AllShipments)
-                    {
-                        Caption = 'All Shipments';
-                        ToolTip = 'Opens the list of all shipments.';
-                        RunObject = page "CRF Shipment List";
-                        Image = TileNew;
-                    }
-                }
+    actions
+    {
+        area(Processing)
+        {
+            action(AllShipments)
+            {
+                ApplicationArea = All;
+                Caption = 'All Shipments';
+                ToolTip = 'Opens the list of all shipments.';
+                RunObject = page "CRF Shipment List";
+                Image = List;
             }
         }
     }
