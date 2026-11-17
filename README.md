@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Link to standard Business Central
 
+**[See what this step changed: diff against step 27](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/5897e3c3ab420b956583fce018b5dd73c4942842...9f27fec21908cbaa61d9910289bba5e4a1984118)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -26,7 +28,7 @@ Make Cronus Fragt send its own telemetry to Application Insights. Create an Appl
 ## In this branch
 
 - [Notes for this step](docs/steps/28-telemetry.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/27-link-to-standard-business-central/create-a-shipment-when-a-sales-shipment-is-posted...28-link-to-standard-business-central/log-what-happens)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/5897e3c3ab420b956583fce018b5dd73c4942842...9f27fec21908cbaa61d9910289bba5e4a1984118): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/telemetry
 
 ---
