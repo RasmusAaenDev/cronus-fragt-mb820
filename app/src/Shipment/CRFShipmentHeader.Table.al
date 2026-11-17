@@ -9,6 +9,15 @@ table 50101 "CRF Shipment Header"
         {
             Caption = 'No.';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                if Rec."No." <> xRec."No." then begin
+                    FreightSetup.Get();
+                    NoSeries.TestManual(FreightSetup."Shipment Nos.");
+                    Rec."No. Series" := '';
+                end;
+            end;
         }
         field(2; "Customer No."; Code[20])
         {
@@ -68,6 +77,13 @@ table 50101 "CRF Shipment Header"
             Caption = 'Posting Date';
             DataClassification = CustomerContent;
         }
+        field(11; "No. Series"; Code[20])
+        {
+            Caption = 'No. Series';
+            DataClassification = CustomerContent;
+            Editable = false;
+            TableRelation = "No. Series";
+        }
     }
 
     keys
@@ -77,6 +93,24 @@ table 50101 "CRF Shipment Header"
             Clustered = true;
         }
     }
+
+    var
+        FreightSetup: Record "CRF Freight Setup";
+        NoSeries: Codeunit "No. Series";
+
+    trigger OnInsert()
+    begin
+        if Rec."Posting Date" = 0D then
+            Rec."Posting Date" := WorkDate();
+        if Rec."No." = '' then begin
+            FreightSetup.Get();
+            FreightSetup.TestField("Shipment Nos.");
+            Rec."No. Series" := FreightSetup."Shipment Nos.";
+            if NoSeries.AreRelated(FreightSetup."Shipment Nos.", xRec."No. Series") then
+                Rec."No. Series" := xRec."No. Series";
+            Rec."No." := NoSeries.GetNextNo(Rec."No. Series", Rec."Posting Date");
+        end;
+    end;
 
     trigger OnDelete()
     var
