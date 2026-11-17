@@ -15,3 +15,5 @@ Choices: the card's Status is editable for now, because the facade that changes 
 A limit worth knowing: the weight check runs when Weight is validated, so a package line saved without ever touching Weight keeps weight 0. A check on insert would close that; it is outside this step's wording.
 
 Compile: `scripts/compile.sh app` 0 errors. Not done: creating a shipment with two packages and reading the total weight in the web client (needs a sandbox). `object-ids.md`: pages 50101-50103 built.
+
+Design correction made in this step: `docs/design/01-object-list.md` called page 50102 a Card; a card with a lines part is a Document page, so the row now says Document (the id and name are unchanged).
