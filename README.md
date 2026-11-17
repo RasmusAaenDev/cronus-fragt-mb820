@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Bonus: CI/CD and notifications · bonus
 
+**[See what this step changed: diff against step 35](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/02cb39ae607166dafe4eb7ef8fdd05242e8fcd76...4916bfb49d632925ec0e9151b205376894475303)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -26,7 +28,7 @@ Move Cronus Fragt and Cronus Fragt Tests (module 3e) into one GitHub repository 
 ## In this branch
 
 - [Notes for this step](docs/steps/36-git-and-pipeline.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/35-quality-and-deploy/prepare-for-appsource-and-release...36-bonus-ci-cd-and-notifications/put-it-in-git-and-build-it-in-a-pipeline)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/02cb39ae607166dafe4eb7ef8fdd05242e8fcd76...4916bfb49d632925ec0e9151b205376894475303): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/git-and-pipeline
 
 ---
