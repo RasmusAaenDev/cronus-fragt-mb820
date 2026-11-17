@@ -65,7 +65,7 @@ When an object is built, change its status here and nowhere else. An id is never
 | 50106 | CRF Shipment Line API | API | 23 | built |
 | 50107 | CRF Carrier Rates | List | 15 | built |
 | 50108 | CRF Freight Activities | CardPart | 16 | built |
-| 50109 | CRF Shipment Status API | API, read-only | 24 | planned |
+| 50109 | CRF Shipment Status API | API, read-only | 24 | built |
 
 ## Page extensions
 

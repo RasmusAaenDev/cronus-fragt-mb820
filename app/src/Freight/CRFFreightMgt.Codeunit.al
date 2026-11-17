@@ -52,6 +52,21 @@ codeunit 50100 "CRF Freight Mgt"
         exit(true);
     end;
 
+    /// <summary>
+    /// Books an open shipment. The carrier service has no booking call (see step 19), so nothing is sent to the carrier:
+    /// the shipment must have a carrier and a matching rate, and its status becomes Booked.
+    /// </summary>
+    procedure BookShipment(var ShipmentHeader: Record "CRF Shipment Header")
+    var
+        NotOpenErr: Label 'Shipment %1 cannot be booked because its status is %2.', Comment = '%1 = shipment number, %2 = status';
+    begin
+        if ShipmentHeader.Status <> ShipmentHeader.Status::Open then
+            Error(NotOpenErr, ShipmentHeader."No.", ShipmentHeader.Status);
+        GetRate(ShipmentHeader); // fails for a shipment without a carrier or without a matching rate
+        ShipmentHeader.Validate(Status, ShipmentHeader.Status::Booked);
+        ShipmentHeader.Modify(true);
+    end;
+
     [TryFunction]
     local procedure TryGetStatus(Carrier: Interface "CRF ICarrier"; ShipmentHeader: Record "CRF Shipment Header"; var NewStatus: Enum "CRF Shipment Status")
     begin
