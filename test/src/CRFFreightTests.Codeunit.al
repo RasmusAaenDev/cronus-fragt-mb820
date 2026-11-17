@@ -37,4 +37,25 @@ codeunit 50140 "CRF Freight Tests"
         // [THEN] The error from the shipment line table is raised
         Assert.AreEqual('The weight of a package must be greater than zero.', GetLastErrorText(), 'Unexpected error message');
     end;
+
+    [Test]
+    [TransactionModel(TransactionModel::AutoRollback)]
+    procedure PostingWithoutShipmentNumberSeriesCreatesNoShipment()
+    var
+        FreightSetup: Record "CRF Freight Setup";
+        ShipmentHeader: Record "CRF Shipment Header";
+        FreightMgt: Codeunit "CRF Freight Mgt";
+    begin
+        // [SCENARIO] Posting a sales shipment must not fail in a company where the freight setup guide has not been run
+        // [GIVEN] A freight setup without a shipment number series
+        if not FreightSetup.Get() then
+            FreightSetup.Insert();
+        FreightSetup."Shipment Nos." := '';
+        FreightSetup.Modify();
+        // [WHEN] The posted sales shipment is handed to Cronus Fragt
+        FreightMgt.CreateShipmentFromSalesShipment('10000', 'CRF-TEST-SHPT');
+        // [THEN] No error is raised and no shipment exists for it
+        ShipmentHeader.SetRange("Sales Shipment No.", 'CRF-TEST-SHPT');
+        Assert.RecordIsEmpty(ShipmentHeader);
+    end;
 }
