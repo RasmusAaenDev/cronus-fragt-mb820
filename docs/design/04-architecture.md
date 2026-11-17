@@ -81,7 +81,7 @@ flowchart LR
 | Facade | `CRF Freight Mgt`: the only public entry point; all callers (pages, API, subscriber, job) go through it |
 | API pages | The webshop's door: shipments, lines, read-only status |
 | Status polling | A job queue entry running `CRF Update Status` in the background |
-| Telemetry | `Session.LogMessage` events `CRF-0001`, `CRF-0002`, `CRF-0003` to the Application Insights resource named in `applicationInsightsConnectionString` in `app.json` |
+| Telemetry | `Session.LogMessage` events `CRF-0001` to `CRF-0004` (see `docs/runbooks/telemetry.md`) to the Application Insights resource named in `applicationInsightsConnectionString` in `app.json` |
 | Permissions | Permission set `CRF Freight`; the license decides what a user may do at most, the permission set what they may do |
 
 ## Things to remember

@@ -86,7 +86,7 @@ When an object is built, change its status here and nowhere else. An id is never
 
 ## Not objects
 
-- Telemetry events `CRF-0001` (step 19, Carrier A could not be reached), `CRF-0002` (step 21, a shipment failed in the polling round) and `CRF-0003` (step 28) are event ids in code, not object ids.
+- Telemetry events `CRF-0001` (step 19, Carrier A could not be reached), `CRF-0002` (step 21, a shipment failed in the polling round) `CRF-0003` (step 28, a shipment was created from a sales shipment) and `CRF-0004` (step 28, a polling round finished) are event ids in code, not object ids.
 - The report layout is a file, not an object (`app/src/Report/CRFWarehouseShipmentList.docx`, step 22).
 - The Danish translation (step 32) is an `.xlf` file.
 - Field ids in `CRF Customer` start at 50100 (field ids of an extension table share the same range).

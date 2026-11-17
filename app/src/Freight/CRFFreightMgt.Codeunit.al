@@ -92,7 +92,19 @@ codeunit 50100 "CRF Freight Mgt"
         ShipmentHeader.Validate("Customer No.", CustomerNo); // ship-to fields and carrier
         ShipmentHeader."Sales Shipment No." := SalesShipmentNo;
         ShipmentHeader.Modify(true);
+        LogShipmentCreated(ShipmentHeader);
         OnAfterCreateShipmentFromSalesShipment(ShipmentHeader, SalesShipmentNo);
+    end;
+
+    local procedure LogShipmentCreated(ShipmentHeader: Record "CRF Shipment Header")
+    var
+        Dimensions: Dictionary of [Text, Text];
+    begin
+        // The number is CustomerContent, so the SystemId is logged instead
+        Dimensions.Add('ShipmentSystemId', Format(ShipmentHeader.SystemId));
+        Dimensions.Add('Carrier', Format(ShipmentHeader.Carrier));
+        Session.LogMessage('CRF-0003', ShipmentCreatedTxt, Verbosity::Normal,
+            DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, Dimensions);
     end;
 
     /// <summary>
@@ -111,6 +123,7 @@ codeunit 50100 "CRF Freight Mgt"
     end;
 
     var
+        ShipmentCreatedTxt: Label 'Shipment created from sales shipment', Locked = true;
         UpdateFailedTitleLbl: Label 'The shipment status was not updated';
         UpdateFailedErr: Label 'Cronus Fragt could not get the status of shipment %1 from the carrier. Try again later.', Comment = '%1 = shipment number';
 }
