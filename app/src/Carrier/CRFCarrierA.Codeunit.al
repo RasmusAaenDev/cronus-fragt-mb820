@@ -103,7 +103,7 @@ codeunit 50101 "CRF Carrier A" implements "CRF ICarrier"
             DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, Dimensions);
     end;
 
-    local procedure StatusFromText(StatusText: Text): Enum "CRF Shipment Status"
+    internal procedure StatusFromText(StatusText: Text): Enum "CRF Shipment Status"
     var
         UnknownStatusErr: Label 'The carrier service reported the unknown status %1.', Comment = '%1 = status text';
     begin

@@ -48,7 +48,7 @@ When an object is built, change its status here and nowhere else. An id is never
 | 50108 | CRF Install | 31 | planned |
 | 50109 | CRF Upgrade | 31 | planned |
 | 50110 | CRF Upgrade Tags | 31 | planned |
-| 50140 | CRF Freight Tests | 30, in the test app | planned |
+| 50140 | CRF Freight Tests | 30, in the test app | built |
 
 50111-50139 and 50141-50149 are free.
 
@@ -88,5 +88,6 @@ When an object is built, change its status here and nowhere else. An id is never
 
 - Telemetry events `CRF-0001` (step 19, Carrier A could not be reached), `CRF-0002` (step 21, a shipment failed in the polling round) `CRF-0003` (step 28, a shipment was created from a sales shipment) and `CRF-0004` (step 28, a polling round finished) are event ids in code, not object ids.
 - The report layout is a file, not an object (`app/src/Report/CRFWarehouseShipmentList.docx`, step 22).
+- The test app (`test/`, id range 50140-50149 inside the same 50100-50149 range) holds only codeunit 50140.
 - The Danish translation (step 32) is an `.xlf` file.
 - Field ids in `CRF Customer` start at 50100 (field ids of an extension table share the same range).
