@@ -42,7 +42,7 @@ When an object is built, change its status here and nowhere else. An id is never
 | 50102 | CRF Carrier B | 17 | planned |
 | 50103 | CRF Update Status | 21 | planned |
 | 50104 | CRF Sales Post Subs | 27 | planned |
-| 50105 | CRF Assisted Setup Subs | 10 | planned |
+| 50105 | CRF Assisted Setup Subs | 10 | built |
 | 50106 | CRF No Carrier | 17 | planned |
 | 50107 | (free, reserve) | - | free |
 | 50108 | CRF Install | 31 | planned |
@@ -60,7 +60,7 @@ When an object is built, change its status here and nowhere else. An id is never
 | 50101 | CRF Shipment List | List | 13 | planned |
 | 50102 | CRF Shipment Card | Card | 13 | planned |
 | 50103 | CRF Shipment Subform | ListPart | 13 | planned |
-| 50104 | CRF Freight Setup Guide | NavigatePage | 10 | planned |
+| 50104 | CRF Freight Setup Guide | NavigatePage | 10 | built |
 | 50105 | CRF Shipment API | API | 23 | planned |
 | 50106 | CRF Shipment Line API | API | 23 | planned |
 | 50107 | CRF Carrier Rates | List | 15 | planned |
