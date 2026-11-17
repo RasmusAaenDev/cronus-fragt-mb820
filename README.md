@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Carriers and the outbound API
 
+**[See what this step changed: diff against step 16](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/351c3f9cca393942eef60611a494070c52d86fd5...711304ebb77567a39b050d9ec5783f7554696848)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Create the interface CRF ICarrier with two procedures: GetRate, which returns th
 ## In this branch
 
 - [Notes for this step](docs/steps/17-carrier-interface.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/16-shipment/a-query-for-shipments-per-carrier...17-carriers-and-the-outbound-api/one-interface-for-every-carrier)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/351c3f9cca393942eef60611a494070c52d86fd5...711304ebb77567a39b050d9ec5783f7554696848): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/carrier-interface
 
 ---
