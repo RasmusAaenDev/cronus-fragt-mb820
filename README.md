@@ -1,15 +1,34 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 8: Create the freight setup table
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that books shipments with freight carriers for the fictional distributor Cronus. It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Build the solution › Setup and assisted setup
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`. They are stacked: a branch starts from the previous step's branch, so its diff shows exactly what that step adds. `main` points at the last step.
+> Hi! We need one place where we decide which carrier we use by default, and where we store the address and the
+> password for the carrier's system. The shipments also need their own running numbers, just like our orders
+> have. And it should only exist once, so we don't suddenly end up with two different setups that people edit
+> separately.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Create the setup table CRF Freight Setup (table 50100) using the setup table pattern of Business Central. Give it a primary key field named Primary Key, a field for the default carrier, a field for the base URL of the carrier service and a field for the number series that numbers new shipments. The default carrier needs the enum CRF Carrier (50100) from your design: create it now with a blank value and one value per carrier, and module 3c makes it implement the CRF ICarrier interface. Do not add a field for the API key: tell Mette that the key is stored elsewhere and that module 3c covers it. Compile and publish the extension.
+
+## Checklist
+
+- [ ] Table 50100 CRF Freight Setup has a Primary Key field of type Code[10] and that field is the table's only key field.
+- [ ] The table has fields for the default carrier (enum CRF Carrier), the API base URL and the shipment number series.
+- [ ] The number series field has a table relation to the No. Series table.
+- [ ] The table has no field for the API key.
+- [ ] The extension compiles and publishes to the sandbox without errors.
+
+## In this branch
+
+- [Notes for this step](docs/steps/08-setup-table.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/07-solution-design/sketch-the-architecture...08-setup-and-assisted-setup/create-the-freight-setup-table)
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/setup-table
+
+---
+
+[← Step 7](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/07-solution-design/sketch-the-architecture/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 9 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/09-setup-and-assisted-setup/create-the-setup-page-and-open-it-from-search/README.md)
