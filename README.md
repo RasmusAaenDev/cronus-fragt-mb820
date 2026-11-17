@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Solution design
 
+**[See what this step changed: diff against step 4](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/8bba76499ca197f158fc7ab6713cf51a6281fd3a...bc8fa24db1a7c4995a0a4577bfb16a6349c94c2f)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Add a decision table to the design document. For each piece of data in Mette's w
 ## In this branch
 
 - [Notes for this step](docs/steps/05-extend-or-build.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/04-solution-design/design-document-part-1-the-object-list...05-solution-design/extend-standard-or-build-your-own)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/8bba76499ca197f158fc7ab6713cf51a6281fd3a...bc8fa24db1a7c4995a0a4577bfb16a6349c94c2f): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/extend-or-build
 
 ---
