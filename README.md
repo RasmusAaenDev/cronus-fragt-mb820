@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Carriers and the outbound API
 
+**[See what this step changed: diff against step 20](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/3e1237f3c0a81834054688caf865a31e25e8d0a3...299647ac1d50861dc0230e779bf3fc5995c88d57)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Create CRF Update Status (codeunit 50103), the codeunit that the job queue will 
 ## In this branch
 
 - [Notes for this step](docs/steps/21-update-status.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/20-carriers-and-the-outbound-api/keep-the-api-key-out-of-the-table...21-carriers-and-the-outbound-api/update-shipment-status-from-the-carrier)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/3e1237f3c0a81834054688caf865a31e25e8d0a3...299647ac1d50861dc0230e779bf3fc5995c88d57): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/status-polling-codeunit
 
 ---
