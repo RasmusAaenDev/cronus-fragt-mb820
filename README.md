@@ -1,15 +1,33 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 6: Hook in with events, do not change standard code
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that books shipments with freight carriers for the fictional distributor Cronus. It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Solution design
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`. They are stacked: a branch starts from the previous step's branch, so its diff shows exactly what that step adds. `main` points at the last step.
+> Management asked me yesterday whether what we're building breaks when Microsoft updates Business Central. I'd
+> like to be able to give a proper answer to that. And it's important to us that the shipment appears by itself
+> when the warehouse posts a delivery, and that you can see the customer's regular carrier right on the customer
+> card.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Add a section on how Cronus Fragt plugs into Business Central. First explain the extension model in a few sentences: the System Application, the Base Application and your extension, and why your extension adds to them instead of changing their code. Then list every extension point the solution will use, with the publisher object, the event or extension object, and what Cronus Fragt does there: at least the posting of a sales shipment (to create a shipment) and the Customer table and Customer Card (for the default carrier). Finally decide which of your own objects other extensions may call, and which events Cronus Fragt itself should publish so that it can be extended later.
+
+## Checklist
+
+- [ ] Your design explains the System Application, the Base Application and your extension, and that base code is not modified.
+- [ ] The sales shipment hook names the publisher codeunit and the event, and says why that event fits.
+- [ ] The default carrier uses a table extension on Customer and a page extension on the Customer Card.
+- [ ] You have named at least one event that Cronus Fragt publishes itself and said which objects stay internal.
+
+## In this branch
+
+- [Notes for this step](docs/steps/06-events-not-modifications.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/05-solution-design/extend-standard-or-build-your-own...06-solution-design/hook-in-with-events-do-not-change-standard-code)
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/events-not-modifications
+
+---
+
+[← Step 5](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/05-solution-design/extend-standard-or-build-your-own/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 7 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/07-solution-design/sketch-the-architecture/README.md)
