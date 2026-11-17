@@ -82,7 +82,7 @@ When an object is built, change its status here and nowhere else. An id is never
 | Report | 50100 | CRF Warehouse Shipment List | 22 | planned |
 | XMLport | 50100 | CRF Import Carrier Rates | 15 | planned |
 | Query | 50100 | CRF Shipments by Carrier | 16 | planned |
-| Permission set | 50100 | CRF Freight | 14 | planned |
+| Permission set | 50100 | CRF Freight | 14 | built |
 
 ## Not objects
 
