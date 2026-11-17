@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Quality and deploy
 
+**[See what this step changed: diff against step 33](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/205ebad9d42c0fd0105d150f3c48dc06482fc387...28f983ae2eb8f45a13a5f45027ecd28b02052096)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -26,7 +28,7 @@ Run CRF Freight Tests (codeunit 50140 from module 3e) again, and then run it tog
 ## In this branch
 
 - [Notes for this step](docs/steps/34-run-standard-tests.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/33-quality-and-deploy/make-the-code-pass-the-analyzers...34-quality-and-deploy/run-your-tests-and-the-standard-tests)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/205ebad9d42c0fd0105d150f3c48dc06482fc387...28f983ae2eb8f45a13a5f45027ecd28b02052096): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/run-standard-tests
 
 ---
