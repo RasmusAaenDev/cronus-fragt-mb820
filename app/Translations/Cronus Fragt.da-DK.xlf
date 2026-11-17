@@ -1107,6 +1107,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Shipment Status - EnumValue Open - Property Caption</note>
         </trans-unit>
+        <trans-unit id="EnumExtension 1312393341 - EnumValue 353575072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Enum 1178123344">
+          <source>Cronus Freight</source>
+          <target>Cronus Fragt</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">EnumExtension CRF Event Category - EnumValue CRF Freight - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PermissionSet 353575072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cronus Freight</source>
           <target>Cronus Fragt</target>

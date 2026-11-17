@@ -20,6 +20,12 @@ When an object is built, change its status here and nowhere else. An id is never
 |---|---|---|---|---|
 | 50100 | CRF Customer | Customer | 26 | built |
 
+## Enum extensions
+
+| Id | Name | Extends | Step | Status |
+|---|---|---|---|---|
+| 50100 | CRF Event Category | EventCategory (adds `CRF Freight`, the category of the external business event) | 38 | built |
+
 ## Enums
 
 | Id | Name | Step | Status |

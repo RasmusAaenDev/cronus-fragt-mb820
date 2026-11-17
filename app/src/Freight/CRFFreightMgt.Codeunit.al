@@ -48,6 +48,7 @@ codeunit 50100 "CRF Freight Mgt"
         if NewStatus <> ShipmentHeader.Status then begin
             ShipmentHeader.Validate(Status, NewStatus);
             ShipmentHeader.Modify(true);
+            ShipmentStatusChanged(ShipmentHeader.SystemId, ShipmentHeader.Status, ShipmentHeader."Tracking No.");
         end;
         exit(true);
     end;
@@ -65,6 +66,7 @@ codeunit 50100 "CRF Freight Mgt"
         GetRate(ShipmentHeader); // fails for a shipment without a carrier or without a matching rate
         ShipmentHeader.Validate(Status, ShipmentHeader.Status::Booked);
         ShipmentHeader.Modify(true);
+        ShipmentStatusChanged(ShipmentHeader.SystemId, ShipmentHeader.Status, ShipmentHeader."Tracking No.");
     end;
 
     /// <summary>
@@ -112,6 +114,16 @@ codeunit 50100 "CRF Freight Mgt"
     /// </summary>
     [IntegrationEvent(false, false)]
     local procedure OnAfterCreateShipmentFromSalesShipment(var CRFShipmentHeader: Record "CRF Shipment Header"; SalesShipmentNo: Code[20])
+    begin
+    end;
+
+    /// <summary>
+    /// External business event (preview): tells subscribers such as Power Automate that the status of a shipment
+    /// changed. The parameters are the payload (no customer name or address). It is sent after the transaction commits.
+    /// </summary>
+    [ExternalBusinessEvent('shipmentstatuschanged', 'Shipment status changed', 'Triggered when the status of a shipment changes', EventCategory::"CRF Freight")]
+    [RequiredPermissions(PermissionObjectType::TableData, Database::"CRF Shipment Header", 'R')]
+    local procedure ShipmentStatusChanged(shipmentId: Guid; status: Enum "CRF Shipment Status"; trackingNumber: Text[50])
     begin
     end;
 
