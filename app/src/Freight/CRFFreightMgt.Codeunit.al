@@ -67,6 +67,42 @@ codeunit 50100 "CRF Freight Mgt"
         ShipmentHeader.Modify(true);
     end;
 
+    /// <summary>
+    /// Creates a shipment for a posted sales shipment, with the customer's address and default carrier.
+    /// Does nothing when a shipment for that posted sales shipment already exists, or when the freight setup
+    /// has no shipment number series (posting a sales shipment must not fail because freight is not set up).
+    /// </summary>
+    procedure CreateShipmentFromSalesShipment(CustomerNo: Code[20]; SalesShipmentNo: Code[20])
+    var
+        ExistingShipment: Record "CRF Shipment Header";
+        ShipmentHeader: Record "CRF Shipment Header";
+        FreightSetup: Record "CRF Freight Setup";
+    begin
+        if (CustomerNo = '') or (SalesShipmentNo = '') then
+            exit;
+        ExistingShipment.SetRange("Sales Shipment No.", SalesShipmentNo);
+        if not ExistingShipment.IsEmpty() then
+            exit;
+        if not FreightSetup.Get() then
+            exit;
+        if FreightSetup."Shipment Nos." = '' then
+            exit;
+        ShipmentHeader.Init();
+        ShipmentHeader.Insert(true); // OnInsert takes the number from the number series
+        ShipmentHeader.Validate("Customer No.", CustomerNo); // ship-to fields and carrier
+        ShipmentHeader."Sales Shipment No." := SalesShipmentNo;
+        ShipmentHeader.Modify(true);
+        OnAfterCreateShipmentFromSalesShipment(ShipmentHeader, SalesShipmentNo);
+    end;
+
+    /// <summary>
+    /// Raised after a shipment was created and saved from a posted sales shipment.
+    /// </summary>
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterCreateShipmentFromSalesShipment(var CRFShipmentHeader: Record "CRF Shipment Header"; SalesShipmentNo: Code[20])
+    begin
+    end;
+
     [TryFunction]
     local procedure TryGetStatus(Carrier: Interface "CRF ICarrier"; ShipmentHeader: Record "CRF Shipment Header"; var NewStatus: Enum "CRF Shipment Status")
     begin

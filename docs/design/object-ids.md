@@ -41,7 +41,7 @@ When an object is built, change its status here and nowhere else. An id is never
 | 50101 | CRF Carrier A | 17 | built |
 | 50102 | CRF Carrier B | 17 | built |
 | 50103 | CRF Update Status | 21 | built |
-| 50104 | CRF Sales Post Subs | 27 | planned |
+| 50104 | CRF Sales Post Subs | 27 | built |
 | 50105 | CRF Assisted Setup Subs | 10 | built |
 | 50106 | CRF No Carrier | 17 | built |
 | 50107 | (free, reserve) | - | free |

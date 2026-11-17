@@ -97,6 +97,13 @@ table 50101 "CRF Shipment Header"
             DecimalPlaces = 0 : 5;
             Editable = false;
         }
+        field(13; "Sales Shipment No."; Code[20])
+        {
+            Caption = 'Sales Shipment No.';
+            DataClassification = CustomerContent;
+            Editable = false;
+            TableRelation = "Sales Shipment Header"."No.";
+        }
     }
 
     keys
@@ -104,6 +111,9 @@ table 50101 "CRF Shipment Header"
         key(PK; "No.")
         {
             Clustered = true;
+        }
+        key(SalesShipment; "Sales Shipment No.")
+        {
         }
     }
 
