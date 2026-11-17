@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
+**[See what this step changed: diff against step 13](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/c581d425cb5638f4f0c40be2027b96a6ecd5cf58...09a55ed63a3737ac6bd878413510726043d1a025)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -25,7 +27,7 @@ Create the permission set CRF Freight (permissionset 50100) with Assignable = tr
 ## In this branch
 
 - [Notes for this step](docs/steps/14-permissions.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/13-shipment/card-list-and-subform-pages...14-shipment/permission-sets-and-entitlements)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/c581d425cb5638f4f0c40be2027b96a6ecd5cf58...09a55ed63a3737ac6bd878413510726043d1a025): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/permissions
 
 ---
