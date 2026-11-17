@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Bonus: CI/CD and notifications · bonus
 
+**[See what this step changed: diff against step 36](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/4916bfb49d632925ec0e9151b205376894475303...759b14b5c2d8666219c5f9f348b6677ee84e1b22)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -24,7 +26,7 @@ Write down a version scheme for Cronus Fragt: which of the four numbers in the v
 ## In this branch
 
 - [Notes for this step](docs/steps/37-signing-and-versioning.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
-- [Changes since the previous step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/36-bonus-ci-cd-and-notifications/put-it-in-git-and-build-it-in-a-pipeline...37-bonus-ci-cd-and-notifications/version-and-sign-the-app)
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/4916bfb49d632925ec0e9151b205376894475303...759b14b5c2d8666219c5f9f348b6677ee84e1b22): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/signing-and-versioning
 
 ---
