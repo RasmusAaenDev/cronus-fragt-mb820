@@ -13,11 +13,11 @@ For Cronus' administrator. Settings, not AL code: Learn documents creating entri
 | Job Queue Category Code | CRF (so two CRF entries never run at the same time) |
 | Maximum No. of Attempts to Run | 3 |
 | Rerun Delay (sec.) | 600 |
-| Set to Ready by | The Cronus administrator user, who must have the `CRF Freight` permission set (the background session runs as that user) |
+| Set to Ready by | The Cronus administrator user, who must have the `CRF Freight Basic` permission set (the background session runs as that user) |
 
 ## Steps
 
-1. Give the user `CRF Freight` (it contains codeunit `CRF Update Status` and the shipment tables).
+1. Give the user `CRF Freight Basic` (it contains codeunit `CRF Update Status` and the shipment tables).
 2. Open Job Queue Entries, choose New, fill in the table above.
 3. Choose Set Status to Ready. A new entry starts On Hold.
 4. For a first test, use Run once (Foreground) and then check Log Entries: one Success entry per run.

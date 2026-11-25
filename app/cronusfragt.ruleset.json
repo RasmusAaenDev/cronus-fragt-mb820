@@ -15,7 +15,7 @@
     {
       "id": "PTE0012",
       "action": "Info",
-      "justification": "internalsVisibleTo only opens internals to Cronus Fragt Tests (id 31e3580c-855a-4f98-a6f4-3627af1be009). Access modifiers are not a security boundary here: the CRF Freight permission set protects the data, and the test app is never installed in production."
+      "justification": "internalsVisibleTo only opens internals to Cronus Fragt Tests (id 31e3580c-855a-4f98-a6f4-3627af1be009). Access modifiers are not a security boundary here: the CRF Freight Basic and CRF Freight Admin permission sets protect the data, and the test app is never installed in production."
     },
     {
       "id": "AA0247",

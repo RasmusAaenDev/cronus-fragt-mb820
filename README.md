@@ -22,7 +22,7 @@ Build two Power Automate flows on Cronus Fragt's API from module 3d. The first i
 - [ ] The scheduled flow uses the Recurrence trigger and Find records (V3) on the API category of cronus/freight/v1.0 with a filter on status and postingDate, and posts one message per run that lists the late shipments.
 - [ ] The second flow uses When a business event occurs (V3) on the Shipment status changed event, reads the shipment with Get record (V3) by the shipmentId from the payload, and sends the e-mail only when the status is Delivered and the posting date is more than three days back.
 - [ ] The messages contain the shipment number, carrier and tracking number, and no customer name or address.
-- [ ] Your notes list the prerequisites (a Power Automate license with premium connectors, a user with CRF Freight, and for the event the Ext. Events – Subscr permission set) and say that the business event trigger is preview and that notifications are sent only after the transaction commits.
+- [ ] Your notes list the prerequisites (a Power Automate license with premium connectors, a user with CRF Freight Basic, and for the event the Ext. Events – Subscr permission set) and say that the business event trigger is preview and that notifications are sent only after the transaction commits.
 
 ## In this branch
 
