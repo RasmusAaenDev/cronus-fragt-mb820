@@ -15,6 +15,6 @@ Posting a sales shipment now creates a CRF shipment without touching base code.
 | Integration event raised after the shipment is saved | `OnAfterCreateShipmentFromSalesShipment`, called after `Modify(true)` |
 | Posting creates a shipment with the customer's address and carrier | Needs a sandbox, not run here. The code uses the `Customer No.` validation from step 26. |
 
-Design choice: if the freight setup record or its `Shipment Nos.` is missing, the procedure exits quietly, so posting a sales shipment never fails because freight is not set up. The cost is that no shipment appears in that case; step 28 logs created shipments, so a gap is visible. The user who posts needs the `CRF Freight` permission set (both skip flags are false, as in the model answer).
+Design choice: if the freight setup record or its `Shipment Nos.` is missing, the procedure exits quietly, so posting a sales shipment never fails because freight is not set up. The cost is that no shipment appears in that case; step 28 logs created shipments, so a gap is visible. The user who posts needs the `CRF Freight Basic` permission set (both skip flags are false, as in the model answer).
 
 Not verified here: posting a real shipment, the duplicate guard in practice, the subscriber binding at run time. `scripts/compile.sh app`: 0 errors, 0 warnings.
