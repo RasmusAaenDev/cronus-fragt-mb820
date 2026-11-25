@@ -4,6 +4,8 @@ page 50102 "CRF Shipment Card"
     PageType = Document;
     SourceTable = "CRF Shipment Header";
     ApplicationArea = All;
+    AboutTitle = 'About a shipment';  // Extra (course): teaching tips
+    AboutText = 'A shipment is one delivery to one customer. The packages are on the lines, and the carrier and status are on the header.';
 
     layout
     {
@@ -23,6 +25,8 @@ page 50102 "CRF Shipment Card"
                 }
                 field(Carrier; Rec.Carrier)
                 {
+                    AboutTitle = 'Choose the carrier';
+                    AboutText = 'The carrier comes from the customer. Change it here before the shipment is booked.';
                     ToolTip = 'Specifies the carrier that transports the shipment.';
                 }
                 field(Status; Rec.Status)
@@ -31,6 +35,8 @@ page 50102 "CRF Shipment Card"
                 }
                 field("Tracking No."; Rec."Tracking No.")
                 {
+                    AboutTitle = 'Track the parcel';
+                    AboutText = 'The carrier''s tracking number. Cronus Fragt uses it to ask the carrier for the status.';
                     ToolTip = 'Specifies the tracking number that the carrier gave the shipment.';
                 }
                 field("Sales Shipment No."; Rec."Sales Shipment No.")

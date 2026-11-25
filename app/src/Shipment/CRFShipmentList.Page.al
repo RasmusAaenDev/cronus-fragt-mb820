@@ -7,6 +7,8 @@ page 50101 "CRF Shipment List"
     Editable = false;
     ApplicationArea = All;
     UsageCategory = Lists;
+    AboutTitle = 'About shipments';  // Extra (course): teaching tips
+    AboutText = 'Every posted sales shipment becomes a shipment here. Follow its carrier and status until it is delivered.';
 
     layout
     {
@@ -32,6 +34,8 @@ page 50101 "CRF Shipment List"
                 }
                 field(Status; Rec.Status)
                 {
+                    AboutTitle = 'Where is the shipment?';
+                    AboutText = 'The status is updated from the carrier by a job queue entry.';
                     ToolTip = 'Specifies where the shipment is: open, booked, in transit or delivered.';
                 }
                 field("Tracking No."; Rec."Tracking No.")
@@ -47,6 +51,27 @@ page 50101 "CRF Shipment List"
                     ToolTip = 'Specifies the total weight in kilograms of all packages of the shipment.';
                 }
             }
+        }
+    }
+
+    // Extra (course): views
+    views
+    {
+        view(Open)
+        {
+            Caption = 'Open';
+            Filters = where(Status = const(Open));
+        }
+        view(InTransit)
+        {
+            Caption = 'In Transit';
+            Filters = where(Status = const("In Transit"));
+        }
+        view(CarrierA)
+        {
+            Caption = 'Carrier A';
+            Filters = where(Carrier = const("Carrier A"));
+            OrderBy = descending("Posting Date");
         }
     }
 }

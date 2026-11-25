@@ -115,6 +115,13 @@ table 50101 "CRF Shipment Header"
         key(SalesShipment; "Sales Shipment No.")
         {
         }
+        key(PostingDate; "Posting Date") { }  // Extra (course): sorting of the Carrier A view
+    }
+
+    // Extra (course): what a lookup shows
+    fieldgroups
+    {
+        fieldgroup(DropDown; "No.", "Customer No.", Status) { }
     }
 
     var

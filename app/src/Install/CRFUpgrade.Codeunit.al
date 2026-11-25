@@ -8,10 +8,29 @@ codeunit 50109 "CRF Upgrade"
         UpgradeTag: Codeunit "Upgrade Tag";
         UpgradeTags: Codeunit "CRF Upgrade Tags";
     begin
-        if UpgradeTag.HasUpgradeTag(UpgradeTags.GetDefaultCarrierTag()) then
-            exit;
-        FillDefaultCarrierFromShipments();
-        UpgradeTag.SetUpgradeTag(UpgradeTags.GetDefaultCarrierTag());
+        if not UpgradeTag.HasUpgradeTag(UpgradeTags.GetDefaultCarrierTag()) then begin
+            FillDefaultCarrierFromShipments();
+            UpgradeTag.SetUpgradeTag(UpgradeTags.GetDefaultCarrierTag());
+        end;
+        // Extra (course): a second upgrade step with its own tag, using DataTransfer
+        if not UpgradeTag.HasUpgradeTag(UpgradeTags.GetOrderCarrierTag()) then begin
+            CopyCarrierToOpenOrders();
+            UpgradeTag.SetUpgradeTag(UpgradeTags.GetOrderCarrierTag());
+        end;
+    end;
+
+    local procedure CopyCarrierToOpenOrders()
+    var
+        Customer: Record Customer;
+        SalesHeader: Record "Sales Header";
+        CarrierTransfer: DataTransfer;
+    begin
+        // "CRF Carrier" is new on the sales header: open orders get their customer's default carrier
+        CarrierTransfer.SetTables(Database::Customer, Database::"Sales Header");
+        CarrierTransfer.AddJoin(Customer.FieldNo("No."), SalesHeader.FieldNo("Sell-to Customer No."));
+        CarrierTransfer.AddDestinationFilter(SalesHeader.FieldNo("Document Type"), '=%1', SalesHeader."Document Type"::Order);
+        CarrierTransfer.AddFieldValue(Customer.FieldNo("CRF Default Carrier"), SalesHeader.FieldNo("CRF Carrier"));
+        CarrierTransfer.CopyFields();
     end;
 
     // Customers without a default carrier get the carrier of their latest shipment (highest number).

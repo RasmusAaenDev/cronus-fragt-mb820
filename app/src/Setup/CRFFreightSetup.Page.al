@@ -8,6 +8,8 @@ page 50100 "CRF Freight Setup"
     AdditionalSearchTerms = 'carrier, shipping, freight, shipment';
     InsertAllowed = false;
     DeleteAllowed = false;
+    AboutTitle = 'About freight setup';  // Extra (course): teaching tips
+    AboutText = 'Here you decide which carrier new shipments get, where the carrier service lives and how shipments are numbered.';
 
     layout
     {

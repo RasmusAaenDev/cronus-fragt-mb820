@@ -1,6 +1,9 @@
 codeunit 50100 "CRF Freight Mgt"
 {
     Access = Public;
+    // Extra (course): sales posting and order entry run this for users without the CRF Freight Basic permission set
+    InherentEntitlements = X;
+    InherentPermissions = X;
 
     /// <summary>
     /// Returns the price of the shipment from the carrier on the shipment.
@@ -96,6 +99,17 @@ codeunit 50100 "CRF Freight Mgt"
         ShipmentHeader.Modify(true);
         LogShipmentCreated(ShipmentHeader);
         OnAfterCreateShipmentFromSalesShipment(ShipmentHeader, SalesShipmentNo);
+    end;
+
+    // Extra (course): salespeople see the status on the sales order without the CRF Freight Basic permission set
+    [InherentPermissions(PermissionObjectType::TableData, Database::"CRF Shipment Header", 'r')]
+    procedure GetShipmentStatus(ShipmentNo: Code[20]): Text
+    var
+        ShipmentHeader: Record "CRF Shipment Header";
+    begin
+        if not ShipmentHeader.Get(ShipmentNo) then
+            exit('');
+        exit(Format(ShipmentHeader.Status));
     end;
 
     local procedure LogShipmentCreated(ShipmentHeader: Record "CRF Shipment Header")

@@ -30,6 +30,8 @@ permissionset 50100 "CRF Freight Basic"
         codeunit "CRF Carrier A" = X,
         codeunit "CRF Carrier B" = X,
         codeunit "CRF No Carrier" = X,
+        page "CRF Freight Coordinator RC" = X,  // Extra (course)
+        codeunit "CRF Sales Header Subs" = X,
         tabledata Customer = R,
         tabledata "Sales Shipment Header" = R,
         tabledata "No. Series" = R;

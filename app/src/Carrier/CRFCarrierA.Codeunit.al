@@ -103,6 +103,32 @@ codeunit 50101 "CRF Carrier A" implements "CRF ICarrier"
             DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, Dimensions);
     end;
 
+    // Extra (course): the body a booking call would send, as a JSON exercise (the carrier service has no booking call)
+    internal procedure BuildBookingRequest(ShipmentHeader: Record "CRF Shipment Header") Request: JsonObject
+    var
+        ShipmentLine: Record "CRF Shipment Line";
+        Packages: JsonArray;
+        Package: JsonObject;
+    begin
+        Request.Add('reference', ShipmentHeader."No.");
+        Request.Add('name', ShipmentHeader."Ship-to Name");
+        Request.Add('address', ShipmentHeader."Ship-to Address");
+        Request.Add('postCode', ShipmentHeader."Ship-to Post Code");
+        Request.Add('city', ShipmentHeader."Ship-to City");
+        ShipmentLine.SetRange("Shipment No.", ShipmentHeader."No.");
+        if ShipmentLine.FindSet() then
+            repeat
+                Clear(Package);
+                Package.Add('description', ShipmentLine.Description);
+                Package.Add('weightKg', ShipmentLine.Weight);
+                Package.Add('lengthCm', ShipmentLine.Length);
+                Package.Add('widthCm', ShipmentLine.Width);
+                Package.Add('heightCm', ShipmentLine.Height);
+                Packages.Add(Package);
+            until ShipmentLine.Next() = 0;
+        Request.Add('packages', Packages);
+    end;
+
     internal procedure StatusFromText(StatusText: Text): Enum "CRF Shipment Status"
     var
         UnknownStatusErr: Label 'The carrier service reported the unknown status %1.', Comment = '%1 = status text';

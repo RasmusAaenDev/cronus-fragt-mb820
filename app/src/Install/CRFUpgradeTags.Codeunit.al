@@ -8,10 +8,17 @@ codeunit 50110 "CRF Upgrade Tags"
         exit('CRF-DefaultCarrierFromShipments-20261117');
     end;
 
+    // Extra (course)
+    procedure GetOrderCarrierTag(): Code[250]
+    begin
+        exit('CRF-CarrierOnOpenOrders-20261122');
+    end;
+
     // Makes the tag exist in companies created later, so the backfill does not run there.
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Upgrade Tag", 'OnGetPerCompanyUpgradeTags', '', false, false)]
     local procedure RegisterPerCompanyTags(var PerCompanyUpgradeTags: List of [Code[250]])
     begin
         PerCompanyUpgradeTags.Add(GetDefaultCarrierTag());
+        PerCompanyUpgradeTags.Add(GetOrderCarrierTag());
     end;
 }
