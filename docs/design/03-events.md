@@ -44,4 +44,4 @@ Also standard objects we use through their public API and not through events: Gu
 | `CRF Sales Post Subs`, `CRF Assisted Setup Subs`, `CRF Install`, `CRF Upgrade`, `CRF Upgrade Tags`, `CRF Update Status` | Internal | Subscribers and runners nobody else should call. |
 | Tables and pages | Public by default | The webshop and users need them; the permission set is the security boundary. |
 
-Access modifiers shape our API at compile time and are not a security boundary. Security is the `CRF Freight` permission set.
+Access modifiers shape our API at compile time and are not a security boundary. Security is the permission sets `CRF Freight Basic` and `CRF Freight Admin`.
