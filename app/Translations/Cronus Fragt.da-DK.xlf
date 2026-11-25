@@ -1095,11 +1095,17 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">EnumExtension CRF Event Category - EnumValue CRF Freight - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PermissionSet 353575072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cronus Freight</source>
-          <target>Cronus Fragt</target>
+        <trans-unit id="PermissionSet 1911827997 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cronus Freight - Admin</source>
+          <target>Cronus Fragt - Administrator</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet CRF Freight - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet CRF Freight Admin - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 2552246522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cronus Freight - Basic</source>
+          <target>Cronus Fragt - Basis</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet CRF Freight Basic - Property Caption</note>
         </trans-unit>
       </group>
     </body>

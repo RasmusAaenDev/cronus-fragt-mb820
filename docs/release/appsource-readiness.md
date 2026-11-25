@@ -71,7 +71,7 @@ AS0084 (id range), AS0051 x5 (`privacyStatement`, `EULA`, `help`, `logo`, `conte
 | Affix on all objects | done in code (`CRF`); registration open |
 | Registered ID range | open |
 | Translations | done for da-DK (`app/Translations`, my translation, needs a Danish review); en-US is the source language |
-| Permission sets, none requiring SUPER | done: `CRF Freight` (all tables, pages, code); not tested with a non-SUPER user (needs a sandbox) |
+| Permission sets, none requiring SUPER | done: `CRF Freight Basic` (daily work) and `CRF Freight Admin` (includes Basic; setup, carrier rates, install and upgrade code); not tested with a non-SUPER user (needs a sandbox) |
 | DataClassification not ToBeClassified | done: no `ToBeClassified` in `app/src` |
 | Upgrade code | done (`CRF Install`, `CRF Upgrade`, `CRF Upgrade Tags`, step 31); not run |
 | Automated tests | the test app exists (3 tests); not run; the test package is not part of the submission |
