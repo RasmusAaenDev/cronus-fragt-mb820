@@ -22,7 +22,7 @@ Add a bound action bookShipment to CRF Shipment API that books an open shipment.
 - [ ] BookShipment in CRF Freight Mgt rejects a shipment that isn't Open, fails with a clear error without a carrier or rate, and sets Status to Booked.
 - [ ] A POST to .../shipments({id})/Microsoft.NAV.bookShipment books the test shipment, and a GET shows status Booked.
 - [ ] Page 50109 CRF Shipment Status API has PageType = API, Editable = false and DataAccessIntent = ReadOnly, and a GET returns status and tracking number.
-- [ ] The new page is in the CRF Freight permission set.
+- [ ] The new page is in the CRF Freight Basic permission set.
 
 ## In this branch
 
