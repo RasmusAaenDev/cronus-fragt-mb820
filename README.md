@@ -14,11 +14,11 @@ This page is the task description for the step. The code and documents on this b
 
 ## Your task
 
-Build an assisted setup guide for the freight setup: the NavigatePage CRF Freight Setup Guide (page 50104) with a welcome step, a step for the default carrier, a step for the shipment number series and a final step, with Back, Next and Finish buttons. The guide must not save anything until the user chooses Finish; then it writes the values to the CRF Freight Setup record. Register the guide on the Assisted Setup page through the Guided Experience codeunit, in a codeunit of its own (for example 50105 CRF Assisted Setup Subs), with a title, a short title, a description and an assisted setup group. Publish, open Assisted Setup, run the guide and check the result on the CRF Freight Setup page.
+Build an assisted setup guide for the freight setup: the NavigatePage CRF Cronus Freight Wizard (page 50104) with a welcome step, a step for the default carrier, a step for the shipment number series and a final step, with Back, Next and Finish buttons. The guide must not save anything until the user chooses Finish; then it writes the values to the CRF Freight Setup record. Register the guide on the Assisted Setup page through the Guided Experience codeunit, in a codeunit of its own (for example 50105 CRF Assisted Setup Subs), with a title, a short title, a description and an assisted setup group. Publish, open Assisted Setup, run the guide and check the result on the CRF Freight Setup page.
 
 ## Checklist
 
-- [ ] Page 50104 CRF Freight Setup Guide is a NavigatePage with a welcome, a default carrier, a number series and a finish step.
+- [ ] Page 50104 CRF Cronus Freight Wizard is a NavigatePage with a welcome, a default carrier, a number series and a finish step.
 - [ ] The Back, Next and Finish actions appear at the bottom of the guide and are enabled only where they make sense.
 - [ ] Values are saved to CRF Freight Setup only when the user chooses Finish; closing the guide earlier changes nothing.
 - [ ] An event subscriber registers the guide through the Guided Experience codeunit, and it appears on the Assisted Setup page.
