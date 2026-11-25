@@ -1,6 +1,6 @@
 # Step 22: The shipment report for the warehouse
 
-Delivers report 50100 `CRF Warehouse Shipment List` (`app/src/Report/CRFWarehouseShipmentList.Report.al`) and its Word layout `app/src/Report/CRFWarehouseShipmentList.docx`. The report is in the `CRF Freight` permission set.
+Delivers report 50100 `CRF Warehouse Shipment List` (`app/src/Report/CRFWarehouseShipmentList.Report.al`) and its Word layout `app/src/Report/CRFWarehouseShipmentList.docx`. The report is in the `CRF Freight Basic` permission set.
 
 | Checklist item | Where |
 |---|---|
