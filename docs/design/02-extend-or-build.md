@@ -31,7 +31,7 @@ Reuse: Shipping Agents are not replaced. The design keeps the carrier as an exte
 
 **Data volume and performance.** Sales Header and Sales Line are read by the whole sales process, and extension fields are loaded with the base table unless code uses partial records. Every extra field is paid on each read of each order. Shipments are many and grow (several partial shipments per order, several packages per shipment); in an own table they do not touch the performance of the base table. Customer gets one small field, which is acceptable.
 
-**Ownership.** An own table gives Cronus Fragt its own primary key and number series, its own permissions (the `CRF Freight` permission set grants it separately), its own API for the webshop and its own life cycle: a sales order disappears from the order list once fully posted, a shipment must stay. The webshop also creates shipments that have no sales order. Standard tables would force us to share keys, number series and permissions with sales.
+**Ownership.** An own table gives Cronus Fragt its own primary key and number series, its own permissions (the `CRF Freight Basic` and `CRF Freight Admin` permission sets grant it separately), its own API for the webshop and its own life cycle: a sales order disappears from the order list once fully posted, a shipment must stay. The webshop also creates shipments that have no sales order. Standard tables would force us to share keys, number series and permissions with sales.
 
 ## Summary for Mette
 
