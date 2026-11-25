@@ -12,10 +12,10 @@ codeunit 50105 "CRF Assisted Setup Subs"
         ShortTitleTxt: Label 'Cronus Freight';
         DescriptionTxt: Label 'Choose the default carrier and the number series for shipments.';
     begin
-        if GuidedExperience.Exists("Guided Experience Type"::"Assisted Setup", ObjectType::Page, Page::"CRF Freight Setup Guide") then
+        if GuidedExperience.Exists("Guided Experience Type"::"Assisted Setup", ObjectType::Page, Page::"CRF Cronus Freight Wizard") then
             exit;
         GuidedExperience.InsertAssistedSetup(
-            TitleTxt, ShortTitleTxt, DescriptionTxt, 3, ObjectType::Page, Page::"CRF Freight Setup Guide",
+            TitleTxt, ShortTitleTxt, DescriptionTxt, 3, ObjectType::Page, Page::"CRF Cronus Freight Wizard",
             AssistedSetupGroup::ReadyForBusiness, '', VideoCategory::Uncategorized, '');
     end;
 }
