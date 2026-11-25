@@ -15,13 +15,14 @@ This page is the task description for the step. The code and documents on this b
 
 ## Your task
 
-Create the permission set CRF Freight (permissionset 50100) with Assignable = true and a caption. Grant execute permission on every table, page and codeunit you have built so far (CRF Freight Setup, CRF Shipment Header, CRF Shipment Line, pages 50100 to 50104 and codeunit 50105) and read, insert, modify and delete permission on the data in the three tables. Publish, assign the permission set to a test user in the sandbox and check the result on the Effective Permissions page. Keep the permission set up to date as the next steps add objects. Then write Mette three or four plain sentences on the difference between what a user's license entitles them to and what the permission set gives them.
+Create two permission sets. CRF Freight Basic (permissionset 50100) is for the warehouse and customer service: execute on every table, page and codeunit they use (CRF Freight Setup, CRF Shipment Header, CRF Shipment Line, pages 50101 to 50103), read, insert, modify and delete on shipments and shipment lines, and read-only on the freight setup. CRF Freight Admin (permissionset 50101) is for the person who sets up freight: it includes CRF Freight Basic with IncludedPermissionSets and adds read, insert, modify and delete on the freight setup, the setup page 50100, the guide 50104 and codeunit 50105. Both sets have Assignable = true and a caption. Publish, assign Basic to one test user and Admin to another, and check the result on the Effective Permissions page. Keep both sets up to date as the next steps add objects. Then write Mette three or four plain sentences on the difference between what a user's license entitles them to and what the permission sets give them.
 
 ## Checklist
 
-- [ ] permissionset 50100 CRF Freight has Assignable = true, a caption and a name of no more than 20 characters.
-- [ ] Every table of the extension has table X and tabledata RIMD in the permission set, and every page and codeunit has X.
-- [ ] The permission set is assigned to a test user, and the Effective Permissions page shows access to the CRF tables.
+- [ ] permissionset 50100 CRF Freight Basic and permissionset 50101 CRF Freight Admin have Assignable = true, a caption and names of no more than 20 characters.
+- [ ] Every table of the extension has table X; Basic has RIMD on shipments and shipment lines and R on the freight setup, and every page and codeunit a role uses has X in that role's set.
+- [ ] CRF Freight Admin includes CRF Freight Basic and adds RIMD on the freight setup, the setup page, the guide and the assisted setup codeunit.
+- [ ] The sets are assigned to two test users, and the Effective Permissions page shows that only the Admin user can change the freight setup.
 - [ ] Your note for Mette explains that a user can do only what both the license and the assigned permission sets allow.
 
 ## In this branch
