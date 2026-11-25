@@ -45,7 +45,7 @@ Every object of the extension. Names carry the `CRF` affix, ids are in 50100-501
 | Page (List) | 50101 | CRF Shipment List | Read-only list of shipments; opens the card; searchable. |
 | Page (Document) | 50102 | CRF Shipment Card | Shipment header with the lines part; Update Status action (added with the facade, step 18). |
 | Page (ListPart) | 50103 | CRF Shipment Subform | Lines of the shipment. |
-| Page (NavigatePage) | 50104 | CRF Freight Setup Guide | Assisted setup guide that writes the setup record on Finish. |
+| Page (NavigatePage) | 50104 | CRF Cronus Freight Wizard | Assisted setup guide that writes the setup record on Finish. |
 | Page (List) | 50107 | CRF Carrier Rates | Rates list with an Import Rates action. |
 | Page (CardPart) | 50108 | CRF Freight Activities | Cues on the Role Center. |
 | Page (API) | 50105 | CRF Shipment API | Webshop: shipments, with the lines as a part; bound action `bookShipment`. |
