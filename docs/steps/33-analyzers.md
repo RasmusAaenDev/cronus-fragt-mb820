@@ -31,7 +31,7 @@ Ruleset: AA0218 and AA0215 are raised to Error (a missing or wrongly worded tool
 | Ruleset, set in `al.ruleSetPath`, one rule Error, justification for every lowered rule | `cronusfragt.ruleset.json` |
 | Trial build with AppSourceCop | below |
 
-PTE0004 (tables need a permission set) and PTE0008 (ApplicationArea) did not fire: `CRF Freight` covers all tables and page extension controls set `ApplicationArea` themselves.
+PTE0004 (tables need a permission set) and PTE0008 (ApplicationArea) did not fire: `CRF Freight Basic` covers all tables and page extension controls set `ApplicationArea` themselves.
 
 ## Trial build with AppSourceCop (`scripts/compile.sh app --appsource`, then back to `--codecop`)
 
