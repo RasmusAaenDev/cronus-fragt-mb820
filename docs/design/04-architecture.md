@@ -27,7 +27,7 @@ flowchart LR
         CA["CRF Carrier A"]
         CB["CRF Carrier B"]
         NC["CRF No Carrier"]
-        PS["Permission set CRF Freight"]
+        PS["Permission sets CRF Freight Basic and CRF Freight Admin"]
         DB[("SQL database:<br/>CRF tables and standard tables")]
     end
 
@@ -82,7 +82,7 @@ flowchart LR
 | API pages | The webshop's door: shipments, lines, read-only status |
 | Status polling | A job queue entry running `CRF Update Status` in the background |
 | Telemetry | `Session.LogMessage` events `CRF-0001` to `CRF-0004` (see `docs/runbooks/telemetry.md`) to the Application Insights resource named in `applicationInsightsConnectionString` in `app.json` |
-| Permissions | Permission set `CRF Freight`; the license decides what a user may do at most, the permission set what they may do |
+| Permissions | Permission sets `CRF Freight Basic` (daily work) and `CRF Freight Admin` (includes Basic; setup and carrier rates); the license decides what a user may do at most, the permission set what they may do |
 
 ## Things to remember
 
