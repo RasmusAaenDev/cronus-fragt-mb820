@@ -14,7 +14,7 @@ This page is the task description for the step. The code and documents on this b
 
 ## Your task
 
-Create the query CRF Shipments by Carrier (query 50100) on CRF Shipment Header that returns one row per carrier with the number of shipments, with a filter on Status that code can set. Feed it into a cue on the Role Center that Mette uses (Order Processor Role Center): a cue table CRF Freight Cue (table 50104) with a FlowField Open Shipments and a normal field Open Default Carrier, a CardPart page CRF Freight Activities (page 50108) with a cue group for the two cues and an action tile that opens CRF Shipment List, and a page extension CRF Order Processor RC (page extension 50102) that adds the part to the Role Center. The normal field is filled from the query, filtered on Status Open and on the default carrier from CRF Freight Setup. Add the new objects to CRF Freight, publish, and check the cues with a few shipments.
+Create the query CRF Shipments by Carrier (query 50100) on CRF Shipment Header that returns one row per carrier with the number of shipments, with a filter on Status that code can set. Feed it into a cue on the Role Center that Mette uses (Order Processor Role Center): a cue table CRF Freight Cue (table 50104) with a FlowField Open Shipments and a normal field Open Default Carrier, a CardPart page CRF Freight Activities (page 50108) with a cue group for the two cues and an action tile that opens CRF Shipment List, and a page extension CRF Order Processor RC (page extension 50102) that adds the part to the Role Center. The normal field is filled from the query, filtered on Status Open and on the default carrier from CRF Freight Setup. Add the new objects to CRF Freight Basic and CRF Freight Admin, publish, and check the cues with a few shipments.
 
 ## Checklist
 
@@ -22,7 +22,7 @@ Create the query CRF Shipments by Carrier (query 50100) on CRF Shipment Header t
 - [ ] Table 50104 CRF Freight Cue has a Primary Key field, an Integer FlowField that counts open shipments and an Integer normal field.
 - [ ] Page 50108 CRF Freight Activities is a CardPart with a cuegroup, fills the normal field from the query and has an action tile that opens CRF Shipment List.
 - [ ] The page extension adds the part to Order Processor Role Center, and the cues appear under Activities with the right numbers.
-- [ ] The query, cue table, cue page and page extension are in the CRF Freight permission set.
+- [ ] The query, cue table, cue page and page extension are in the CRF Freight Basic permission set.
 
 ## In this branch
 
