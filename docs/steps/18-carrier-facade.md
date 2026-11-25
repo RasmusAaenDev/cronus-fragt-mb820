@@ -1,6 +1,6 @@
 # Step 18: A facade codeunit
 
-Delivers codeunit 50100 `CRF Freight Mgt` (`app/src/Freight/CRFFreightMgt.Codeunit.al`) and an Update Status action on `CRF Shipment Card`. The codeunit is in the `CRF Freight` permission set.
+Delivers codeunit 50100 `CRF Freight Mgt` (`app/src/Freight/CRFFreightMgt.Codeunit.al`) and an Update Status action on `CRF Shipment Card`. The codeunit is in the `CRF Freight Basic` permission set.
 
 | Checklist item | Where |
 |---|---|

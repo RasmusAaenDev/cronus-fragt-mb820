@@ -22,7 +22,7 @@ Create the report CRF Warehouse Shipment List (report 50100) for the warehouse. 
 - [ ] Report 50100 CRF Warehouse Shipment List has a CRF Shipment Header data item with an indented CRF Shipment Line data item, linked with DataItemLink on Shipment No.
 - [ ] The header data item has RequestFilterFields for Status and Carrier, and the request page has a Show Packages option that skips the lines when it's off.
 - [ ] The rendering section declares a Word layout that DefaultRenderingLayout names, and the generated .docx shows each shipment with its packages repeated below it.
-- [ ] The report sets UsageCategory and ApplicationArea, is found in search and is in the CRF Freight permission set.
+- [ ] The report sets UsageCategory and ApplicationArea, is found in search and is in the CRF Freight Basic permission set.
 - [ ] Running the report with Status = Open prints only open shipments, each with its packages.
 
 ## In this branch
