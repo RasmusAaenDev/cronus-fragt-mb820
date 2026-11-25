@@ -1,6 +1,6 @@
 # Step 17: One interface for every carrier
 
-Delivers the interface `CRF ICarrier` (`app/src/Carrier/CRFICarrier.Interface.al`), codeunits 50101 `CRF Carrier A`, 50102 `CRF Carrier B` and 50106 `CRF No Carrier` (same folder), and changes the existing enum 50100 `CRF Carrier` (`app/src/Setup/CRFCarrier.Enum.al`) to implement the interface. Values and ordinals are unchanged. The three codeunits are in the `CRF Freight` permission set.
+Delivers the interface `CRF ICarrier` (`app/src/Carrier/CRFICarrier.Interface.al`), codeunits 50101 `CRF Carrier A`, 50102 `CRF Carrier B` and 50106 `CRF No Carrier` (same folder), and changes the existing enum 50100 `CRF Carrier` (`app/src/Setup/CRFCarrier.Enum.al`) to implement the interface. Values and ordinals are unchanged. The three codeunits are in the `CRF Freight Basic` permission set.
 
 | Checklist item | Where |
 |---|---|

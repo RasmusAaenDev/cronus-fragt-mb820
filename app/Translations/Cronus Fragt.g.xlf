@@ -908,10 +908,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Shipment Status - EnumValue Open - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PermissionSet 353575072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cronus Freight</source>
+        <trans-unit id="PermissionSet 1911827997 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cronus Freight - Admin</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet CRF Freight - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet CRF Freight Admin - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 2552246522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cronus Freight - Basic</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet CRF Freight Basic - Property Caption</note>
         </trans-unit>
       </group>
     </body>

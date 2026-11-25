@@ -14,7 +14,7 @@ Version raised to 1.1.0.0 in `app/app.json` (the version that adds the default c
 | Tag from a procedure, registered in `OnGetPerCompanyUpgradeTags`, set by install | `CRFUpgradeTags`, `OnInstallAppPerCompany` |
 | After 1.1.0.0, customers have a carrier; a second publish changes nothing | Not run here: needs an environment with 1.0.0.0 installed and data. |
 
-Tag name: `CRF-DefaultCarrierFromShipments-20261117` (the workbook's `CRF-0001-...` would collide with the telemetry event id numbering). "Latest" shipment means the highest shipment number. New permissions: the three codeunits were added to `CRF Freight`.
+Tag name: `CRF-DefaultCarrierFromShipments-20261117` (the workbook's `CRF-0001-...` would collide with the telemetry event id numbering). "Latest" shipment means the highest shipment number. New permissions: the three codeunits were added to `CRF Freight Admin`.
 
 For Mette: the data change is upgrade code because install code does not run when a new version is installed over an old one, and the tag makes sure the one-time job runs once per company.
 

@@ -62,7 +62,8 @@ Every object of the extension. Names carry the `CRF` affix, ids are in 50100-501
 | Report | 50100 | CRF Warehouse Shipment List | Printable warehouse list with a Word or RDLC layout. |
 | XMLport | 50100 | CRF Import Carrier Rates | Import-only XMLport for carrier rates. |
 | Query | 50100 | CRF Shipments by Carrier | Number of shipments per carrier, status filter settable by code. |
-| Permission set | 50100 | CRF Freight | Assignable set with access to all objects above (up to 20 characters in the name). |
+| Permission set | 50100 | CRF Freight Basic | Assignable set for daily work: shipments, lines, cues, report and API pages; setup and carrier rates read-only. |
+| Permission set | 50101 | CRF Freight Admin | Assignable set that includes CRF Freight Basic and adds setup, carrier rates, the setup guide, the rate import and install/upgrade code. |
 
 Counts: 5 tables, 1 table extension, 2 enums, 1 interface, 11 codeunits (10 in the app, 1 in the test app), 10 pages, 3 page extensions, 1 report, 1 XMLport, 1 query, 1 permission set.
 
