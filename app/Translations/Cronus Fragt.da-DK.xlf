@@ -429,107 +429,89 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Control Shipment Nos. - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1854041771 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3213313075 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set up Cronus Freight</source>
           <target>Opsæt Cronus Fragt</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1854041771 - Control 4164498802 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Choose the carrier that new shipments get when the customer has none of its own.</source>
-          <target>Vælg den fragtfører, som nye forsendelser får, når debitoren ikke har en egen.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Control StepCarrier - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1854041771 - Control 4164498802 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3213313075 - Control 4164498802 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Default carrier</source>
           <target>Standardfragtfører</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Control StepCarrier - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control StepCarrier - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1854041771 - Control 2540885473 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3213313075 - Control 727926705 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select the carrier that you want to use on shipments, when there is no other carriers selected.</source>
+          <target>Vælg den fragtfører, du vil bruge på forsendelser, når der ikke er valgt en anden fragtfører.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Group22 - Property InstructionalText</note>
+        </trans-unit>
+        <trans-unit id="Page 3213313075 - Control 2540885473 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the carrier that new shipments get by default.</source>
           <target>Angiver den fragtfører, som nye forsendelser får som standard.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Control Default Carrier - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Default Carrier - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1854041771 - Control 3819372211 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Choose Finish to save the freight setup.</source>
-          <target>Vælg Udfør for at gemme fragtopsætningen.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Control StepFinish - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1854041771 - Control 3819372211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>That's it</source>
-          <target>Så er du færdig</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Control StepFinish - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1854041771 - Control 1043852251 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Choose the number series that numbers new shipments.</source>
-          <target>Vælg den nummerserie, der nummererer nye forsendelser.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Control StepNumbering - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1854041771 - Control 1043852251 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment numbers</source>
-          <target>Forsendelsesnumre</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Control StepNumbering - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1854041771 - Control 2752123408 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the number series that is used to number new shipments.</source>
-          <target>Angiver den nummerserie, der bruges til at nummerere nye forsendelser.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Control Shipment Nos. - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1854041771 - Control 1234687532 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This guide sets up the default carrier and the numbering of shipments. Nothing is saved until you choose Finish.</source>
-          <target>Denne guide opsætter standardfragtføreren og nummereringen af forsendelser. Intet gemmes, før du vælger Udfør.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Control StepWelcome - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1854041771 - Control 1234687532 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3213313075 - Control 2262293549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Welcome</source>
           <target>Velkommen</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Control StepWelcome - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Welcome to CRF Cronus Freight - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1854041771 - Action 742034285 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Goes back to the previous step.</source>
-          <target>Går tilbage til det forrige trin.</target>
+        <trans-unit id="Page 3213313075 - Control 1612614122 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This guide sets up the default carrier and the numbering of shipments.</source>
+          <target>Denne guide opsætter standardfragtføreren og nummereringen af forsendelser.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Action Back - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Group18 - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 1854041771 - Action 742034285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>&amp;Back</source>
-          <target>&amp;Tilbage</target>
+        <trans-unit id="Page 3213313075 - Control 552822507 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select the number series you want to use, when you create new shipments</source>
+          <target>Vælg den nummerserie, du vil bruge, når du opretter nye forsendelser</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Action Back - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Group35 - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 1854041771 - Action 2667510389 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Saves the freight setup and closes the guide.</source>
-          <target>Gemmer fragtopsætningen og lukker guiden.</target>
+        <trans-unit id="Page 3213313075 - Control 552822507 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment numbers</source>
+          <target>Forsendelsesnumre</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Action Finish - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Group35 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1854041771 - Action 2667510389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>&amp;Finish</source>
-          <target>&amp;Udfør</target>
+        <trans-unit id="Page 3213313075 - Control 2752123408 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number series that is used to number new shipments.</source>
+          <target>Angiver den nummerserie, der bruges til at nummerere nye forsendelser.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Action Finish - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Shipment Nos. - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1854041771 - Action 1235620153 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Goes to the next step.</source>
-          <target>Går til det næste trin.</target>
+        <trans-unit id="Page 3213313075 - Control 1546979963 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>That's it!</source>
+          <target>Så er du færdig!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Action Next - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control That's it! - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1854041771 - Action 1235620153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>&amp;Next</source>
-          <target>&amp;Næste</target>
+        <trans-unit id="Page 3213313075 - Control 2641016556 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Choose Finish to save the freight setup</source>
+          <target>Vælg Udfør for at gemme fragtopsætningen</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup Guide - Action Next - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Group25 - Property InstructionalText</note>
+        </trans-unit>
+        <trans-unit id="Page 3213313075 - Action 2438272767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Back</source>
+          <target>Tilbage</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Action ActionBack - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3213313075 - Action 3259912055 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Finish</source>
+          <target>Udfør</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Action ActionFinish - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3213313075 - Action 914282563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Next</source>
+          <target>Næste</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Action ActionNext - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3862554337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shipment API</source>
