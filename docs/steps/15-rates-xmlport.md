@@ -1,6 +1,6 @@
 # Step 15: Import carrier rates with an XMLport
 
-Delivers table 50103 `CRF Carrier Rate` (`app/src/Rate/CRFCarrierRate.Table.al`), page 50107 `CRF Carrier Rates` (`app/src/Rate/CRFCarrierRates.Page.al`) and XMLport 50100 `CRF Import Carrier Rates` (`app/src/Rate/CRFImportCarrierRates.XmlPort.al`). All three are added to the `CRF Freight` permission set. The XMLport reads `<CarrierRates carrier="Carrier A"><Rate><WeightLimit>5</WeightLimit><Price>49</Price></Rate>...</CarrierRates>`.
+Delivers table 50103 `CRF Carrier Rate` (`app/src/Rate/CRFCarrierRate.Table.al`), page 50107 `CRF Carrier Rates` (`app/src/Rate/CRFCarrierRates.Page.al`) and XMLport 50100 `CRF Import Carrier Rates` (`app/src/Rate/CRFImportCarrierRates.XmlPort.al`). The table and page are added to `CRF Freight Basic` (rates read-only); `CRF Freight Admin` gets RIMD on the rates and the XMLport. The XMLport reads `<CarrierRates carrier="Carrier A"><Rate><WeightLimit>5</WeightLimit><Price>49</Price></Rate>...</CarrierRates>`.
 
 | Checklist item | Where |
 |---|---|
@@ -8,7 +8,7 @@ Delivers table 50103 `CRF Carrier Rate` (`app/src/Rate/CRFCarrierRate.Table.al`)
 | `Direction = Import`, `Format = Xml`, root is a textelement | XMLport file: properties, root `textelement(CarrierRates)`. |
 | Carrier attribute turned into the enum, unknown name stops the import | `CarrierFromName`: `Names().IndexOf`, then `Ordinals().Get`; no match (or an empty or blank name) raises the Label error. |
 | Import Rates runs the XMLport without request page; the sample gives two Carrier A rates | Action `ImportRates` calls `Xmlport.Run(..., false, true)`. The two-rates result is not run, see below. |
-| New objects in CRF Freight | Permission set: table, tabledata, page 50107, xmlport 50100. |
+| New objects in the permission sets | `CRF Freight Basic`: table, tabledata R, page 50107. `CRF Freight Admin`: tabledata RIMD, xmlport 50100. |
 
 Decision: the table element has `AutoReplace = true`, so a new rate sheet replaces the price of an existing carrier and weight limit instead of failing on a duplicate key. This should be agreed with Mette. A rate list that gets shorter (a limit dropped from the new sheet) keeps the old row; nothing deletes rows.
 

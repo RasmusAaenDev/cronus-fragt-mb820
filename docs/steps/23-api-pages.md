@@ -1,6 +1,6 @@
 # Step 23: API pages for the webshop
 
-Delivers page 50105 `CRF Shipment API` and page 50106 `CRF Shipment Line API` (`app/src/Api/`), both in the `CRF Freight` permission set.
+Delivers page 50105 `CRF Shipment API` and page 50106 `CRF Shipment Line API` (`app/src/Api/`), both in the `CRF Freight Basic` permission set.
 
 Endpoint: `/api/cronus/freight/v1.0/companies({company id})/shipments` and `.../shipmentLines`.
 
