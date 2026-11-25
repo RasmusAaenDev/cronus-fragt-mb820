@@ -14,7 +14,7 @@ This page is the task description for the step. The code and documents on this b
 
 ## Your task
 
-Create the table CRF Carrier Rate (table 50103) with Carrier (enum CRF Carrier), Weight Limit and Price, keyed by Carrier and Weight Limit, and a list page CRF Carrier Rates (page 50107) that can be found in search. Create the XMLport CRF Import Carrier Rates (xmlport 50100) that only imports, reads an XML file like the sample below and creates one CRF Carrier Rate per rate element; the carrier comes from the attribute on the root element and must match a value name of CRF Carrier, otherwise the import stops with a clear error. Add an Import Rates action to the list page that runs the XMLport without a request page. Add the new objects to CRF Freight. Publish, import the sample file and show Mette the rates. The sample file is <CarrierRates carrier="Carrier A"><Rate><WeightLimit>5</WeightLimit><Price>49</Price></Rate> <Rate><WeightLimit>20</WeightLimit><Price>89</Price></Rate></CarrierRates>.
+Create the table CRF Carrier Rate (table 50103) with Carrier (enum CRF Carrier), Weight Limit and Price, keyed by Carrier and Weight Limit, and a list page CRF Carrier Rates (page 50107) that can be found in search. Create the XMLport CRF Import Carrier Rates (xmlport 50100) that only imports, reads an XML file like the sample below and creates one CRF Carrier Rate per rate element; the carrier comes from the attribute on the root element and must match a value name of CRF Carrier, otherwise the import stops with a clear error. Add an Import Rates action to the list page that runs the XMLport without a request page. Add the new objects to CRF Freight Basic and CRF Freight Admin. Publish, import the sample file and show Mette the rates. The sample file is <CarrierRates carrier="Carrier A"><Rate><WeightLimit>5</WeightLimit><Price>49</Price></Rate> <Rate><WeightLimit>20</WeightLimit><Price>89</Price></Rate></CarrierRates>.
 
 ## Checklist
 
@@ -22,7 +22,7 @@ Create the table CRF Carrier Rate (table 50103) with Carrier (enum CRF Carrier),
 - [ ] XMLport 50100 CRF Import Carrier Rates sets Direction = Import and Format = Xml, and its root node is a textelement.
 - [ ] The carrier attribute is turned into a CRF Carrier value, and an unknown carrier name stops the import with an error.
 - [ ] The Import Rates action runs the XMLport without a request page, and importing the sample file creates two rates for Carrier A.
-- [ ] The new table, page and XMLport are in the CRF Freight permission set.
+- [ ] The new table and page are in CRF Freight Basic with read access to the rates, and CRF Freight Admin can maintain the rates and run the XMLport.
 
 ## In this branch
 
