@@ -11,7 +11,7 @@ permissionset 50100 "CRF Freight"
         table "CRF Shipment Line" = X,
         tabledata "CRF Shipment Line" = RIMD,
         page "CRF Freight Setup" = X,
-        page "CRF Freight Setup Guide" = X,
+        page "CRF Cronus Freight Wizard" = X,
         page "CRF Shipment List" = X,
         page "CRF Shipment Card" = X,
         page "CRF Shipment Subform" = X,
