@@ -16,7 +16,7 @@ flowchart LR
         direction TB
         PG["Pages: CRF Shipment List/Card/Subform,<br/>Customer Card ext, Role Center cues"]
         SETUP[("CRF Freight Setup")]
-        GUIDE["CRF Freight Setup Guide<br/>(Assisted Setup list)"]
+        GUIDE["CRF Cronus Freight Wizard<br/>(Assisted Setup list)"]
         API["API pages: CRF Shipment API,<br/>CRF Shipment Line API, CRF Shipment Status API"]
         SP["Sales-Post<br/>(standard)"]
         SUBS["CRF Sales Post Subs"]
@@ -76,7 +76,7 @@ flowchart LR
 | Part | Place on the sketch |
 |---|---|
 | Setup | `CRF Freight Setup` table, filled by the setup page or by the assisted setup guide |
-| Assisted setup | `CRF Freight Setup Guide`, registered by `CRF Assisted Setup Subs` |
+| Assisted setup | `CRF Cronus Freight Wizard`, registered by `CRF Assisted Setup Subs` |
 | Carrier implementations | `CRF Carrier A`, `CRF Carrier B`, `CRF No Carrier` behind `CRF ICarrier`; the enum `CRF Carrier` selects one |
 | Facade | `CRF Freight Mgt`: the only public entry point; all callers (pages, API, subscriber, job) go through it |
 | API pages | The webshop's door: shipments, lines, read-only status |
