@@ -12,7 +12,7 @@ Status: **written, not built.** Power Automate flows cannot be created from here
 ## Prerequisites
 
 - A Power Automate license that includes premium connectors (the Dynamics 365 Business Central connector is premium).
-- The connection signs in as a user (the connector does not support service-to-service authentication). That user needs the permission set `CRF Freight` so the API pages can be read, and, for the event, the permission set `Ext. Events - Subscr` and read access to `CRF Shipment Header` (the event's `RequiredPermissions`).
+- The connection signs in as a user (the connector does not support service-to-service authentication). That user needs the permission set `CRF Freight Basic` so the API pages can be read, and, for the event, the permission set `Ext. Events - Subscr` and read access to `CRF Shipment Header` (the event's `RequiredPermissions`).
 - A Teams team/channel for customer service and an Outlook mailbox for the sender.
 - The business event trigger is **preview** and may change. Notifications are sent only after the transaction is committed, never if it is rolled back, and later if the transaction is long. A status change from a polling round therefore reaches the flow after the round's transaction ends, and Power Automate then runs the flow on its own timing: expect minutes, not seconds.
 - Each Business Central step needs the environment and company set again.
