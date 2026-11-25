@@ -21,7 +21,7 @@ Schedule CRF Update Status (codeunit 50103 from module 3c) with a recurring job 
 
 - [ ] A job queue entry runs Object Type Codeunit with Object ID 50103 CRF Update Status, is recurring, and runs on weekdays in working hours at the interval agreed with Mette.
 - [ ] The entry has a job queue category, a Maximum No. of Attempts and a Rerun Delay (sec.), and your notes say that the last two cover errors that stop the whole round, while a down carrier waits for the next recurring run.
-- [ ] The entry was set to Ready by a user who has the CRF Freight permission set, and your notes name that user.
+- [ ] The entry was set to Ready by a user who has the CRF Freight Basic permission set, and your notes name that user.
 - [ ] After a run the Log Entries show a successful run, and a shipment whose carrier fails is logged as CRF-0001 instead of putting the entry in Error.
 - [ ] The temporary test action from module 3c is removed.
 

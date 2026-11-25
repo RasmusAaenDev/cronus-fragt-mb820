@@ -1,6 +1,6 @@
 # Step 16: A query for shipments per carrier
 
-Delivers query 50100 `CRF Shipments by Carrier` (`app/src/Cue/CRFShipmentsByCarrier.Query.al`), cue table 50104 `CRF Freight Cue`, CardPart 50108 `CRF Freight Activities` and page extension 50102 `CRF Order Processor RC` (all in `app/src/Cue/`). The query, table and part are in the `CRF Freight` permission set (the page extension needs no entry).
+Delivers query 50100 `CRF Shipments by Carrier` (`app/src/Cue/CRFShipmentsByCarrier.Query.al`), cue table 50104 `CRF Freight Cue`, CardPart 50108 `CRF Freight Activities` and page extension 50102 `CRF Order Processor RC` (all in `app/src/Cue/`). The query, table and part are in the `CRF Freight Basic` permission set (the page extension needs no entry).
 
 | Checklist item | Where |
 |---|---|
