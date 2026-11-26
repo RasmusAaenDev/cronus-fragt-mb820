@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Quality and deploy
 
+**[See what this step changed: diff against step 32](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/d849773253cbeb7ac27bda472dd7c9a26fbd0813...7eca96e423be0076373020531ea758cb6e7b3ce3)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -35,6 +37,7 @@ Turn on code analysis for both projects in your workspace, Cronus Fragt and Cron
 ## In this branch
 
 - [Notes for this step](docs/steps/33-analyzers.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/d849773253cbeb7ac27bda472dd7c9a26fbd0813...7eca96e423be0076373020531ea758cb6e7b3ce3): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/analyzers
 
 ---
