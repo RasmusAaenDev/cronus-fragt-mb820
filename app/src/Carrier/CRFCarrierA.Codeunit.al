@@ -21,18 +21,23 @@ codeunit 50101 "CRF Carrier A" implements "CRF ICarrier"
         ShippingAgent: Record "Shipping Agent";
         Client: HttpClient;
         Response: HttpResponseMessage;
+        ApiKey: SecretText;
         ResponseText: Text;
         Body: JsonObject;
         StatusToken: JsonToken;
         ServiceStatusErr: Label 'The carrier service answered %1 %2.', Comment = '%1 = HTTP status code, %2 = reason phrase';
         InvalidResponseErr: Label 'The carrier service sent an answer that Cronus Fragt cannot read.';
+        MissingApiKeyErr: Label 'No API key for the carrier service is stored. Enter it on the Shipping Agents page.';
     begin
         // The shipping agent is read before the call; nothing is written while waiting for the service
         ShippingAgent.Get(TrackingHeader."Shipping Agent Code");
         ShippingAgent.TestField("CRF API Base URL");
         TrackingHeader.TestField("Package Tracking No.");
+        if not ShippingAgent.CRFHasApiKey() then
+            Error(MissingApiKeyErr);
+        ApiKey := ShippingAgent.CRFGetApiKey();
         Client.Timeout := 30000; // milliseconds
-        SendWithRetry(Client, StatusUrl(ShippingAgent."CRF API Base URL", TrackingHeader."Package Tracking No."), Response);
+        SendWithRetry(Client, StatusUrl(ShippingAgent."CRF API Base URL", TrackingHeader."Package Tracking No."), ApiKey, Response);
         if not Response.IsSuccessStatusCode() then
             Error(ServiceStatusErr, Response.HttpStatusCode(), Response.ReasonPhrase());
         Response.Content().ReadAs(ResponseText);
@@ -51,7 +56,7 @@ codeunit 50101 "CRF Carrier A" implements "CRF ICarrier"
         exit(BaseUrl.TrimEnd('/') + '/shipments/' + TrackingNo + '/status');
     end;
 
-    local procedure SendWithRetry(var Client: HttpClient; Url: Text; var Response: HttpResponseMessage)
+    local procedure SendWithRetry(var Client: HttpClient; Url: Text; ApiKey: SecretText; var Response: HttpResponseMessage)
     var
         Request: HttpRequestMessage;
         Headers: HttpHeaders;
@@ -65,7 +70,7 @@ codeunit 50101 "CRF Carrier A" implements "CRF ICarrier"
             Request.SetRequestUri(Url);
             Request.GetHeaders(Headers);
             Headers.Add('Accept', 'application/json');
-            // Step 21 adds the API key header here
+            Headers.Add('X-Api-Key', ApiKey);
             Sent := Client.Send(Request, Response);
             if Sent then
                 if not IsTransient(Response.HttpStatusCode()) then
