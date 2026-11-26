@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Link to standard Business Central
 
+**[See what this step changed: diff against step 31](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/ad3f8b7890550f243380b996de3c38aa3960afd6...d849773253cbeb7ac27bda472dd7c9a26fbd0813)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -42,6 +44,7 @@ Find out why the tracking status of one shipment tracking record isn't updated, 
 ## In this branch
 
 - [Notes for this step](docs/steps/32-debug-and-danish.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/ad3f8b7890550f243380b996de3c38aa3960afd6...d849773253cbeb7ac27bda472dd7c9a26fbd0813): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/debug-and-translate
 
 ---
