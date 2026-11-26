@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Carriers and the outbound API
 
+**[See what this step changed: diff against step 17](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/28f743178b3d46ac7a4cfbf75853ff756389b6a9...1efd9f5236748777c8aca93c5bc1237ad3d68c2b)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -35,6 +37,7 @@ Make it possible to add carriers without changing existing code: create an inter
 ## In this branch
 
 - [Notes for this step](docs/steps/18-carrier-interface.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/28f743178b3d46ac7a4cfbf75853ff756389b6a9...1efd9f5236748777c8aca93c5bc1237ad3d68c2b): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/carrier-interface
 
 ---
