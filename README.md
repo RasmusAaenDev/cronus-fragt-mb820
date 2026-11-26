@@ -1,15 +1,45 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 12: Enums and number series
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that follows shipments with freight carriers for the fictional distributor Cronus. It extends the standard shipping agents with the carrier settings and keeps its own shipment tracking records (Danish: fragtbreve). It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`, and its `README.md` is the task description for that step (see `STEPS.md` for links). The branches are stacked: a branch starts from the previous step's code, so the compare view between two neighbouring steps shows what the step adds, plus the swapped README. `main` holds the finished solution (the last step's code) and this project README.
+> We need to be able to follow where a shipment is: whether it's just been created, booked with the carrier,
+> in transit or delivered. There will probably be more steps later, for example if a package is sent back. And
+> when someone creates a shipment tracking record, it should get the next number by itself from the number
+> series we picked in the freight setup.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Finish the tracking status enum and give the shipment tracking header its number series with the No. Series pattern, so that every new shipment tracking record gets the next number.
+
+**Do this**
+
+1. Finish the enum CRF Tracking Status (50101): the values Open, Booked, In Transit and Delivered with captions, and make it extensible so another extension can add a status later.
+2. Give CRF Shipment Tracking Header its number series: add a No. Series field and fill No. from the Shipment Tracking Nos. series in CRF Freight Setup when a record is inserted without a number.
+3. Check in No.'s OnValidate that the series allows manual numbers.
+4. Set Posting Date to the work date when it's blank.
+5. In the sandbox, create a number series for shipment tracking on the No. Series page and choose it on the CRF Freight Setup page.
+
+**You are done when**
+
+- A shipment tracking record inserted from code (or through the pages in step 14) gets the next number.
+
+## Checklist
+
+- [ ] Enum 50101 CRF Tracking Status has Extensible = true and the values Open, Booked, In Transit and Delivered.
+- [ ] CRF Shipment Tracking Header has a No. Series field of type Code[20] with a table relation to No. Series, and users can't edit it.
+- [ ] OnInsert gets the next number from the series in CRF Freight Setup through codeunit No. Series, only when No. is blank.
+- [ ] Typing a number by hand fails unless the series has Manual Nos. turned on.
+- [ ] A new shipment tracking record gets the next number from the series you set up in the sandbox.
+
+## In this branch
+
+- [Notes for this step](docs/steps/12-enums-and-numbers.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/enums-and-numbers
+
+---
+
+[← Step 11](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/11-shipment/create-the-shipment-tracking-tables/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 13 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/13-shipment/extend-the-shipping-agent/README.md)
