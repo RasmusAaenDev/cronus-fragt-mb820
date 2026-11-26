@@ -8,7 +8,7 @@ When an object is built, change its status here and nowhere else. An id is never
 
 | Id | Name | Step | Status |
 |---|---|---|---|
-| 50100 | CRF Freight Setup | 08 | planned |
+| 50100 | CRF Freight Setup | 08 | built |
 | 50101 | CRF Shipment Tracking Header | 11 | planned |
 | 50102 | CRF Shipment Tracking Line | 11 | planned |
 | 50103 | CRF Shipping Agent Rate | 16 | planned |
