@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Link to standard Business Central
 
+**[See what this step changed: diff against step 29](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/c9030446b32e5f683b9fe2a24d58836266eccdf9...9425f063a7578421f3b4f6ec62be64e481cf0248)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -39,6 +41,7 @@ Create a separate test project for Cronus Fragt, wire it to the app, and write t
 ## In this branch
 
 - [Notes for this step](docs/steps/30-tests.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/c9030446b32e5f683b9fe2a24d58836266eccdf9...9425f063a7578421f3b4f6ec62be64e481cf0248): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/tests
 
 ---
