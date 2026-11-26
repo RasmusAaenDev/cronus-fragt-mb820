@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Solution design
 
+**[See what this step changed: diff against step 3](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/b0c0af354f882f8dc6e12705f8a813705661a431...b03477bb2d0810d172b951c2b5595f30ec417b92)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -59,6 +61,7 @@ Mette has told you what Cronus Fragt must be able to do. Turn her wishes into th
 ## In this branch
 
 - [Notes for this step](docs/steps/04-requirements-to-objects.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/b0c0af354f882f8dc6e12705f8a813705661a431...b03477bb2d0810d172b951c2b5595f30ec417b92): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/requirements-to-objects
 
 ---
