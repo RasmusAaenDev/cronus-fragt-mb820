@@ -1,15 +1,47 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 13: Extend the shipping agent
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that follows shipments with freight carriers for the fictional distributor Cronus. It extends the standard shipping agents with the carrier settings and keeps its own shipment tracking records (Danish: fragtbreve). It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`, and its `README.md` is the task description for that step (see `STEPS.md` for links). The branches are stacked: a branch starts from the previous step's code, so the compare view between two neighbouring steps shows what the step adds, plus the swapped README. `main` holds the finished solution (the last step's code) and this project README.
+> We already have our shipping agents in Business Central, DHL, FedEx and the others, and the customers and
+> orders point to them. Some of them have a system we can ask where a package is, and some don't. Can we note
+> on each shipping agent how we talk to it and where its system is, so we don't have to keep a second list
+> somewhere else?
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+**What you hand in:** Two or three plain sentences for Mette on why the carrier settings go on the shipping agents she already has, and not in a new list of carriers. The extension objects themselves are AL code.
+
+Extend the standard Shipping Agent table and the Shipping Agents page so that each shipping agent says which carrier implementation Cronus Fragt uses for it and where that carrier's web service is.
+
+**Do this**
+
+1. Create the enum CRF Carrier (enum 50100) with the values ' ' (blank), Carrier A and Carrier B, and make it extensible. It has no implementation yet; step 18 makes it implement the CRF ICarrier interface.
+2. Create the table extension CRF Shipping Agent (tableextension 50100) on Shipping Agent with the fields CRF Carrier (enum CRF Carrier) and CRF API Base URL (Text[250]).
+3. Create the page extension CRF Shipping Agents (pageextension 50101) on the Shipping Agents page that shows both fields in the list.
+4. Don't add the API key. It is a secret and gets its own storage in step 21, with a masked field on the same page extension.
+5. Publish, open Shipping Agents and set one agent (for example DHL) to Carrier A with the API Base URL https://freight-mock.sekvens.tools/carrier-a, and another (for example FEDEX) to Carrier B with no address. If your demo company lacks them, create them on the page first.
+
+**Not this**
+
+- Don't extend Customer. It already has a Shipping Agent Code field on the Customer Card, and step 11 already reads it.
+
+## Checklist
+
+- [ ] Enum 50100 CRF Carrier is extensible and has the values ' ', Carrier A and Carrier B, without implements.
+- [ ] tableextension 50100 CRF Shipping Agent extends Shipping Agent with the fields CRF Carrier and CRF API Base URL, both with a Caption and DataClassification = CustomerContent, and no field for the API key.
+- [ ] pageextension 50101 CRF Shipping Agents extends Shipping Agents and adds both fields to the repeater, each with ApplicationArea and a ToolTip.
+- [ ] The new fields and page controls carry the CRF affix, because Shipping Agent and Shipping Agents belong to Microsoft.
+- [ ] On the Shipping Agents page, one agent is set to Carrier A with the mock address and another to Carrier B.
+
+## In this branch
+
+- [Notes for this step](docs/steps/13-shipping-agent.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/extend-shipping-agent
+
+---
+
+[← Step 12](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/12-shipment/enums-and-number-series/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 14 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/14-shipment/card-list-and-subform-pages/README.md)
