@@ -1,15 +1,38 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 8: Create the freight setup table
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that follows shipments with freight carriers for the fictional distributor Cronus. It extends the standard shipping agents with the carrier settings and keeps its own shipment tracking records (Danish: fragtbreve). It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Build the solution › Setup and assisted setup
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`, and its `README.md` is the task description for that step (see `STEPS.md` for links). The branches are stacked: a branch starts from the previous step's code, so the compare view between two neighbouring steps shows what the step adds, plus the swapped README. `main` holds the finished solution (the last step's code) and this project README.
+> Hi! We need one place where we decide which shipping agent we use when a customer hasn't got one of its own.
+> The shipment tracking records also need their own running numbers, just like our orders have. And it should
+> only exist once, so we don't suddenly end up with two different setups that people edit separately.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Mette needs one place for the default shipping agent and the numbering of shipment tracking records. Create the setup table CRF Freight Setup (table 50100) using the setup table pattern of Business Central.
+
+**Do this**
+
+1. Create table 50100 CRF Freight Setup with a primary key field named Primary Key, a field Default Shipping Agent Code related to the standard Shipping Agent table, and a field Shipment Tracking Nos. for the number series that numbers new shipment tracking records.
+2. Don't add the carrier, the address of the carrier service or the API key here. They belong to each shipping agent: step 13 adds the carrier and the address to the Shipping Agent table, and step 21 stores the key. Tell Mette why.
+3. Compile and publish the extension.
+
+## Checklist
+
+- [ ] Table 50100 CRF Freight Setup has a Primary Key field of type Code[10] and that field is the table's only key field.
+- [ ] The table has the fields Default Shipping Agent Code and Shipment Tracking Nos., and nothing about carriers, addresses or keys.
+- [ ] Default Shipping Agent Code is Code[10] with a table relation to the Shipping Agent table.
+- [ ] Shipment Tracking Nos. is Code[20] with a table relation to the No. Series table.
+- [ ] The extension compiles and publishes to the sandbox without errors.
+
+## In this branch
+
+- [Notes for this step](docs/steps/08-setup-table.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/setup-table
+
+---
+
+[← Step 7](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/07-solution-design/sketch-the-architecture/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 9 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/09-setup-and-assisted-setup/create-the-setup-page-and-open-it-from-search/README.md)
