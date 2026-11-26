@@ -19,6 +19,8 @@ permissionset 50100 "CRF Freight Basic"
         page "CRF Shipment Tracking Subform" = X,
         page "CRF Shipping Agent Rates" = X,
         page "CRF Freight Activities" = X,
+        page "CRF Shipment Tracking API" = X,
+        page "CRF Shipment Tracking Line API" = X,
         query "CRF Tracking by Shipping Agent" = X,
         report "CRF Warehouse Freight List" = X,
         codeunit "CRF Freight Mgt" = X,
