@@ -1,15 +1,46 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 6: Hook in with events, do not change standard code
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that follows shipments with freight carriers for the fictional distributor Cronus. It extends the standard shipping agents with the carrier settings and keeps its own shipment tracking records (Danish: fragtbreve). It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Solution design
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`, and its `README.md` is the task description for that step (see `STEPS.md` for links). The branches are stacked: a branch starts from the previous step's code, so the compare view between two neighbouring steps shows what the step adds, plus the swapped README. `main` holds the finished solution (the last step's code) and this project README.
+> Management asked me yesterday whether what we're building breaks when Microsoft updates Business Central.
+> I'd like to be able to give a proper answer to that. And it's important to us that the shipment tracking
+> appears by itself when the warehouse posts a delivery, and that we set up the carrier's system right on the
+> shipping agents we already have in Business Central.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+**What you hand in:** A written section of the design document, not AL code: a short explanation, a list of extension points and a decision on what Cronus Fragt exposes.
+
+Add a section to the design document on how Cronus Fragt plugs into Business Central, and which of its own objects and events other extensions may use.
+
+**Do this**
+
+1. Explain the extension model in a few sentences: the System Application, the Base Application and your extension, and why your extension adds to them instead of changing their code.
+2. List every extension point the solution will use, with the publisher object, the event or extension object, and what Cronus Fragt does there.
+3. Decide which of your own objects other extensions may call.
+4. Decide which events Cronus Fragt itself should publish so that it can be extended later.
+
+**The list must include at least**
+
+- The posting of a sales shipment, to create shipment tracking.
+- The Shipping Agent table and the Shipping Agents page, for the carrier settings.
+
+## Checklist
+
+- [ ] Your design explains the System Application, the Base Application and your extension, and that base code is not modified.
+- [ ] The sales shipment hook names the publisher codeunit and the event, and says why that event fits.
+- [ ] The carrier settings use a table extension on Shipping Agent and a page extension on the Shipping Agents page.
+- [ ] You have named at least one event that Cronus Fragt publishes itself and said which objects stay internal.
+
+## In this branch
+
+- [Notes for this step](docs/steps/06-events-not-modifications.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/events-not-modifications
+
+---
+
+[← Step 5](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/05-solution-design/extend-standard-or-build-your-own/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 7 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/07-solution-design/sketch-the-architecture/README.md)
