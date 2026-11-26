@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
+**[See what this step changed: diff against step 12](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/ba2976ce046edc763582491f9ec8eee724ab4ba5...80140b6ec74c13480c40f6242d23cc4ecb07ceb5)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -40,6 +42,7 @@ Extend the standard Shipping Agent table and the Shipping Agents page so that ea
 ## In this branch
 
 - [Notes for this step](docs/steps/13-shipping-agent.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/ba2976ce046edc763582491f9ec8eee724ab4ba5...80140b6ec74c13480c40f6242d23cc4ecb07ceb5): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/extend-shipping-agent
 
 ---
