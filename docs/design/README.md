@@ -1,6 +1,6 @@
 # Cronus Fragt: design document
 
-Cronus Fragt lets Cronus create shipments for customers, book them with freight carriers, follow their status, print a warehouse list and let the webshop read and create shipments.
+Cronus Fragt lets Cronus create shipment tracking for customers, book it with the shipping agents' carriers, follow the status, print a freight list for the warehouse and let the webshop read and create shipment tracking.
 
 The document grows over four steps and stays consistent with `object-ids.md`, which is the only place where ids are allocated.
 
@@ -14,18 +14,19 @@ The document grows over four steps and stays consistent with `object-ids.md`, wh
 
 ## Requirements (from Mette)
 
-1. Create a shipment for a customer with delivery address, carrier, status and tracking number; a shipment has several packages with weight and dimensions.
-2. One place to choose the regular carrier and to hold access to the carriers' systems.
-3. A printable shipment list for the warehouse.
-4. The webshop can see and create shipments.
+1. Keep shipment tracking for a customer with delivery address, shipping agent, status and package tracking number; a shipment has several packages with weight and dimensions.
+2. One place to choose the regular shipping agent, and a place on each shipping agent for the address and access to its system.
+3. A printable freight list for the warehouse.
+4. The webshop can see and create shipment tracking.
 5. Status updates itself.
-6. Posting a delivery creates the shipment automatically.
-7. Every customer has a regular carrier.
-8. Several carriers today, more later.
+6. Posting a delivery creates the tracking automatically.
+7. Every customer has a regular shipping agent (it already does: the standard `Shipping Agent Code`).
+8. Several shipping agents today, more later.
 
 ## Conventions
 
-- Affix `CRF` on every object name; fields added to standard tables also carry it (`CRF Default Carrier`).
+- Affix `CRF` on every object name; fields added to standard tables also carry it (`CRF Carrier`, `CRF API Base URL`).
 - Ids 50100-50149, allocated per object type. Interfaces have no id.
 - Publisher `Cronus`, target Cloud (per-tenant extension), no changes to standard objects.
+- The shipping agent is the carrier master data. "Carrier" is the name of the implementation behind a shipping agent (enum `CRF Carrier`, interface `CRF ICarrier`), not of a table.
 - The test app (step 30) lives in its own project and uses codeunit id 50140 from the same range.

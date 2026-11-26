@@ -1,19 +1,19 @@
-# Runbook: why is one shipment's status never updated
+# Runbook: why is the tracking status of one shipment never updated
 
 Written from the code and the workbook text. Nothing here was run: it needs a sandbox, a carrier service and the AL debugger.
 
 ## What we know from the code
 
-- The polling round (`CRF Update Status`) catches the error of each shipment and logs CRF-0002 without the error text (the text could hold customer data). Other shipments keep updating, which matches what Mette sees.
+- The polling round (`CRF Update Status`) catches the error of each shipment tracking record and logs CRF-0002 without the error text (the text could hold customer data). Other shipments keep updating, which matches what Mette sees.
 - The error text exists only inside `UpdateStatusNoError` in `CRF Freight Mgt`: after `TryGetStatus` returns false, `GetLastErrorText()` holds it.
-- Carrier A's `GetStatus` fails with "The carrier service reported the unknown status ..." when `StatusFromText` gets a text other than booked, in_transit or delivered. That is the first suspect. Other candidates: a blank or wrong tracking number, an HTTP error for that one parcel, an answer the code cannot read. It is a hypothesis until someone runs the steps below.
+- Carrier A's `GetStatus` fails with "The carrier service reported the unknown status ..." when `StatusFromText` gets a text other than booked, in_transit or delivered. That is the first suspect. Other candidates: a blank or wrong package tracking number, an HTTP error for that one parcel, an answer the code cannot read. If every record of one shipping agent fails, look at that shipping agent instead (Shipping Agents page): a blank `CRF Carrier`, a missing `CRF API Base URL` or a missing API key each give their own error. It is a hypothesis until someone runs the steps below.
 
 ## Reproduce in your own session
 
 1. Publish (Ctrl+F5), start the configuration "Attach to Cronus Fragt sandbox" (`breakOnNext: WebClient`; `breakOnError` is All on the launch configuration, so the debugger also stops on errors that the code handles, such as inside the try function).
 2. Breakpoint in `UpdateStatusNoError` (`CRF Freight Mgt`) on the line after `TryGetStatus`. Inspect `GetLastErrorText()` in the Variables pane.
-3. Conditional breakpoint in `GetStatus` of `CRF Carrier A`, expression `ShipmentHeader."No." = '<number of the failing shipment>'`, so it stops only for that shipment, also during polling.
-4. On the shipment card choose Update Status. Note the error text.
+3. Conditional breakpoint in `GetStatus` of `CRF Carrier A`, expression `TrackingHeader."No." = '<number of the failing shipment tracking record>'`, so it stops only for that record, also during polling.
+4. On the shipment tracking card choose Update Status. Note the error text.
 
 (Learn's attach article restricts sandboxes to some session types and its support table lists the web client. If the attach does not stop, check what the sandbox allows. For the job queue run, use Run once (Foreground) on the entry.)
 
@@ -26,10 +26,10 @@ Written from the code and the workbook text. Nothing here was run: it needs a sa
 
 ## Cause and proposed fix (to be confirmed)
 
-Likely cause: the carrier reports a status that `StatusFromText` does not know (for example `returned`), so the shipment fails in every round. Options for Mette:
+Likely cause: the carrier reports a status that `StatusFromText` does not know (for example `returned`), so that record fails in every round. Options for Mette:
 
-1. Add a value to `CRF Shipment Status` (Cronus owns the enum), map it in `StatusFromText` and add a test for it in the test app (recommended if the status is a real business state).
-2. Keep the error and let the warehouse handle such shipments by hand.
+1. Add a value to `CRF Tracking Status` (Cronus owns the enum), map it in `StatusFromText` and add a test for it in the test app (recommended if the status is a real business state).
+2. Keep the error and let the warehouse handle such shipments by hand (the record stays at its old status).
 
 ## Danish captions
 

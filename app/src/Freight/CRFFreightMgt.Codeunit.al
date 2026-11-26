@@ -3,29 +3,55 @@ codeunit 50100 "CRF Freight Mgt"
     Access = Public;
 
     /// <summary>
-    /// Returns the price of the shipment from the carrier on the shipment.
+    /// Returns the carrier implementation of the shipping agent on the shipment tracking record.
+    /// Raises an error when the record has no shipping agent.
     /// </summary>
-    procedure GetRate(var ShipmentHeader: Record "CRF Shipment Header"): Decimal
+    procedure GetCarrier(TrackingHeader: Record "CRF Shipment Tracking Header") Carrier: Interface "CRF ICarrier"
+    var
+        ShippingAgent: Record "Shipping Agent";
+        NoShippingAgentErr: Label 'Shipment tracking %1 has no shipping agent. Choose a shipping agent on it first.', Comment = '%1 = shipment tracking number';
+    begin
+        if TrackingHeader."Shipping Agent Code" = '' then
+            Error(NoShippingAgentErr, TrackingHeader."No.");
+        ShippingAgent.Get(TrackingHeader."Shipping Agent Code");
+        Carrier := ShippingAgent."CRF Carrier";
+    end;
+
+    /// <summary>
+    /// Returns the price of the shipment from the carrier of the shipping agent on the shipment tracking record.
+    /// </summary>
+    procedure GetRate(var TrackingHeader: Record "CRF Shipment Tracking Header"): Decimal
     var
         Carrier: Interface "CRF ICarrier";
     begin
-        Carrier := ShipmentHeader.Carrier;
-        exit(Carrier.GetRate(ShipmentHeader));
+        Carrier := GetCarrier(TrackingHeader);
+        exit(Carrier.GetRate(TrackingHeader));
+    end;
+
+    /// <summary>
+    /// The carrier of the shipping agent on the record, or blank. Used for telemetry, which must not log the agent code.
+    /// </summary>
+    internal procedure CarrierOf(TrackingHeader: Record "CRF Shipment Tracking Header"): Enum "CRF Carrier"
+    var
+        ShippingAgent: Record "Shipping Agent";
+    begin
+        if ShippingAgent.Get(TrackingHeader."Shipping Agent Code") then
+            exit(ShippingAgent."CRF Carrier");
     end;
 
     /// <summary>
     /// Asks the carrier for the status of the shipment and saves it when it changed.
     /// Raises one error, with the technical details in the detailed message, if the carrier call fails.
     /// </summary>
-    procedure UpdateStatus(var ShipmentHeader: Record "CRF Shipment Header")
+    procedure UpdateStatus(var TrackingHeader: Record "CRF Shipment Tracking Header")
     var
         UpdateFailedInfo: ErrorInfo;
         ErrorText: Text;
     begin
-        if UpdateStatusNoError(ShipmentHeader, ErrorText) then
+        if UpdateStatusNoError(TrackingHeader, ErrorText) then
             exit;
         UpdateFailedInfo.Title := UpdateFailedTitleLbl;
-        UpdateFailedInfo.Message := StrSubstNo(UpdateFailedErr, ShipmentHeader."No.");
+        UpdateFailedInfo.Message := StrSubstNo(UpdateFailedErr, TrackingHeader."No.");
         UpdateFailedInfo.DetailedMessage := ErrorText;
         Error(UpdateFailedInfo);
     end;
@@ -33,109 +59,118 @@ codeunit 50100 "CRF Freight Mgt"
     /// <summary>
     /// Same as UpdateStatus, but returns false and the error text instead of stopping. Used by the job queue.
     /// </summary>
-    procedure UpdateStatusNoError(var ShipmentHeader: Record "CRF Shipment Header"; var ErrorText: Text): Boolean
+    procedure UpdateStatusNoError(var TrackingHeader: Record "CRF Shipment Tracking Header"; var ErrorText: Text): Boolean
     var
-        Carrier: Interface "CRF ICarrier";
-        NewStatus: Enum "CRF Shipment Status";
+        NewStatus: Enum "CRF Tracking Status";
     begin
         ErrorText := '';
-        Carrier := ShipmentHeader.Carrier;
-        if not TryGetStatus(Carrier, ShipmentHeader, NewStatus) then begin
+        if not TryGetStatus(TrackingHeader, NewStatus) then begin
             ErrorText := GetLastErrorText();
             exit(false);
         end;
         // Writes happen only after the carrier call succeeded
-        if NewStatus <> ShipmentHeader.Status then begin
-            ShipmentHeader.Validate(Status, NewStatus);
-            ShipmentHeader.Modify(true);
-            ShipmentStatusChanged(ShipmentHeader.SystemId, ShipmentHeader.Status, ShipmentHeader."Tracking No.");
+        if NewStatus <> TrackingHeader.Status then begin
+            TrackingHeader.Validate(Status, NewStatus);
+            TrackingHeader.Modify(true);
+            TrackingStatusChanged(TrackingHeader.SystemId, TrackingHeader.Status, TrackingHeader."Package Tracking No.");
         end;
         exit(true);
     end;
 
     /// <summary>
-    /// Books an open shipment. The carrier service has no booking call (see step 19), so nothing is sent to the carrier:
-    /// the shipment must have a carrier and a matching rate, and its status becomes Booked.
+    /// Books an open shipment tracking record. The carrier service has no booking call (see step 20), so nothing is sent
+    /// to the carrier: the shipping agent must have a carrier and a matching rate, and the status becomes Booked.
     /// </summary>
-    procedure BookShipment(var ShipmentHeader: Record "CRF Shipment Header")
+    procedure Book(var TrackingHeader: Record "CRF Shipment Tracking Header")
     var
-        NotOpenErr: Label 'Shipment %1 cannot be booked because its status is %2.', Comment = '%1 = shipment number, %2 = status';
+        NotOpenErr: Label 'Shipment tracking %1 cannot be booked because its status is %2.', Comment = '%1 = shipment tracking number, %2 = status';
     begin
-        if ShipmentHeader.Status <> ShipmentHeader.Status::Open then
-            Error(NotOpenErr, ShipmentHeader."No.", ShipmentHeader.Status);
-        GetRate(ShipmentHeader); // fails for a shipment without a carrier or without a matching rate
-        ShipmentHeader.Validate(Status, ShipmentHeader.Status::Booked);
-        ShipmentHeader.Modify(true);
-        ShipmentStatusChanged(ShipmentHeader.SystemId, ShipmentHeader.Status, ShipmentHeader."Tracking No.");
+        if TrackingHeader.Status <> TrackingHeader.Status::Open then
+            Error(NotOpenErr, TrackingHeader."No.", TrackingHeader.Status);
+        GetRate(TrackingHeader); // fails without a shipping agent, without a carrier on it or without a matching rate
+        TrackingHeader.Validate(Status, TrackingHeader.Status::Booked);
+        TrackingHeader.Modify(true);
+        TrackingStatusChanged(TrackingHeader.SystemId, TrackingHeader.Status, TrackingHeader."Package Tracking No.");
     end;
 
     /// <summary>
-    /// Creates a shipment for a posted sales shipment, with the customer's address and default carrier.
-    /// Does nothing when a shipment for that posted sales shipment already exists, or when the freight setup
-    /// has no shipment number series (posting a sales shipment must not fail because freight is not set up).
+    /// Creates a shipment tracking record for a posted sales shipment, with the customer's address and the shipping
+    /// agent of the posted sales shipment (or, if it has none, the customer's or the freight setup's).
+    /// Does nothing when a record for that posted sales shipment already exists, or when the freight setup has no
+    /// number series (posting a sales shipment must not fail because freight is not set up).
     /// </summary>
-    procedure CreateShipmentFromSalesShipment(CustomerNo: Code[20]; SalesShipmentNo: Code[20])
+    procedure CreateTrackingFromSalesShipment(CustomerNo: Code[20]; SalesShipmentNo: Code[20])
     var
-        ExistingShipment: Record "CRF Shipment Header";
-        ShipmentHeader: Record "CRF Shipment Header";
+        ExistingTracking: Record "CRF Shipment Tracking Header";
+        TrackingHeader: Record "CRF Shipment Tracking Header";
         FreightSetup: Record "CRF Freight Setup";
+        SalesShipmentHeader: Record "Sales Shipment Header";
     begin
         if (CustomerNo = '') or (SalesShipmentNo = '') then
             exit;
-        ExistingShipment.SetRange("Sales Shipment No.", SalesShipmentNo);
-        if not ExistingShipment.IsEmpty() then
+        ExistingTracking.SetRange("Sales Shipment No.", SalesShipmentNo);
+        if not ExistingTracking.IsEmpty() then
             exit;
         if not FreightSetup.Get() then
             exit;
-        if FreightSetup."Shipment Nos." = '' then
+        if FreightSetup."Shipment Tracking Nos." = '' then
             exit;
-        ShipmentHeader.Init();
-        ShipmentHeader.Insert(true); // OnInsert takes the number from the number series
-        ShipmentHeader.Validate("Customer No.", CustomerNo); // ship-to fields and carrier
-        ShipmentHeader."Sales Shipment No." := SalesShipmentNo;
-        ShipmentHeader.Modify(true);
-        LogShipmentCreated(ShipmentHeader);
-        OnAfterCreateShipmentFromSalesShipment(ShipmentHeader, SalesShipmentNo);
+        TrackingHeader.Init();
+        TrackingHeader.Insert(true); // OnInsert takes the number from the number series
+        TrackingHeader.Validate("Customer No.", CustomerNo); // ship-to fields and shipping agent
+        // The shipping agent on the posted sales shipment is the one that was chosen for this delivery
+        if SalesShipmentHeader.Get(SalesShipmentNo) then
+            if SalesShipmentHeader."Shipping Agent Code" <> '' then
+                TrackingHeader."Shipping Agent Code" := SalesShipmentHeader."Shipping Agent Code";
+        TrackingHeader."Sales Shipment No." := SalesShipmentNo;
+        TrackingHeader.Modify(true);
+        LogTrackingCreated(TrackingHeader);
+        OnAfterCreateTrackingFromSalesShipment(TrackingHeader, SalesShipmentNo);
     end;
 
-    local procedure LogShipmentCreated(ShipmentHeader: Record "CRF Shipment Header")
+    local procedure LogTrackingCreated(TrackingHeader: Record "CRF Shipment Tracking Header")
     var
         Dimensions: Dictionary of [Text, Text];
     begin
-        // The number is CustomerContent, so the SystemId is logged instead
-        Dimensions.Add('ShipmentSystemId', Format(ShipmentHeader.SystemId));
-        Dimensions.Add('Carrier', Format(ShipmentHeader.Carrier));
-        Session.LogMessage('CRF-0003', ShipmentCreatedTxt, Verbosity::Normal,
+        // The number and the shipping agent code are CustomerContent, so the SystemId and the carrier are logged instead
+        Dimensions.Add('TrackingSystemId', Format(TrackingHeader.SystemId));
+        Dimensions.Add('Carrier', Format(CarrierOf(TrackingHeader)));
+        Session.LogMessage('CRF-0003', TrackingCreatedTxt, Verbosity::Normal,
             DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, Dimensions);
     end;
 
     /// <summary>
-    /// Raised after a shipment was created and saved from a posted sales shipment.
+    /// Raised after a shipment tracking record was created and saved from a posted sales shipment.
     /// </summary>
     [IntegrationEvent(false, false)]
-    local procedure OnAfterCreateShipmentFromSalesShipment(var CRFShipmentHeader: Record "CRF Shipment Header"; SalesShipmentNo: Code[20])
+    local procedure OnAfterCreateTrackingFromSalesShipment(var CRFTrackingHeader: Record "CRF Shipment Tracking Header"; SalesShipmentNo: Code[20])
     begin
     end;
 
     /// <summary>
     /// External business event (preview): tells subscribers such as Power Automate that the status of a shipment
-    /// changed. The parameters are the payload (no customer name or address). It is sent after the transaction commits.
+    /// tracking record changed. The parameters are the payload (no customer name or address). It is sent after the
+    /// transaction commits.
     /// </summary>
-    [ExternalBusinessEvent('shipmentstatuschanged', 'Shipment status changed', 'Triggered when the status of a shipment changes', EventCategory::"CRF Freight")]
-    [RequiredPermissions(PermissionObjectType::TableData, Database::"CRF Shipment Header", 'R')]
-    local procedure ShipmentStatusChanged(shipmentId: Guid; status: Enum "CRF Shipment Status"; trackingNumber: Text[50])
+    [ExternalBusinessEvent('trackingstatuschanged', 'Tracking status changed', 'Triggered when the status of a shipment tracking record changes', EventCategory::"CRF Freight")]
+    [RequiredPermissions(PermissionObjectType::TableData, Database::"CRF Shipment Tracking Header", 'R')]
+    local procedure TrackingStatusChanged(trackingId: Guid; status: Enum "CRF Tracking Status"; trackingNumber: Text[50])
     begin
     end;
 
     [TryFunction]
-    local procedure TryGetStatus(Carrier: Interface "CRF ICarrier"; ShipmentHeader: Record "CRF Shipment Header"; var NewStatus: Enum "CRF Shipment Status")
+    local procedure TryGetStatus(TrackingHeader: Record "CRF Shipment Tracking Header"; var NewStatus: Enum "CRF Tracking Status")
+    var
+        Carrier: Interface "CRF ICarrier";
     begin
-        // No database writes in here: they would not be rolled back if the call fails
-        NewStatus := Carrier.GetStatus(ShipmentHeader);
+        // No database writes in here: they would not be rolled back if the call fails.
+        // Finding the carrier is in here too, because a missing shipping agent is an error like any other.
+        Carrier := GetCarrier(TrackingHeader);
+        NewStatus := Carrier.GetStatus(TrackingHeader);
     end;
 
     var
-        ShipmentCreatedTxt: Label 'Shipment created from sales shipment', Locked = true;
-        UpdateFailedTitleLbl: Label 'The shipment status was not updated';
-        UpdateFailedErr: Label 'Cronus Fragt could not get the status of shipment %1 from the carrier. Try again later.', Comment = '%1 = shipment number';
+        TrackingCreatedTxt: Label 'Shipment tracking created from sales shipment', Locked = true;
+        UpdateFailedTitleLbl: Label 'The tracking status was not updated';
+        UpdateFailedErr: Label 'Cronus Fragt could not get the status of shipment tracking %1 from the carrier. Try again later.', Comment = '%1 = shipment tracking number';
 }

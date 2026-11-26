@@ -9,18 +9,18 @@ page 50108 "CRF Freight Activities"
     {
         area(Content)
         {
-            cuegroup(Shipments)
+            cuegroup(Tracking)
             {
-                Caption = 'Shipments';
+                Caption = 'Shipment Tracking';
 
                 field("Open Shipments"; Rec."Open Shipments")
                 {
-                    DrillDownPageId = "CRF Shipment List";
-                    ToolTip = 'Specifies the number of shipments that are still open.';
+                    DrillDownPageId = "CRF Shipment Tracking List";
+                    ToolTip = 'Specifies the number of shipment tracking records that are still open.';
                 }
-                field("Open Default Carrier"; Rec."Open Default Carrier")
+                field("Open Default Agent"; Rec."Open Default Agent")
                 {
-                    ToolTip = 'Specifies the number of open shipments that go with the default carrier of the freight setup.';
+                    ToolTip = 'Specifies the number of open shipment tracking records that go with the default shipping agent of the freight setup.';
                 }
             }
         }
@@ -30,12 +30,12 @@ page 50108 "CRF Freight Activities"
     {
         area(Processing)
         {
-            action(AllShipments)
+            action(AllTracking)
             {
                 ApplicationArea = All;
-                Caption = 'All Shipments';
-                ToolTip = 'Opens the list of all shipments.';
-                RunObject = page "CRF Shipment List";
+                Caption = 'All Shipment Tracking';
+                ToolTip = 'Opens the list of all shipment tracking records.';
+                RunObject = page "CRF Shipment Tracking List";
                 Image = List;
             }
         }
@@ -53,16 +53,16 @@ page 50108 "CRF Freight Activities"
     trigger OnAfterGetRecord()
     var
         FreightSetup: Record "CRF Freight Setup";
-        ShipmentsByCarrier: Query "CRF Shipments by Carrier";
+        TrackingByAgent: Query "CRF Tracking by Shipping Agent";
     begin
-        Rec."Open Default Carrier" := 0;
+        Rec."Open Default Agent" := 0;
         if not FreightSetup.Get() then
             exit;
-        ShipmentsByCarrier.SetRange(Status, "CRF Shipment Status"::Open);
-        ShipmentsByCarrier.SetRange(Carrier, FreightSetup."Default Carrier");
-        ShipmentsByCarrier.Open();
-        if ShipmentsByCarrier.Read() then
-            Rec."Open Default Carrier" := ShipmentsByCarrier.NoOfShipments;
-        ShipmentsByCarrier.Close();
+        TrackingByAgent.SetRange(Status, "CRF Tracking Status"::Open);
+        TrackingByAgent.SetRange(ShippingAgentCode, FreightSetup."Default Shipping Agent Code");
+        TrackingByAgent.Open();
+        if TrackingByAgent.Read() then
+            Rec."Open Default Agent" := TrackingByAgent.NoOfShipments;
+        TrackingByAgent.Close();
     end;
 }

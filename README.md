@@ -1,6 +1,6 @@
 # Cronus Fragt (MB-820 model solution)
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that books shipments with freight carriers for the fictional distributor Cronus. It includes the design document the workbook asks for.
+A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that follows shipments with freight carriers for the fictional distributor Cronus. It extends the standard shipping agents with the carrier settings and keeps its own shipment tracking records (Danish: fragtbreve). It includes the design document the workbook asks for.
 
 - `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
 - `app/` is the AL extension (object ids 50100-50149, affix `CRF`).

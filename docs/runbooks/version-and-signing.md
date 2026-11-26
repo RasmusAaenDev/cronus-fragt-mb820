@@ -7,7 +7,7 @@
 | Part | Raise it when | Who sets it |
 |---|---|---|
 | Major | A change that breaks other extensions (removed or changed public events, procedures, tables) or that Cronus wants to mark as a big release | A developer, in a pull request |
-| Minor | New features, also those that ship upgrade code (1.1.0.0 added the default carrier and its backfill) | A developer, in a pull request |
+| Minor | New features, also those that ship upgrade code (1.1.0.0 added the setup's default shipping agent and its backfill) | A developer, in a pull request |
 | Build | The build number | The pipeline only (it may set this part; the workflow in `.github/workflows/build.yml` does not do it yet) |
 | Revision | A hotfix on an already released version | A developer |
 
@@ -15,7 +15,7 @@ Rules: every release has a higher version than the one before and the **same app
 
 ## Next release after 1.1.0.0
 
-`app/app.json` is now `1.2.0.0` (minor: the cue page action was moved and the primary key of `CRF Shipment Line` got a SIFT field, both a feature/quality change without breaking anything; the id is unchanged). Tests: `test/app.json` still depends on Cronus Fragt `1.0.0.0`. A dependency version is a *minimum*, so the tests resolve 1.1.0.0 and 1.2.0.0 as well. Raise it only when a test needs something that was added after 1.0.0.0.
+`app/app.json` is now `1.2.0.0` (minor: the cue page action was moved and the primary key of `CRF Shipment Tracking Line` got a SIFT field, both a feature/quality change without breaking anything; the id is unchanged). Tests: `test/app.json` still depends on Cronus Fragt `1.0.0.0`. A dependency version is a *minimum*, so the tests resolve 1.1.0.0 and 1.2.0.0 as well. Raise it only when a test needs something that was added after 1.0.0.0.
 
 Verified here: `scripts/compile.sh app --codecop` and `scripts/compile.sh test --codecop` give 0 errors with 1.2.0.0.
 

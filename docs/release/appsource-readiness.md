@@ -9,8 +9,8 @@ Nothing was uploaded: there is no admin center access here, so the checklist ite
 1. Build `Cronus Fragt` 1.2.0.0 (the version at step 37; 1.1.0.0 was the version of module 3e) and take the `.app` of the app only. Not the test app (tests are not allowed in online production).
 2. Admin center, Environments, Production, Apps, Manage Apps, Install Extension; select the `.app`. Business Central decides itself whether it is a new extension or an update.
 3. Choose the schedule agreed with Mette (new extension: immediately or the next update window; update: also possible with the next minor/major update) and the sync mode.
-4. Follow the Operations page until it says Succeeded. For an update from 1.0.0.0 the upgrade code (`CRF Upgrade`, step 31) runs; check that the default-carrier backfill tag was set.
-5. After installation: run the setup guide (assisted setup) in each company so `Shipment Nos.` is set; until then posting works but creates no shipments.
+4. Follow the Operations page until it says Succeeded. For an update from 1.0.0.0 the upgrade code (`CRF Upgrade`, step 31) runs; check that the default shipping agent backfill tag was set (`CRF-DefaultShippingAgentFromTracking-20261126`).
+5. After installation: run the setup guide (assisted setup) in each company so `Shipment Tracking Nos.` is set; until then posting works but creates no shipment tracking. Also check each shipping agent that has a web service (Shipping Agents page): carrier, API base URL and API key are per shipping agent.
 
 Before this, the sandbox runs from steps 30-34 must have been done (they have not).
 
@@ -22,7 +22,7 @@ Before this, the sandbox runs from steps 30-34 must have been done (they have no
 | Name / publisher / version | Cronus Fragt / Cronus / 1.2.0.0 | The combination must not exist as a per-tenant extension in the same service | decision |
 | ID range | 50100-50149 (per-tenant range; AS0084 in the trial build) | A range assigned by Microsoft to the publisher (for a new publisher 70000000-74999999); every object id changes | open |
 | Affix | `CRF` used on all objects | Must be registered for the publisher with Microsoft; if it cannot be, objects are renamed | open |
-| Cronus's own data | Lives in the per-tenant tables | Not available to the new app (different id, different tables). Options: run both side by side without shared object names/ids, and a third per-tenant extension that depends on both and moves the data | decision |
+| Cronus's own data | Lives in the per-tenant tables, and the carrier settings in the fields of `CRF Shipping Agent` on the shipping agents | Not available to the new app (different id, different tables and table extension). Options: run both side by side without shared object names/ids, and a third per-tenant extension that depends on both and moves the data | decision |
 | Namespaces | Not used (AA0247 hidden in the ruleset) | Recommended; do it together with the id change | open |
 | Signing | none | The `.app` must be signed (step 37) | open |
 
@@ -38,8 +38,8 @@ Illustrative; every `<...>` must be replaced with a real value. The current `app
   "name": "Cronus Fragt",
   "publisher": "Cronus",
   "version": "2.0.0.0",
-  "brief": "Book shipments with your carriers and track their status in Business Central.",
-  "description": "Cronus Fragt creates shipments from posted sales shipments, books them with your carriers and keeps their status up to date.",
+  "brief": "Book shipments with your shipping agents and track their status in Business Central.",
+  "description": "Cronus Fragt creates shipment tracking from posted sales shipments, books it with your shipping agents' carriers and keeps the status up to date.",
   "privacyStatement": "<https url>",
   "EULA": "<https url>",
   "help": "<https url>",
@@ -71,10 +71,10 @@ AS0084 (id range), AS0051 x5 (`privacyStatement`, `EULA`, `help`, `logo`, `conte
 | Affix on all objects | done in code (`CRF`); registration open |
 | Registered ID range | open |
 | Translations | done for da-DK (`app/Translations`, my translation, needs a Danish review); en-US is the source language |
-| Permission sets, none requiring SUPER | done: `CRF Freight Basic` (daily work) and `CRF Freight Admin` (includes Basic; setup, carrier rates, install and upgrade code); not tested with a non-SUPER user (needs a sandbox) |
+| Permission sets, none requiring SUPER | done: `CRF Freight Basic` (daily work) and `CRF Freight Admin` (includes Basic; setup, shipping agent rates, modify permission on Shipping Agent, install and upgrade code); not tested with a non-SUPER user (needs a sandbox) |
 | DataClassification not ToBeClassified | done: no `ToBeClassified` in `app/src` |
 | Upgrade code | done (`CRF Install`, `CRF Upgrade`, `CRF Upgrade Tags`, step 31); not run |
-| Automated tests | the test app exists (3 tests); not run; the test package is not part of the submission |
+| Automated tests | the test app exists (4 tests); not run; the test package is not part of the submission |
 | Signed `.app` | open (step 37) |
 | No runtime packages | done: `resourceExposurePolicy` allows download of source; check against the offer before submitting |
 | Same name/publisher/version as the offer in Partner Center | open |

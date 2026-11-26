@@ -3,45 +3,21 @@
   <file datatype="xml" source-language="en-US" target-language="da-DK" original="Cronus Fragt">
     <body>
       <group id="body">
-        <trans-unit id="Table 2067418491 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Carrier Rate</source>
-          <target>Fragtpris</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Carrier Rate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2067418491 - Field 4093983712 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Carrier</source>
-          <target>Fragtfører</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Carrier Rate - Field Carrier - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2067418491 - Field 3635338911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Price</source>
-          <target>Pris</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Carrier Rate - Field Price - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2067418491 - Field 2927535303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Weight Limit (kg)</source>
-          <target>Vægtgrænse (kg)</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Carrier Rate - Field Weight Limit - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2045176401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Freight Cue</source>
           <target>Fragtstak</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRF Freight Cue - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2045176401 - Field 3835530925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Open with Default Carrier</source>
-          <target>Åbne med standardfragtfører</target>
+        <trans-unit id="Table 2045176401 - Field 2834168858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open with Default Shipping Agent</source>
+          <target>Åbne med standardspedition</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Freight Cue - Field Open Default Carrier - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Freight Cue - Field Open Default Agent - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2045176401 - Field 1589632657 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Open Shipments</source>
-          <target>Åbne forsendelser</target>
+          <source>Open Shipment Tracking</source>
+          <target>Åbne fragtbreve</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRF Freight Cue - Field Open Shipments - Property Caption</note>
         </trans-unit>
@@ -57,17 +33,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRF Freight Setup - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 839821037 - Field 869913466 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>API Base URL</source>
-          <target>API-basisadresse</target>
+        <trans-unit id="Table 839821037 - Field 2109459519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Shipping Agent Code</source>
+          <target>Standardspeditionskode</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Freight Setup - Field API Base URL - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 839821037 - Field 2540885473 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Default Carrier</source>
-          <target>Standardfragtfører</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Freight Setup - Field Default Carrier - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Freight Setup - Field Default Shipping Agent Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 839821037 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
@@ -75,149 +45,173 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRF Freight Setup - Field Primary Key - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 839821037 - Field 2752123408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Nos.</source>
-          <target>Forsendelsesnumre</target>
+        <trans-unit id="Table 839821037 - Field 1185956853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Tracking Nos.</source>
+          <target>Fragtbrevsnumre</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Freight Setup - Field Shipment Nos. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Freight Setup - Field Shipment Tracking Nos. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Header</source>
-          <target>Forsendelseshoved</target>
+        <trans-unit id="Table 2053999057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Tracking Header</source>
+          <target>Fragtbrevshoved</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 4093983712 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Carrier</source>
-          <target>Fragtfører</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field Carrier - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2053999057 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer No.</source>
           <target>Debitornr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field Customer No. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field Customer No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2053999057 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
           <target>Nr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field No. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2053999057 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Series</source>
           <target>Nummerserie</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field No. Series - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field No. Series - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2053999057 - Field 1115434830 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Tracking No.</source>
+          <target>Pakkesporingsnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field Package Tracking No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2053999057 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
           <target>Bogføringsdato</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field Posting Date - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field Posting Date - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 3201609449 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2053999057 - Field 3201609449 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales Shipment No.</source>
           <target>Salgsleverancenr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field Sales Shipment No. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field Sales Shipment No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 1187003046 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2053999057 - Field 1187003046 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Address</source>
           <target>Leveringsadresse</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field Ship-to Address - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field Ship-to Address - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 1981213637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2053999057 - Field 1981213637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to City</source>
           <target>Leveringsby</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field Ship-to City - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field Ship-to City - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 2743501653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2053999057 - Field 2743501653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Name</source>
           <target>Leveringsnavn</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field Ship-to Name - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field Ship-to Name - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 3172878019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2053999057 - Field 3172878019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Post Code</source>
           <target>Leveringspostnr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field Ship-to Post Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field Ship-to Post Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2053999057 - Field 4045368290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Agent Code</source>
+          <target>Speditionskode</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field Shipping Agent Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2053999057 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Status</source>
           <target>Status</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field Status - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field Status - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 582094086 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2053999057 - Field 582094086 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Weight (kg)</source>
           <target>Samlet vægt (kg)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field Total Weight - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Header - Field Total Weight - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1029501196 - Field 3830253100 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tracking No.</source>
-          <target>Sporingsnr.</target>
+        <trans-unit id="Table 3781429482 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Tracking Line</source>
+          <target>Fragtbrevslinje</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Header - Field Tracking No. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Line - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1508026163 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Line</source>
-          <target>Forsendelseslinje</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Line - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1508026163 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3781429482 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Beskrivelse</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Line - Field Description - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Line - Field Description - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1508026163 - Field 3581037481 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3781429482 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <target>Bilagsnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Line - Field Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3781429482 - Field 3581037481 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Height (cm)</source>
           <target>Højde (cm)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Line - Field Height - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Line - Field Height - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1508026163 - Field 1881551368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3781429482 - Field 1881551368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Length (cm)</source>
           <target>Længde (cm)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Line - Field Length - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Line - Field Length - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1508026163 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3781429482 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <target>Linjenr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Line - Field Line No. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Line - Field Line No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1508026163 - Field 64970433 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment No.</source>
-          <target>Forsendelsesnr.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Line - Field Shipment No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1508026163 - Field 2854289444 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3781429482 - Field 2854289444 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Weight (kg)</source>
           <target>Vægt (kg)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Line - Field Weight - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Line - Field Weight - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1508026163 - Field 2854289444 - Method 2126772001 - NamedType 431833306" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3781429482 - Field 2854289444 - Method 2126772001 - NamedType 431833306" size-unit="char" translate="yes" xml:space="preserve">
           <source>The weight of a package must be greater than zero.</source>
           <target>Vægten af en pakke skal være større end nul.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Line - Field Weight - Method OnValidate - NamedType WeightMustBePositiveErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Line - Field Weight - Method OnValidate - NamedType WeightMustBePositiveErr</note>
         </trans-unit>
-        <trans-unit id="Table 1508026163 - Field 613790498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3781429482 - Field 613790498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Width (cm)</source>
           <target>Bredde (cm)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Line - Field Width - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipment Tracking Line - Field Width - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 801003666 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Agent Rate</source>
+          <target>Speditionspris</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipping Agent Rate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 801003666 - Field 3635338911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Price</source>
+          <target>Pris</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipping Agent Rate - Field Price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 801003666 - Field 4045368290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Agent Code</source>
+          <target>Speditionskode</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipping Agent Rate - Field Shipping Agent Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 801003666 - Field 2927535303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Weight Limit (kg)</source>
+          <target>Vægtgrænse (kg)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRF Shipping Agent Rate - Field Weight Limit - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 3765769611 - Method 1964727257 - NamedType 3683717780" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set up Cronus Freight</source>
@@ -232,15 +226,15 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF Assisted Setup Subs - Method RegisterFreightSetupGuide - NamedType ShortTitleTxt</note>
         </trans-unit>
         <trans-unit id="Codeunit 3765769611 - Method 1964727257 - NamedType 1427565258" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Choose the default carrier and the number series for shipments.</source>
-          <target>Vælg standardfragtfører og nummerserie for forsendelser.</target>
+          <source>Choose the default shipping agent and the number series for shipment tracking.</source>
+          <target>Vælg standardspeditionen og nummerserien til fragtbreve.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF Assisted Setup Subs - Method RegisterFreightSetupGuide - NamedType DescriptionTxt</note>
         </trans-unit>
         <trans-unit id="Codeunit 1608722726 - Method 1786176640 - NamedType 859870226" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Carrier A has no rate for a shipment of %1 kg.</source>
-          <target>Fragtfører A har ingen pris for en forsendelse på %1 kg.</target>
-          <note from="Developer" annotates="general" priority="2">%1 = total weight</note>
+          <source>Shipping agent %1 has no rate for a shipment of %2 kg.</source>
+          <target>Speditionen %1 har ingen pris for en forsendelse på %2 kg.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shipping agent code, %2 = total weight</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF Carrier A - Method GetRate - NamedType NoRateErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1608722726 - Method 4266119374 - NamedType 229413448" size-unit="char" translate="yes" xml:space="preserve">
@@ -256,8 +250,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF Carrier A - Method GetStatus - NamedType InvalidResponseErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1608722726 - Method 4266119374 - NamedType 1471355834" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No API key for the carrier service is stored. Enter it on the Cronus Freight Setup page.</source>
-          <target>Der er ikke gemt nogen API-nøgle til fragtførerens tjeneste. Indtast den på siden Cronus Fragt-opsætning.</target>
+          <source>No API key for the carrier service is stored. Enter it on the Shipping Agents page.</source>
+          <target>Der er ikke gemt nogen API-nøgle til fragtfirmaets tjeneste. Indtast den på siden Speditioner.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF Carrier A - Method GetStatus - NamedType MissingApiKeyErr</note>
         </trans-unit>
@@ -274,160 +268,40 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF Carrier A - Method StatusFromText - NamedType UnknownStatusErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3990600171 - Method 1786176640 - NamedType 859870226" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Carrier B has no rate for a package of %1 kg.</source>
-          <target>Fragtfører B har ingen pris for en pakke på %1 kg.</target>
-          <note from="Developer" annotates="general" priority="2">%1 = package weight</note>
+          <source>Shipping agent %1 has no rate for a package of %2 kg.</source>
+          <target>Speditionen %1 har ingen pris for en pakke på %2 kg.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shipping agent code, %2 = package weight</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF Carrier B - Method GetRate - NamedType NoRateErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 488312390 - NamedType 4135973753" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cronus Fragt could not get the status of shipment %1 from the carrier. Try again later.</source>
-          <target>Cronus Fragt kunne ikke hente status for forsendelse %1 fra fragtføreren. Prøv igen senere.</target>
-          <note from="Developer" annotates="general" priority="2">%1 = shipment number</note>
+          <source>Cronus Fragt could not get the status of shipment tracking %1 from the carrier. Try again later.</source>
+          <target>Cronus Fragt kunne ikke hente status for fragtbrev %1 fra fragtføreren. Prøv igen senere.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shipment tracking number</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF Freight Mgt - NamedType UpdateFailedErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 488312390 - NamedType 4030772036" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The shipment status was not updated</source>
-          <target>Forsendelsens status blev ikke opdateret</target>
+          <source>The tracking status was not updated</source>
+          <target>Fragtbrevets status blev ikke opdateret</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF Freight Mgt - NamedType UpdateFailedTitleLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 488312390 - Method 1200287555 - NamedType 1425329136" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment %1 cannot be booked because its status is %2.</source>
-          <target>Forsendelse %1 kan ikke bookes, fordi dens status er %2.</target>
-          <note from="Developer" annotates="general" priority="2">%1 = shipment number, %2 = status</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF Freight Mgt - Method BookShipment - NamedType NotOpenErr</note>
+        <trans-unit id="Codeunit 488312390 - Method 1606545787 - NamedType 1425329136" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment tracking %1 cannot be booked because its status is %2.</source>
+          <target>Fragtbrev %1 kan ikke bookes, fordi dets status er %2.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shipment tracking number, %2 = status</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF Freight Mgt - Method Book - NamedType NotOpenErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 488312390 - Method 420567814 - NamedType 2066084993" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment tracking %1 has no shipping agent. Choose a shipping agent on it first.</source>
+          <target>Fragtbrev %1 har ingen spedition. Vælg først en spedition på det.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shipment tracking number</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF Freight Mgt - Method GetCarrier - NamedType NoShippingAgentErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3311503910 - NamedType 2935201772" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment %1 has no carrier. Choose a carrier on the shipment first.</source>
-          <target>Forsendelse %1 har ingen fragtfører. Vælg først en fragtfører på forsendelsen.</target>
-          <note from="Developer" annotates="general" priority="2">%1 = shipment number</note>
+          <source>Shipping agent %1 on shipment tracking %2 has no carrier. Choose a carrier on the shipping agent first.</source>
+          <target>Speditionen %1 på fragtbrev %2 har ingen fragtfører. Vælg først en fragtfører på speditionen.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shipping agent code, %2 = shipment tracking number</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRF No Carrier - NamedType NoCarrierErr</note>
-        </trans-unit>
-        <trans-unit id="Page 666943782 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Carrier Rates</source>
-          <target>Fragtpriser</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Carrier Rates - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 666943782 - Control 4093983712 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the carrier that the rate belongs to.</source>
-          <target>Angiver den fragtfører, som prisen gælder for.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Carrier Rates - Control Carrier - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 666943782 - Control 3635338911 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the price of a package up to the weight limit.</source>
-          <target>Angiver prisen for en pakke op til vægtgrænsen.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Carrier Rates - Control Price - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 666943782 - Control 2927535303 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the highest weight in kilograms that the price covers.</source>
-          <target>Angiver den højeste vægt i kilogram, som prisen dækker.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Carrier Rates - Control Weight Limit - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 666943782 - Action 1657029184 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Imports carrier rates from an XML file.</source>
-          <target>Importerer fragtpriser fra en XML-fil.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Carrier Rates - Action ImportRates - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 666943782 - Action 1657029184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import Rates</source>
-          <target>Importér priser</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Carrier Rates - Action ImportRates - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2905219465 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Freight</source>
-          <target>Fragt</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Activities - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2905219465 - Control 3579008013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipments</source>
-          <target>Forsendelser</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Activities - Control Shipments - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2905219465 - Control 3835530925 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the number of open shipments that go with the default carrier of the freight setup.</source>
-          <target>Angiver antallet af åbne forsendelser med den standardfragtfører, der er valgt i fragtopsætningen.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Activities - Control Open Default Carrier - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2905219465 - Control 1589632657 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the number of shipments that are still open.</source>
-          <target>Angiver antallet af forsendelser, der stadig er åbne.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Activities - Control Open Shipments - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2905219465 - Action 422380566 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Opens the list of all shipments.</source>
-          <target>Åbner listen over alle forsendelser.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Activities - Action AllShipments - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2905219465 - Action 422380566 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>All Shipments</source>
-          <target>Alle forsendelser</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Activities - Action AllShipments - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 839821037 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cronus Freight Setup</source>
-          <target>Cronus Fragt-opsætning</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 839821037 - Property 3863440606" size-unit="char" translate="yes" xml:space="preserve">
-          <source>carrier, shipping, freight, shipment</source>
-          <target>fragtfører, fragtfirma, fragt, forsendelse, levering, transport</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Property AdditionalSearchTerms</note>
-        </trans-unit>
-        <trans-unit id="Page 839821037 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General</source>
-          <target>Generelt</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Control General - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 839821037 - Control 869913466 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the base address of the carrier service that the extension calls.</source>
-          <target>Angiver basisadressen på den fragtførertjeneste, som udvidelsen kalder.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Control API Base URL - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 839821037 - Control 3332662617 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the key that the carrier service gave Cronus. The key is stored in isolated storage, not in the setup table. Clear the field to delete the key.</source>
-          <target>Angiver den nøgle, som fragtførerens tjeneste har givet Cronus. Nøglen gemmes i isoleret lager og ikke i opsætningstabellen. Ryd feltet for at slette nøglen.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Control ApiKey - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 839821037 - Control 3332662617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>API Key</source>
-          <target>API-nøgle</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Control ApiKey - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 839821037 - Control 2540885473 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the carrier that new shipments get when the customer has no default carrier of its own.</source>
-          <target>Angiver den fragtfører, som nye forsendelser får, når debitoren ikke har en egen standardfragtfører.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Control Default Carrier - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 839821037 - Control 1532816877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Numbering</source>
-          <target>Nummerering</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Control Numbering - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 839821037 - Control 2752123408 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the number series that is used to number new shipments.</source>
-          <target>Angiver den nummerserie, der bruges til at nummerere nye forsendelser.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Control Shipment Nos. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3213313075 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set up Cronus Freight</source>
@@ -436,22 +310,22 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3213313075 - Control 4164498802 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Default carrier</source>
-          <target>Standardfragtfører</target>
+          <source>Default shipping agent</source>
+          <target>Standardspedition</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control StepCarrier - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3213313075 - Control 727926705 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Select the carrier that you want to use on shipments, when there is no other carriers selected.</source>
-          <target>Vælg den fragtfører, du vil bruge på forsendelser, når der ikke er valgt en anden fragtfører.</target>
+          <source>Select the shipping agent that you want to use on shipment tracking, when the customer has none of its own.</source>
+          <target>Vælg den spedition, du vil bruge på fragtbreve, når debitoren ikke har en egen.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Group22 - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 3213313075 - Control 2540885473 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the carrier that new shipments get by default.</source>
-          <target>Angiver den fragtfører, som nye forsendelser får som standard.</target>
+        <trans-unit id="Page 3213313075 - Control 2109459519 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the shipping agent that new shipment tracking records get by default.</source>
+          <target>Angiver den spedition, som nye fragtbreve får som standard.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Default Carrier - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Default Shipping Agent Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3213313075 - Control 2262293549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Welcome</source>
@@ -460,28 +334,28 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Welcome to CRF Cronus Freight - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3213313075 - Control 1612614122 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This guide sets up the default carrier and the numbering of shipments.</source>
-          <target>Denne guide opsætter standardfragtføreren og nummereringen af forsendelser.</target>
+          <source>This guide sets up the default shipping agent and the numbering of shipment tracking.</source>
+          <target>Denne guide opsætter standardspeditionen og nummereringen af fragtbreve.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Group18 - Property InstructionalText</note>
         </trans-unit>
         <trans-unit id="Page 3213313075 - Control 552822507 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Select the number series you want to use, when you create new shipments</source>
-          <target>Vælg den nummerserie, du vil bruge, når du opretter nye forsendelser</target>
+          <source>Select the number series you want to use, when you create new shipment tracking</source>
+          <target>Vælg den nummerserie, du vil bruge, når du opretter nye fragtbreve</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Group35 - Property InstructionalText</note>
         </trans-unit>
         <trans-unit id="Page 3213313075 - Control 552822507 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment numbers</source>
-          <target>Forsendelsesnumre</target>
+          <source>Shipment tracking numbers</source>
+          <target>Fragtbrevsnumre</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Group35 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3213313075 - Control 2752123408 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the number series that is used to number new shipments.</source>
-          <target>Angiver den nummerserie, der bruges til at nummerere nye forsendelser.</target>
+        <trans-unit id="Page 3213313075 - Control 1185956853 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number series that is used to number new shipment tracking records.</source>
+          <target>Angiver den nummerserie, der bruges til at nummerere nye fragtbreve.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Shipment Nos. - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Control Shipment Tracking Nos. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3213313075 - Control 1546979963 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>That's it!</source>
@@ -513,503 +387,617 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRF Cronus Freight Wizard - Action ActionNext - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3862554337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment API</source>
-          <target>Forsendelses-API</target>
+        <trans-unit id="Page 2905219465 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Freight</source>
+          <target>Fragt</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Activities - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3862554337 - Property 3446740159" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment</source>
-          <target>Forsendelse</target>
+        <trans-unit id="Page 2905219465 - Control 1884432609 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Tracking</source>
+          <target>Fragtbrev</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Property EntityCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Activities - Control Tracking - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3862554337 - Property 631549417" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipments</source>
-          <target>Forsendelser</target>
+        <trans-unit id="Page 2905219465 - Control 2834168858 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of open shipment tracking records that go with the default shipping agent of the freight setup.</source>
+          <target>Angiver antallet af åbne fragtbreve, der hører til fragtopsætningens standardspedition.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Property EntitySetCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Activities - Control Open Default Agent - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 2382889984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Carrier</source>
-          <target>Fragtfører</target>
+        <trans-unit id="Page 2905219465 - Control 1589632657 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of shipment tracking records that are still open.</source>
+          <target>Angiver antallet af fragtbreve, der stadig er åbne.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control carrier - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Activities - Control Open Shipments - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 3226897001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer No.</source>
-          <target>Debitornr.</target>
+        <trans-unit id="Page 2905219465 - Action 587584834 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Opens the list of all shipment tracking records.</source>
+          <target>Åbner listen over alle fragtbreve.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control customerNumber - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Activities - Action AllTracking - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 2686962215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Id</source>
-          <target>Id</target>
+        <trans-unit id="Page 2905219465 - Action 587584834 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All Shipment Tracking</source>
+          <target>Alle fragtbreve</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control id - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Activities - Action AllTracking - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 2245436958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Last Modified Date Time</source>
-          <target>Sidst ændret (dato og tid)</target>
+        <trans-unit id="Page 839821037 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cronus Freight Setup</source>
+          <target>Cronus Fragt-opsætning</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control lastModifiedDateTime - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 2757394829 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No.</source>
-          <target>Nr.</target>
+        <trans-unit id="Page 839821037 - Property 3863440606" size-unit="char" translate="yes" xml:space="preserve">
+          <source>carrier, shipping agent, freight, shipment tracking</source>
+          <target>fragtfører, spedition, fragt, fragtbrev</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control number - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Property AdditionalSearchTerms</note>
         </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 1260828904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posting Date</source>
-          <target>Bogføringsdato</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control postingDate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 4087156159 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Lines</source>
-          <target>Forsendelseslinjer</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control shipmentLines - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 3424017913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Address</source>
-          <target>Leveringsadresse</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control shipToAddress - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 1336190306 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to City</source>
-          <target>Leveringsby</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control shipToCity - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 1889388274 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Name</source>
-          <target>Leveringsnavn</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control shipToName - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 2895959832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Post Code</source>
-          <target>Leveringspostnr.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control shipToPostCode - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 998393528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Status</source>
-          <target>Status</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control status - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 3191756974 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Total Weight</source>
-          <target>Samlet vægt</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control totalWeight - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3862554337 - Control 191259496 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tracking No.</source>
-          <target>Sporingsnr.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment API - Control trackingNumber - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1631160149 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment</source>
-          <target>Forsendelse</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 839821037 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General</source>
           <target>Generelt</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control General - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Control General - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 4093983712 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the carrier that transports the shipment.</source>
-          <target>Angiver den fragtfører, der transporterer forsendelsen.</target>
+        <trans-unit id="Page 839821037 - Control 2109459519 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the shipping agent that new shipment tracking records get when the customer has no shipping agent of its own.</source>
+          <target>Angiver den spedition, som nye fragtbreve får, når debitoren ikke har en egen spedition.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Carrier - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Control Default Shipping Agent Code - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the customer that the shipment goes to. The ship-to address is copied from the customer.</source>
-          <target>Angiver den debitor, som forsendelsen skal til. Leveringsadressen kopieres fra debitoren.</target>
+        <trans-unit id="Page 839821037 - Control 1532816877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Numbering</source>
+          <target>Nummerering</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Customer No. - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Control Numbering - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the number of the shipment. It is filled in from the number series when you create the shipment.</source>
-          <target>Angiver forsendelsens nummer. Det udfyldes fra nummerserien, når du opretter forsendelsen.</target>
+        <trans-unit id="Page 839821037 - Control 1185956853 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number series that is used to number new shipment tracking records.</source>
+          <target>Angiver den nummerserie, der bruges til at nummerere nye fragtbreve.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control No. - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Control Shipment Tracking Nos. - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the date of the shipment.</source>
-          <target>Angiver forsendelsens dato.</target>
+        <trans-unit id="Page 839821037 - Action 1757300188 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Opens the shipping agents, where you choose the carrier, the API address and the API key of each one.</source>
+          <target>Åbner speditionerne, hvor du vælger fragtfører, API-adresse og API-nøgle for hver enkelt.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Posting Date - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Action ShippingAgents - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 3201609449 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the posted sales shipment that this shipment was created from. It is blank for shipments created by hand.</source>
-          <target>Angiver den bogførte salgsleverance, som forsendelsen blev oprettet fra. Feltet er tomt for forsendelser, der er oprettet manuelt.</target>
+        <trans-unit id="Page 839821037 - Action 1757300188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Agents</source>
+          <target>Speditioner</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Sales Shipment No. - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Freight Setup - Action ShippingAgents - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 513339096 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies where the shipment is: open, booked, in transit or delivered.</source>
-          <target>Angiver, hvor forsendelsen er: åben, booket, undervejs eller leveret.</target>
+        <trans-unit id="Page 4285978356 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Tracking API</source>
+          <target>Fragtbrev-API</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Status - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 582094086 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the total weight in kilograms of all packages of the shipment.</source>
-          <target>Angiver den samlede vægt i kilogram af alle forsendelsens pakker.</target>
+        <trans-unit id="Page 4285978356 - Property 3446740159" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Tracking</source>
+          <target>Fragtbrev</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Total Weight - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Property EntityCaption</note>
         </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 3830253100 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the tracking number that the carrier gave the shipment.</source>
-          <target>Angiver det sporingsnummer, som fragtføreren gav forsendelsen.</target>
+        <trans-unit id="Page 4285978356 - Property 631549417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Trackings</source>
+          <target>Fragtbreve</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Tracking No. - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Property EntitySetCaption</note>
         </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 3471137671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Packages</source>
-          <target>Pakker</target>
+        <trans-unit id="Page 4285978356 - Control 3226897001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <target>Debitornr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Lines - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control customerNumber - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 3097346278 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to</source>
-          <target>Levering til</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Shipping - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 1187003046 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the delivery address.</source>
-          <target>Angiver leveringsadressen.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Ship-to Address - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 1981213637 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the city of the delivery address.</source>
-          <target>Angiver byen i leveringsadressen.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Ship-to City - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 2743501653 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the name of the recipient.</source>
-          <target>Angiver modtagerens navn.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Ship-to Name - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1631160149 - Control 3172878019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the post code of the delivery address.</source>
-          <target>Angiver postnummeret i leveringsadressen.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Control Ship-to Post Code - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1631160149 - Action 2421935703 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Asks the carrier for the latest status of the shipment and saves it.</source>
-          <target>Spørger fragtføreren om forsendelsens seneste status og gemmer den.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Action UpdateStatus - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1631160149 - Action 2421935703 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Update Status</source>
-          <target>Opdatér status</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Card - Action UpdateStatus - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3527341339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Line API</source>
-          <target>Forsendelseslinje-API</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Line API - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3527341339 - Property 3446740159" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Line</source>
-          <target>Forsendelseslinje</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Line API - Property EntityCaption</note>
-        </trans-unit>
-        <trans-unit id="Page 3527341339 - Property 631549417" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Lines</source>
-          <target>Forsendelseslinjer</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Line API - Property EntitySetCaption</note>
-        </trans-unit>
-        <trans-unit id="Page 3527341339 - Control 4232699882 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <target>Beskrivelse</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Line API - Control description - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3527341339 - Control 4107668617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Height</source>
-          <target>Højde</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Line API - Control height - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3527341339 - Control 2686962215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4285978356 - Control 2686962215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Id</source>
           <target>Id</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Line API - Control id - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control id - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3527341339 - Control 2245436958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4285978356 - Control 2245436958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Last Modified Date Time</source>
           <target>Sidst ændret (dato og tid)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Line API - Control lastModifiedDateTime - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control lastModifiedDateTime - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3527341339 - Control 1624275176 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Length</source>
-          <target>Længde</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Line API - Control length - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3527341339 - Control 928535615 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line No.</source>
-          <target>Linjenr.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Line API - Control lineNumber - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3527341339 - Control 3714227541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment No.</source>
-          <target>Forsendelsesnr.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Line API - Control shipmentNumber - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3527341339 - Control 1321787652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Weight</source>
-          <target>Vægt</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Line API - Control weight - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3527341339 - Control 1940502594 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Width</source>
-          <target>Bredde</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Line API - Control width - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1636851071 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipments</source>
-          <target>Forsendelser</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment List - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1636851071 - Control 4093983712 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the carrier that transports the shipment.</source>
-          <target>Angiver den fragtfører, der transporterer forsendelsen.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment List - Control Carrier - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1636851071 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the customer that the shipment goes to.</source>
-          <target>Angiver den debitor, som forsendelsen skal til.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment List - Control Customer No. - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1636851071 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the number of the shipment.</source>
-          <target>Angiver forsendelsens nummer.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment List - Control No. - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1636851071 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the date of the shipment.</source>
-          <target>Angiver forsendelsens dato.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment List - Control Posting Date - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1636851071 - Control 2743501653 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the name of the recipient.</source>
-          <target>Angiver modtagerens navn.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment List - Control Ship-to Name - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1636851071 - Control 513339096 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies where the shipment is: open, booked, in transit or delivered.</source>
-          <target>Angiver, hvor forsendelsen er: åben, booket, undervejs eller leveret.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment List - Control Status - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1636851071 - Control 582094086 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the total weight in kilograms of all packages of the shipment.</source>
-          <target>Angiver den samlede vægt i kilogram af alle forsendelsens pakker.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment List - Control Total Weight - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1636851071 - Control 3830253100 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the tracking number that the carrier gave the shipment.</source>
-          <target>Angiver det sporingsnummer, som fragtføreren gav forsendelsen.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment List - Control Tracking No. - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2365289501 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Status API</source>
-          <target>Forsendelsesstatus-API</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Status API - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2365289501 - Property 3446740159" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Status</source>
-          <target>Forsendelsesstatus</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Status API - Property EntityCaption</note>
-        </trans-unit>
-        <trans-unit id="Page 2365289501 - Property 631549417" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Statuses</source>
-          <target>Forsendelsesstatusser</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Status API - Property EntitySetCaption</note>
-        </trans-unit>
-        <trans-unit id="Page 2365289501 - Control 2382889984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Carrier</source>
-          <target>Fragtfører</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Status API - Control carrier - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2365289501 - Control 2686962215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Id</source>
-          <target>Id</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Status API - Control id - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2365289501 - Control 2245436958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Last Modified Date Time</source>
-          <target>Sidst ændret (dato og tid)</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Status API - Control lastModifiedDateTime - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2365289501 - Control 2757394829 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4285978356 - Control 2757394829 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
           <target>Nr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Status API - Control number - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control number - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2365289501 - Control 998393528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4285978356 - Control 1260828904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target>Bogføringsdato</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control postingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4285978356 - Control 203344286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Tracking Lines</source>
+          <target>Fragtbrevslinjer</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control shipmentTrackingLines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4285978356 - Control 476472346 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Agent Code</source>
+          <target>Speditionskode</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control shippingAgentCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4285978356 - Control 3424017913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Address</source>
+          <target>Leveringsadresse</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control shipToAddress - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4285978356 - Control 1336190306 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to City</source>
+          <target>Leveringsby</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control shipToCity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4285978356 - Control 1889388274 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Name</source>
+          <target>Leveringsnavn</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control shipToName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4285978356 - Control 2895959832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Post Code</source>
+          <target>Leveringspostnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control shipToPostCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4285978356 - Control 998393528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Status</source>
           <target>Status</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Status API - Control status - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control status - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2365289501 - Control 191259496 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tracking No.</source>
-          <target>Sporingsnr.</target>
+        <trans-unit id="Page 4285978356 - Control 3191756974 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Weight</source>
+          <target>Samlet vægt</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Status API - Control trackingNumber - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control totalWeight - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1932507743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4285978356 - Control 191259496 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Tracking No.</source>
+          <target>Pakkesporingsnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking API - Control trackingNumber - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Tracking</source>
+          <target>Fragtbrev</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target>Generelt</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the customer that the shipment goes to. The ship-to address is copied from the customer.</source>
+          <target>Angiver den debitor, som forsendelsen skal til. Leveringsadressen kopieres fra debitoren.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Customer No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the shipment. It is filled in from the number series when you create the shipment.</source>
+          <target>Angiver forsendelsens nummer. Det udfyldes fra nummerserien, når du opretter forsendelsen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 1115434830 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the tracking number that the carrier gave the shipment.</source>
+          <target>Angiver det sporingsnummer, som fragtføreren gav forsendelsen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Package Tracking No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date of the shipment.</source>
+          <target>Angiver forsendelsens dato.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Posting Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 3201609449 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the posted sales shipment that this shipment was created from. It is blank for shipments created by hand.</source>
+          <target>Angiver den bogførte salgsleverance, som forsendelsen blev oprettet fra. Feltet er tomt for forsendelser, der er oprettet manuelt.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Sales Shipment No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 4045368290 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the shipping agent that transports the shipment.</source>
+          <target>Angiver den spedition, der transporterer forsendelsen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Shipping Agent Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 513339096 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies where the shipment is: open, booked, in transit or delivered.</source>
+          <target>Angiver, hvor forsendelsen er: åben, booket, undervejs eller leveret.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Status - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 582094086 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the total weight in kilograms of all packages of the shipment.</source>
+          <target>Angiver den samlede vægt i kilogram af alle forsendelsens pakker.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Total Weight - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 3471137671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packages</source>
           <target>Pakker</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Subform - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Lines - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1932507743 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4105933048 - Control 3097346278 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to</source>
+          <target>Levering til</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Shipping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 1187003046 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the delivery address.</source>
+          <target>Angiver leveringsadressen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Ship-to Address - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 1981213637 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the city of the delivery address.</source>
+          <target>Angiver byen i leveringsadressen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Ship-to City - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 2743501653 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the recipient.</source>
+          <target>Angiver modtagerens navn.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Ship-to Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Control 3172878019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the post code of the delivery address.</source>
+          <target>Angiver postnummeret i leveringsadressen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Control Ship-to Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Action 2421935703 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Asks the carrier for the latest status of the shipment and saves it.</source>
+          <target>Spørger fragtføreren om forsendelsens seneste status og gemmer den.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Action UpdateStatus - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4105933048 - Action 2421935703 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update Status</source>
+          <target>Opdatér status</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Card - Action UpdateStatus - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142104338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Tracking Line API</source>
+          <target>Fragtbrevslinje-API</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Line API - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142104338 - Property 3446740159" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Tracking Line</source>
+          <target>Fragtbrevslinje</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Line API - Property EntityCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142104338 - Property 631549417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Tracking Lines</source>
+          <target>Fragtbrevslinjer</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Line API - Property EntitySetCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142104338 - Control 4232699882 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Beskrivelse</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Line API - Control description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142104338 - Control 1150262424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <target>Bilagsnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Line API - Control documentNumber - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142104338 - Control 4107668617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Height</source>
+          <target>Højde</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Line API - Control height - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142104338 - Control 2686962215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Id</source>
+          <target>Id</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Line API - Control id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142104338 - Control 2245436958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Modified Date Time</source>
+          <target>Sidst ændret (dato og tid)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Line API - Control lastModifiedDateTime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142104338 - Control 1624275176 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <target>Længde</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Line API - Control length - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142104338 - Control 928535615 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <target>Linjenr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Line API - Control lineNumber - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142104338 - Control 1321787652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Weight</source>
+          <target>Vægt</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Line API - Control weight - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142104338 - Control 1940502594 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Width</source>
+          <target>Bredde</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Line API - Control width - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2656062814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Tracking</source>
+          <target>Fragtbrev</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2656062814 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the customer that the shipment goes to.</source>
+          <target>Angiver den debitor, som forsendelsen skal til.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking List - Control Customer No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2656062814 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the shipment.</source>
+          <target>Angiver forsendelsens nummer.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking List - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2656062814 - Control 1115434830 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the tracking number that the carrier gave the shipment.</source>
+          <target>Angiver det sporingsnummer, som fragtføreren gav forsendelsen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking List - Control Package Tracking No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2656062814 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date of the shipment.</source>
+          <target>Angiver forsendelsens dato.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking List - Control Posting Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2656062814 - Control 2743501653 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the recipient.</source>
+          <target>Angiver modtagerens navn.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking List - Control Ship-to Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2656062814 - Control 4045368290 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the shipping agent that transports the shipment.</source>
+          <target>Angiver den spedition, der transporterer forsendelsen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking List - Control Shipping Agent Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2656062814 - Control 513339096 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies where the shipment is: open, booked, in transit or delivered.</source>
+          <target>Angiver, hvor forsendelsen er: åben, booket, undervejs eller leveret.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking List - Control Status - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2656062814 - Control 582094086 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the total weight in kilograms of all packages of the shipment.</source>
+          <target>Angiver den samlede vægt i kilogram af alle forsendelsens pakker.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking List - Control Total Weight - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3281407766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packages</source>
+          <target>Pakker</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Subform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3281407766 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies what the package contains.</source>
           <target>Angiver, hvad pakken indeholder.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Subform - Control Description - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Subform - Control Description - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1932507743 - Control 3581037481 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3281407766 - Control 3581037481 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the height of the package in centimetres.</source>
           <target>Angiver pakkens højde i centimeter.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Subform - Control Height - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Subform - Control Height - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1932507743 - Control 1881551368 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3281407766 - Control 1881551368 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the length of the package in centimetres.</source>
           <target>Angiver pakkens længde i centimeter.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Subform - Control Length - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Subform - Control Length - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1932507743 - Control 2854289444 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3281407766 - Control 2854289444 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the weight of the package in kilograms. It must be greater than zero.</source>
           <target>Angiver pakkens vægt i kilogram. Den skal være større end nul.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Subform - Control Weight - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Subform - Control Weight - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1932507743 - Control 613790498 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3281407766 - Control 613790498 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the width of the package in centimetres.</source>
           <target>Angiver pakkens bredde i centimeter.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Subform - Control Width - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipment Tracking Subform - Control Width - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Report 337309644 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Warehouse Shipment List</source>
-          <target>Lagerets forsendelsesliste</target>
+        <trans-unit id="Page 1026372575 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Agent Rates</source>
+          <target>Speditionspriser</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Shipment List - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipping Agent Rates - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 337309644 - ReportLabel 1877187315" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 1026372575 - Control 3635338911 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the price of a package up to the weight limit.</source>
+          <target>Angiver prisen for en pakke op til vægtgrænsen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipping Agent Rates - Control Price - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1026372575 - Control 4045368290 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the shipping agent that the rate belongs to.</source>
+          <target>Angiver den spedition, som prisen hører til.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipping Agent Rates - Control Shipping Agent Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1026372575 - Control 2927535303 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the highest weight in kilograms that the price covers.</source>
+          <target>Angiver den højeste vægt i kilogram, som prisen dækker.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipping Agent Rates - Control Weight Limit - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1026372575 - Action 1657029184 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imports shipping agent rates from an XML file.</source>
+          <target>Importerer speditionspriser fra en XML-fil.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipping Agent Rates - Action ImportRates - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1026372575 - Action 1657029184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Rates</source>
+          <target>Importér priser</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Shipping Agent Rates - Action ImportRates - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3488857112 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking Status API</source>
+          <target>Fragtbrevsstatus-API</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Tracking Status API - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3488857112 - Property 3446740159" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking Status</source>
+          <target>Fragtbrevsstatus</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Tracking Status API - Property EntityCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 3488857112 - Property 631549417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking Statuses</source>
+          <target>Fragtbrevsstatusser</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Tracking Status API - Property EntitySetCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 3488857112 - Control 2686962215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Id</source>
+          <target>Id</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Tracking Status API - Control id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3488857112 - Control 2245436958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Modified Date Time</source>
+          <target>Sidst ændret (dato og tid)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Tracking Status API - Control lastModifiedDateTime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3488857112 - Control 2757394829 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target>Nr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Tracking Status API - Control number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3488857112 - Control 476472346 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Agent Code</source>
+          <target>Speditionskode</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Tracking Status API - Control shippingAgentCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3488857112 - Control 998393528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <target>Status</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Tracking Status API - Control status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3488857112 - Control 191259496 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Tracking No.</source>
+          <target>Pakkesporingsnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRF Tracking Status API - Control trackingNumber - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2211322437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warehouse Freight List</source>
+          <target>Lagerets fragtliste</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Freight List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2211322437 - ReportLabel 1877187315" size-unit="char" translate="yes" xml:space="preserve">
           <source>Page</source>
           <target>Side</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Shipment List - ReportLabel PageLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Freight List - ReportLabel PageLbl</note>
         </trans-unit>
-        <trans-unit id="Report 337309644 - ReportLabel 3040577680" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Warehouse Shipment List</source>
-          <target>Lagerets forsendelsesliste</target>
+        <trans-unit id="Report 2211322437 - ReportLabel 3040577680" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warehouse Freight List</source>
+          <target>Lagerets fragtliste</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Shipment List - ReportLabel ReportTitleLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Freight List - ReportLabel ReportTitleLbl</note>
         </trans-unit>
-        <trans-unit id="Report 337309644 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2211322437 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
           <target>Indstillinger</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Shipment List - Control Options - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Freight List - Control Options - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 337309644 - Control 413570340 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies if the packages of each shipment are printed below it.</source>
-          <target>Angiver, om pakkerne for hver forsendelse udskrives under den.</target>
+        <trans-unit id="Report 2211322437 - Control 413570340 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if the packages of each shipment tracking record are printed below it.</source>
+          <target>Angiver, om pakkerne for hvert fragtbrev udskrives under det.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Shipment List - Control ShowPackagesField - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Freight List - Control ShowPackagesField - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Report 337309644 - Control 413570340 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2211322437 - Control 413570340 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show Packages</source>
           <target>Vis pakker</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Shipment List - Control ShowPackagesField - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Freight List - Control ShowPackagesField - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 337309644 - ReportLayout 4173797771 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipments with their packages, for the warehouse to print.</source>
-          <target>Forsendelser med deres pakker, som lageret kan udskrive.</target>
+        <trans-unit id="Report 2211322437 - ReportLayout 4173797771 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment tracking records with their packages, for the warehouse to print.</source>
+          <target>Fragtbreve med deres pakker, som lageret kan udskrive.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Shipment List - ReportLayout WarehouseListWord - Property Summary</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Freight List - ReportLayout WarehouseListWord - Property Summary</note>
         </trans-unit>
-        <trans-unit id="Report 337309644 - ReportLayout 4173797771 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Warehouse shipment list (print)</source>
-          <target>Lagerets forsendelsesliste (udskrift)</target>
+        <trans-unit id="Report 2211322437 - ReportLayout 4173797771 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warehouse freight list (print)</source>
+          <target>Lagerets fragtliste (udskrift)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Shipment List - ReportLayout WarehouseListWord - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CRF Warehouse Freight List - ReportLayout WarehouseListWord - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Query 2610249125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipments by Carrier</source>
-          <target>Forsendelser pr. fragtfører</target>
+        <trans-unit id="Query 1035755236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking by Shipping Agent</source>
+          <target>Fragtbreve pr. spedition</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Query CRF Shipments by Carrier - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query CRF Tracking by Shipping Agent - Property Caption</note>
         </trans-unit>
-        <trans-unit id="XmlPort 2984413145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import Carrier Rates</source>
-          <target>Importér fragtpriser</target>
+        <trans-unit id="XmlPort 1071583374 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Shipping Agent Rates</source>
+          <target>Importér speditionspriser</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort CRF Import Carrier Rates - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort CRF Import Agent Rates - Property Caption</note>
         </trans-unit>
-        <trans-unit id="XmlPort 2984413145 - Method 3072370551 - NamedType 4224178107" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The rate file is for carrier "%1", which is not a known carrier.</source>
-          <target>Prisfilen gælder for fragtføreren "%1", som ikke er en kendt fragtfører.</target>
-          <note from="Developer" annotates="general" priority="2">%1 = the carrier name from the file</note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort CRF Import Carrier Rates - Method CarrierFromName - NamedType UnknownCarrierErr</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 101760761 - Control 2611086684 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
-          <source>Specifies the carrier that new shipments for this customer get by default. If it is blank, the default carrier in the freight setup is used.</source>
-          <target>Angiver den fragtfører, som nye forsendelser til denne debitor får som standard. Hvis feltet er tomt, bruges standardfragtføreren fra fragtopsætningen.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CRF Customer Card - Control CRF Default Carrier - Property ToolTip</note>
+        <trans-unit id="XmlPort 1071583374 - Method 1946601442 - NamedType 2140174432" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The rate file is for shipping agent "%1", which does not exist.</source>
+          <target>Prisfilen gælder for speditionen "%1", som ikke findes.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = the shipping agent code from the file</note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort CRF Import Agent Rates - Method ShippingAgentCodeFromFile - NamedType UnknownAgentErr</note>
         </trans-unit>
         <trans-unit id="PageExtension 3094603307 - Action 3553749927 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2901867346">
           <source>Shows a greeting from the Cronus Fragt extension.</source>
@@ -1029,11 +1017,41 @@
           <note from="Developer" annotates="general" priority="2">%1 = the user ID</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CRF Customer List - Action CRFHello - Method OnAction - NamedType GreetingTxt</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4028208469 - Field 2611086684 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
-          <source>Default Carrier</source>
-          <target>Standardfragtfører</target>
+        <trans-unit id="PageExtension 3942475737 - Control 3841174107 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4073709604">
+          <source>Specifies the base address of the carrier service that Cronus Fragt calls for this shipping agent.</source>
+          <target>Angiver basisadressen på den fragtfører-tjeneste, som Cronus Fragt kalder for denne spedition.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CRF Customer - Field CRF Default Carrier - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CRF Shipping Agents - Control CRF API Base URL - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3942475737 - Control 2968229181 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4073709604">
+          <source>Specifies which carrier implementation Cronus Fragt uses for this shipping agent. Leave it blank if the shipping agent has no web service.</source>
+          <target>Angiver, hvilken fragtfører-implementering Cronus Fragt bruger til denne spedition. Lad feltet være tomt, hvis speditionen ikke har nogen webtjeneste.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CRF Shipping Agents - Control CRF Carrier - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3942475737 - Control 737217980 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4073709604">
+          <source>Specifies the key that the carrier service gave Cronus. The key is stored in isolated storage, not in the shipping agent table. Clear the field to delete the key.</source>
+          <target>Angiver den nøgle, som fragtfører-tjenesten gav Cronus. Nøglen gemmes i isoleret lager og ikke i speditionstabellen. Ryd feltet for at slette nøglen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CRF Shipping Agents - Control CRFApiKey - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3942475737 - Control 737217980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4073709604">
+          <source>API Key</source>
+          <target>API-nøgle</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CRF Shipping Agents - Control CRFApiKey - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2453547448 - Field 3841174107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2271291437">
+          <source>API Base URL</source>
+          <target>API-basisadresse</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CRF Shipping Agent - Field CRF API Base URL - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2453547448 - Field 2968229181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2271291437">
+          <source>Carrier</source>
+          <target>Fragtfører</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CRF Shipping Agent - Field CRF Carrier - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2968229181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Carrier</source>
@@ -1059,35 +1077,35 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Carrier - EnumValue Carrier B - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1147000821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Status</source>
-          <target>Forsendelsesstatus</target>
+        <trans-unit id="Enum 1190029728 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking Status</source>
+          <target>Fragtbrevsstatus</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Shipment Status - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Tracking Status - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1147000821 - EnumValue 775734828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 1190029728 - EnumValue 775734828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Booked</source>
           <target>Booket</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Shipment Status - EnumValue Booked - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Tracking Status - EnumValue Booked - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1147000821 - EnumValue 545346504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 1190029728 - EnumValue 545346504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Delivered</source>
           <target>Leveret</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Shipment Status - EnumValue Delivered - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Tracking Status - EnumValue Delivered - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1147000821 - EnumValue 341853908 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 1190029728 - EnumValue 341853908 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>In Transit</source>
           <target>Undervejs</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Shipment Status - EnumValue In Transit - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Tracking Status - EnumValue In Transit - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1147000821 - EnumValue 4259830144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 1190029728 - EnumValue 4259830144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Open</source>
           <target>Åben</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Shipment Status - EnumValue Open - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRF Tracking Status - EnumValue Open - Property Caption</note>
         </trans-unit>
         <trans-unit id="EnumExtension 1312393341 - EnumValue 353575072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Enum 1178123344">
           <source>Cronus Freight</source>

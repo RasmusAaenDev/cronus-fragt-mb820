@@ -5,7 +5,7 @@ page 50100 "CRF Freight Setup"
     SourceTable = "CRF Freight Setup";
     ApplicationArea = All;
     UsageCategory = Administration;
-    AdditionalSearchTerms = 'carrier, shipping, freight, shipment';
+    AdditionalSearchTerms = 'carrier, shipping agent, freight, shipment tracking';
     InsertAllowed = false;
     DeleteAllowed = false;
 
@@ -17,46 +17,36 @@ page 50100 "CRF Freight Setup"
             {
                 Caption = 'General';
 
-                field("Default Carrier"; Rec."Default Carrier")
+                field("Default Shipping Agent Code"; Rec."Default Shipping Agent Code")
                 {
-                    ToolTip = 'Specifies the carrier that new shipments get when the customer has no default carrier of its own.';
-                }
-                field("API Base URL"; Rec."API Base URL")
-                {
-                    ToolTip = 'Specifies the base address of the carrier service that the extension calls.';
-                }
-                field(ApiKey; ApiKeyText)
-                {
-                    Caption = 'API Key';
-                    ExtendedDatatype = Masked;
-                    ToolTip = 'Specifies the key that the carrier service gave Cronus. The key is stored in isolated storage, not in the setup table. Clear the field to delete the key.';
-
-                    trigger OnValidate()
-                    begin
-                        SaveApiKey();
-                        ShowApiKeyPlaceholder();
-                    end;
+                    ToolTip = 'Specifies the shipping agent that new shipment tracking records get when the customer has no shipping agent of its own.';
                 }
             }
             group(Numbering)
             {
                 Caption = 'Numbering';
 
-                field("Shipment Nos."; Rec."Shipment Nos.")
+                field("Shipment Tracking Nos."; Rec."Shipment Tracking Nos.")
                 {
-                    ToolTip = 'Specifies the number series that is used to number new shipments.';
+                    ToolTip = 'Specifies the number series that is used to number new shipment tracking records.';
                 }
             }
         }
     }
 
-    var
-        ApiKeyText: Text;
-
-    trigger OnAfterGetRecord()
-    begin
-        ShowApiKeyPlaceholder();
-    end;
+    actions
+    {
+        area(Navigation)
+        {
+            action(ShippingAgents)
+            {
+                Caption = 'Shipping Agents';
+                ToolTip = 'Opens the shipping agents, where you choose the carrier, the API address and the API key of each one.';
+                Image = Delivery;
+                RunObject = page "Shipping Agents";
+            }
+        }
+    }
 
     trigger OnOpenPage()
     begin
@@ -66,28 +56,4 @@ page 50100 "CRF Freight Setup"
             Rec.Insert();
         end;
     end;
-
-    local procedure ShowApiKeyPlaceholder()
-    begin
-        // The stored key is never loaded into the page, only a placeholder that shows that one exists
-        if Rec.HasApiKey() then
-            ApiKeyText := ApiKeyPlaceholderTxt
-        else
-            ApiKeyText := '';
-    end;
-
-    [NonDebuggable]
-    local procedure SaveApiKey()
-    var
-        NewApiKey: SecretText;
-    begin
-        // The placeholder means the user did not type a new key
-        if ApiKeyText = ApiKeyPlaceholderTxt then
-            exit;
-        NewApiKey := ApiKeyText;
-        Rec.SetApiKey(NewApiKey);
-    end;
-
-    var
-        ApiKeyPlaceholderTxt: Label '********', Locked = true;
 }

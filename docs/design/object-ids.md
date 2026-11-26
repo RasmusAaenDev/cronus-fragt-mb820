@@ -9,16 +9,16 @@ When an object is built, change its status here and nowhere else. An id is never
 | Id | Name | Step | Status |
 |---|---|---|---|
 | 50100 | CRF Freight Setup | 08 | built |
-| 50101 | CRF Shipment Header | 11 | built |
-| 50102 | CRF Shipment Line | 11 | built |
-| 50103 | CRF Carrier Rate | 15 | built |
-| 50104 | CRF Freight Cue | 16 | built |
+| 50101 | CRF Shipment Tracking Header | 11 | built |
+| 50102 | CRF Shipment Tracking Line | 11 | built |
+| 50103 | CRF Shipping Agent Rate | 16 | built |
+| 50104 | CRF Freight Cue | 17 | built |
 
 ## Table extensions
 
 | Id | Name | Extends | Step | Status |
 |---|---|---|---|---|
-| 50100 | CRF Customer | Customer | 26 | built |
+| 50100 | CRF Shipping Agent | Shipping Agent (adds `CRF Carrier`, `CRF API Base URL` and the API key procedures; the API key itself comes in step 21) | 13 | built |
 
 ## Enum extensions
 
@@ -30,26 +30,26 @@ When an object is built, change its status here and nowhere else. An id is never
 
 | Id | Name | Step | Status |
 |---|---|---|---|
-| 50100 | CRF Carrier | 08 (made to implement CRF ICarrier in 17) | built |
-| 50101 | CRF Shipment Status | 11 (finished in 12) | built |
+| 50100 | CRF Carrier | 13 (made to implement CRF ICarrier in 18) | built |
+| 50101 | CRF Tracking Status | 11 (finished in 12) | built |
 
 ## Interfaces (no id)
 
 | Name | Step | Status |
 |---|---|---|
-| CRF ICarrier | 17 | built |
+| CRF ICarrier | 18 | built |
 
 ## Codeunits
 
 | Id | Name | Step | Status |
 |---|---|---|---|
-| 50100 | CRF Freight Mgt | 18 | built |
-| 50101 | CRF Carrier A | 17 | built |
-| 50102 | CRF Carrier B | 17 | built |
-| 50103 | CRF Update Status | 21 | built |
+| 50100 | CRF Freight Mgt | 19 | built |
+| 50101 | CRF Carrier A | 18 | built |
+| 50102 | CRF Carrier B | 18 | built |
+| 50103 | CRF Update Status | 22 | built |
 | 50104 | CRF Sales Post Subs | 27 | built |
 | 50105 | CRF Assisted Setup Subs | 10 | built |
-| 50106 | CRF No Carrier | 17 | built |
+| 50106 | CRF No Carrier | 18 | built |
 | 50107 | (not used: kept free as a reserve between the carrier codeunits and the install codeunits) | - | not built, on purpose |
 | 50108 | CRF Install | 31 | built |
 | 50109 | CRF Upgrade | 31 | built |
@@ -63,38 +63,38 @@ When an object is built, change its status here and nowhere else. An id is never
 | Id | Name | Type | Step | Status |
 |---|---|---|---|---|
 | 50100 | CRF Freight Setup | Card | 09 | built |
-| 50101 | CRF Shipment List | List | 13 | built |
-| 50102 | CRF Shipment Card | Card | 13 | built |
-| 50103 | CRF Shipment Subform | ListPart | 13 | built |
+| 50101 | CRF Shipment Tracking List | List | 14 | built |
+| 50102 | CRF Shipment Tracking Card | Document | 14 | built |
+| 50103 | CRF Shipment Tracking Subform | ListPart | 14 | built |
 | 50104 | CRF Cronus Freight Wizard | NavigatePage | 10 | built |
-| 50105 | CRF Shipment API | API | 23 | built |
-| 50106 | CRF Shipment Line API | API | 23 | built |
-| 50107 | CRF Carrier Rates | List | 15 | built |
-| 50108 | CRF Freight Activities | CardPart | 16 | built |
-| 50109 | CRF Shipment Status API | API, read-only | 24 | built |
+| 50105 | CRF Shipment Tracking API | API | 24 | built |
+| 50106 | CRF Shipment Tracking Line API | API | 24 | built |
+| 50107 | CRF Shipping Agent Rates | List | 16 | built |
+| 50108 | CRF Freight Activities | CardPart | 17 | built |
+| 50109 | CRF Tracking Status API | API, read-only | 25 | built |
 
 ## Page extensions
 
 | Id | Name | Extends | Step | Status |
 |---|---|---|---|---|
 | 50100 | CRF Customer List | Customer List | 03 | built |
-| 50101 | CRF Customer Card | Customer Card | 26 | built |
-| 50102 | CRF Order Processor RC | Order Processor Role Center | 16 | built |
+| 50101 | CRF Shipping Agents | Shipping Agents (page 428; the masked API Key field comes in step 21) | 13 | built |
+| 50102 | CRF Order Processor RC | Order Processor Role Center | 17 | built |
 
 ## Reports, XMLports, queries, permission sets
 
 | Type | Id | Name | Step | Status |
 |---|---|---|---|---|
-| Report | 50100 | CRF Warehouse Shipment List | 22 | built |
-| XMLport | 50100 | CRF Import Carrier Rates | 15 | built |
-| Query | 50100 | CRF Shipments by Carrier | 16 | built |
-| Permission set | 50100 | CRF Freight Basic | 14 | built |
-| Permission set | 50101 | CRF Freight Admin | 14 | built |
+| Report | 50100 | CRF Warehouse Freight List | 23 | built |
+| XMLport | 50100 | CRF Import Agent Rates | 16 | built |
+| Query | 50100 | CRF Tracking by Shipping Agent | 17 | built |
+| Permission set | 50100 | CRF Freight Basic | 15 | built |
+| Permission set | 50101 | CRF Freight Admin | 15 | built |
 
 ## Not objects
 
-- Telemetry events `CRF-0001` (step 19, Carrier A could not be reached), `CRF-0002` (step 21, a shipment failed in the polling round) `CRF-0003` (step 28, a shipment was created from a sales shipment) and `CRF-0004` (step 28, a polling round finished) are event ids in code, not object ids.
-- The report layout is a file, not an object (`app/src/Report/CRFWarehouseShipmentList.docx`, step 22).
+- Telemetry events `CRF-0001` (step 20, Carrier A could not be reached), `CRF-0002` (step 22, a shipment tracking record failed in the polling round), `CRF-0003` (step 28, shipment tracking was created from a sales shipment) and `CRF-0004` (step 28, a polling round finished) are event ids in code, not object ids.
+- The report layout is a file, not an object (`app/src/Report/CRFWarehouseFreightList.docx`, step 23).
 - The test app (`test/`, id range 50140-50149 inside the same 50100-50149 range) holds only codeunit 50140.
 - The Danish translation (step 32) is an `.xlf` file.
-- Field ids in `CRF Customer` start at 50100 (field ids of an extension table share the same range).
+- Field ids in `CRF Shipping Agent` start at 50100 (field ids of an extension table share the same range).

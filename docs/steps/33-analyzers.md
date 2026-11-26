@@ -5,22 +5,22 @@ Both projects were built with the real analyzers (CodeCop, UICop, PerTenantExten
 - `app/.vscode/settings.json`, `test/.vscode/settings.json`: `al.enableCodeAnalysis: true`, `al.codeAnalyzers` = CodeCop, UICop, PerTenantExtensionCop (no AppSourceCop), `al.ruleSetPath: ./cronusfragt.ruleset.json`.
 - `app/cronusfragt.ruleset.json` and `test/cronusfragt.ruleset.json` (same content; a ruleset path must be inside the project).
 - `app/AppSourceCop.json`: affix and country settings for the trial build (not used in the normal build).
-- Fixes: `CRFFreightActivities.Page.al` (AW0002, action moved out of the cue group into the page `actions`, area Processing), `CRFShipmentLine.Table.al` (AA0232, `SumIndexFields = Weight` on the primary key because "Total Weight" is a FlowField sum).
+- Fixes: `app/src/Cue/CRFFreightActivities.Page.al` (AW0002, action moved out of the cue group into the page `actions`, area Processing), `app/src/Shipment/CRFShipmentTrackingLine.Table.al` (AA0232, `SumIndexFields = Weight` on the primary key because "Total Weight" on the header is a FlowField sum over the lines).
 
 ## Findings of the first full build, with rule ids
 
 | Project | Rule | Finding | Result |
 |---|---|---|---|
-| app | AW0002 (warning) | Cue group 'Shipments' had both fields and an action; web client shows only fields | Fixed |
+| app | AW0002 (warning) | Cue group 'Tracking' had both fields and an action; web client shows only fields | Fixed |
 | app | PTE0012 (warning) | `internalsVisibleTo` for the test app | Lowered to Info in the ruleset, justified there |
 | app | AA0232 (info) | FlowField `Total Weight` should be in a SIFT key | Fixed |
-| app | AA0247 (info, 36 objects) | Use namespaces | Lowered to Hidden, justified in the ruleset: all objects carry the CRF affix; moving to namespaces touches every reference and belongs with the AppSource decision |
-| app | AW0006 (info) | `CRF Shipment Card` has no UsageCategory | Stays, on purpose: the card is opened from the list (`CRF Shipment List` is searchable); a second search entry for the same data would only be noise |
+| app | AA0247 (info, 37 objects) | Use namespaces | Lowered to Hidden, justified in the ruleset: all objects carry the CRF affix; moving to namespaces touches every reference and belongs with the AppSource decision |
+| app | AW0006 (info) | `CRF Shipment Tracking Card` has no UsageCategory | Stays, on purpose: the card is opened from the list (`CRF Shipment Tracking List` is searchable); a second search entry for the same data would only be noise |
 | test | AA0247 (info) | Use namespaces | Hidden, same reason |
 
-After the fixes: app and test show 0 errors, 0 warnings. Remaining diagnostics: PTE0012 (Info) and AW0006 (Info) in the app, none in the test app.
+After the fixes: app and test show 0 errors, 0 warnings. Remaining diagnostics: PTE0012 (Info) and AW0006 (Info) in the app, none in the test app. The first build was repeated on the step 32 tree with the ruleset in place to read the list above from the compiler output; in the step 32 tree PTE0012 shows as a warning without the ruleset and as Info with it.
 
-Ruleset: AA0218 and AA0215 are raised to Error (a missing or wrongly worded tooltip stops the build; I verified that by deleting one tooltip, which gave `error AA0218`). The lowered rules (PTE0012, AA0247) each have a justification.
+Ruleset: AA0218 and AA0215 are raised to Error (a missing or wrongly worded tooltip stops the build). The lowered rules (PTE0012, AA0247) each have a justification.
 
 ## Checklist
 
@@ -35,7 +35,7 @@ PTE0004 (tables need a permission set) and PTE0008 (ApplicationArea) did not fir
 
 ## Trial build with AppSourceCop (`scripts/compile.sh app --appsource`, then back to `--codecop`)
 
-Errors on the app (the test app gives the same plus AS0015 TranslationFile and warning AS0092):
+Errors on the app (7 errors, 1 warning; the test app gives the same plus AS0015 TranslationFile and warning AS0092):
 
 - AS0084: ID range `[50100..50149]` is not valid; AppSource needs a range from 1000000-75999999 allocated to the partner, outside 50000-99999.
 - AS0051 for `privacyStatement`, `EULA`, `help`, `logo`, `contextSensitiveHelpUrl` (all empty or missing in `app.json`).
@@ -43,7 +43,7 @@ Errors on the app (the test app gives the same plus AS0015 TranslationFile and w
 - AS0081 (warning): `internalsVisibleTo`.
 - Info: namespaces (AA0247), AW0006.
 
-Not reported although I expected it: affix problems. With `mandatoryAffixes: ["CRF"]` all objects satisfy AS0011-type rules. Whether CRF is registered with Microsoft is a separate matter (step 35).
+Not reported although I expected it: affix problems on objects. With `mandatoryAffixes: ["CRF"]` all objects satisfy the affix rules. Whether CRF is registered with Microsoft is a separate matter (step 35).
 
 ## Not done / not possible here
 
@@ -51,3 +51,4 @@ Not reported although I expected it: affix problems. With `mandatoryAffixes: ["C
 - "Run every time": the pipeline is step 36 (it cannot run here).
 - Settings take effect in VS Code only after a window reload; I verified the same options through the compiler command line, not in the editor.
 - The workbook's PTE0012 example says Info; alc accepts that.
+- The workbook's checklist has a line that starts with "Every" and stops there (text error in the YAML); it is not covered by anything.

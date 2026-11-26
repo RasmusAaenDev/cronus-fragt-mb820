@@ -12,7 +12,7 @@ Status: **not executed.** Creating an environment needs a person with Business C
 6. Choose **Create** and wait until the state is **Active**.
 7. Open the environment in the web client and sign in.
 8. In the environment details, open **Update settings** and read the update window.
-9. In **Extension Management**, once the first extension is published (step 3), turn on **Allow HttpClient Requests** when the carrier calls arrive (step 19).
+9. In **Extension Management**, once the first extension is published (step 3), turn on **Allow HttpClient Requests** when the carrier calls arrive (step 20).
 
 ## What to note down
 

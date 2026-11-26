@@ -6,14 +6,14 @@ Cronus Fragt sends its own events with `Session.LogMessage`, classified `SystemM
 
 | Event id | Where | Verbosity | Custom dimensions |
 |---|---|---|---|
-| CRF-0001 | `CRF Carrier A`, carrier service could not be reached | Warning | (as built in step 19) |
-| CRF-0002 | `CRF Update Status`, one shipment failed in the round | Warning | `ShipmentSystemId`, `Carrier` |
-| CRF-0003 | `CRF Freight Mgt`, shipment created from a sales shipment | Normal | `ShipmentSystemId`, `Carrier` |
+| CRF-0001 | `CRF Carrier A`, carrier service could not be reached | Warning | `Carrier` (as built in step 20) |
+| CRF-0002 | `CRF Update Status`, one shipment tracking record failed in the round | Warning | `TrackingSystemId`, `Carrier` |
+| CRF-0003 | `CRF Freight Mgt`, shipment tracking created from a sales shipment | Normal | `TrackingSystemId`, `Carrier` |
 | CRF-0004 | `CRF Update Status`, end of a polling round | Normal, Warning if any failed | `Succeeded`, `Failed` |
 
-The workbook names the shipment-created event CRF-0002 and the round event CRF-0003. This repo already used CRF-0002 for the per-shipment failure (step 21), and an event id must be used in one place only, so the new events are CRF-0003 and CRF-0004.
+The workbook names the shipment-created event CRF-0002 and the round event CRF-0003. This repo already used CRF-0002 for the per-record failure (step 22), and an event id must be used in one place only, so the new events are CRF-0003 and CRF-0004.
 
-Privacy: no shipment number, customer name, address or error text. The shipment number is CustomerContent, so the record's SystemId is logged. Whether SystemId is acceptable is a judgement call for a privacy review.
+Privacy: no shipment tracking number, shipping agent code, customer name, address or error text. The tracking number and the shipping agent code are CustomerContent, so the record's SystemId and the carrier (the implementation, for example Carrier A) are logged instead. Whether SystemId is acceptable is a judgement call for a privacy review.
 
 ## Before it works
 
