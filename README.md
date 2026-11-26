@@ -1,15 +1,43 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 23: The freight list for the warehouse
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that follows shipments with freight carriers for the fictional distributor Cronus. It extends the standard shipping agents with the carrier settings and keeps its own shipment tracking records (Danish: fragtbreve). It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Build the solution › Report and API pages
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`, and its `README.md` is the task description for that step (see `STEPS.md` for links). The branches are stacked: a branch starts from the previous step's code, so the compare view between two neighbouring steps shows what the step adds, plus the swapped README. `main` holds the finished solution (the last step's code) and this project README.
+> The warehouse would like a paper list every morning of the shipments that need to go out, with the packages
+> under each shipment, so they can tick them off while they pack. They should be able to choose for themselves
+> whether the list shows only the open shipments or also the booked ones, and whether the packages are
+> included. And if we want our logo on it one day or want to move things around, it mustn't become a big
+> project.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Create the freight list for the warehouse, a printable list of shipment tracking records with their packages.
+
+**Do this**
+
+1. Create the report CRF Warehouse Freight List (report 50100). Don't call it a warehouse shipment list: Warehouse Shipment is already a document in Business Central.
+2. Its dataset has a data item on CRF Shipment Tracking Header with the number, customer, ship-to address, shipping agent code, status, package tracking number and total weight.
+3. Add an indented data item on CRF Shipment Tracking Line with the description, weight and dimensions of each package, linked to its header.
+4. Let users filter on status and shipping agent on the request page, and add an option Show Packages that decides whether the lines are printed.
+5. Give the report a layout type that Learn describes for reports that are printed and whose look Cronus may want to adjust later, make it the default layout, and make the report searchable.
+6. Add the report to CRF Freight Basic, publish and print the list for the open records.
+
+## Checklist
+
+- [ ] Report 50100 CRF Warehouse Freight List has a CRF Shipment Tracking Header data item with an indented CRF Shipment Tracking Line data item, linked with DataItemLink on Document No.
+- [ ] The header data item has RequestFilterFields for Status and Shipping Agent Code, and the request page has a Show Packages option that skips the lines when it's off.
+- [ ] The rendering section declares a Word layout that DefaultRenderingLayout names, and the generated .docx shows each record with its packages repeated below it.
+- [ ] The report sets UsageCategory and ApplicationArea, is found in search and is in the CRF Freight Basic permission set.
+- [ ] Running the report with Status = Open prints only open records, each with its packages.
+
+## In this branch
+
+- [Notes for this step](docs/steps/23-freight-list-report.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/shipment-report
+
+---
+
+[← Step 22](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/22-carriers-and-the-outbound-api/update-the-tracking-status-from-the-carrier/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 24 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/24-report-and-api-pages/api-pages-for-the-webshop/README.md)
