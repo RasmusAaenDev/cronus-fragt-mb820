@@ -87,4 +87,16 @@ page 50105 "CRF Shipment Tracking API"
             }
         }
     }
+
+    [ServiceEnabled]
+    procedure book(var ActionContext: WebServiceActionContext)
+    var
+        FreightMgt: Codeunit "CRF Freight Mgt";
+    begin
+        FreightMgt.Book(Rec);
+        ActionContext.SetObjectType(ObjectType::Page);
+        ActionContext.SetObjectId(Page::"CRF Shipment Tracking API");
+        ActionContext.AddEntityKey(Rec.FieldNo(SystemId), Rec.SystemId);
+        ActionContext.SetResultCode(WebServiceActionResultCode::Updated);
+    end;
 }

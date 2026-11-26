@@ -76,6 +76,21 @@ codeunit 50100 "CRF Freight Mgt"
         exit(true);
     end;
 
+    /// <summary>
+    /// Books an open shipment tracking record. The carrier service has no booking call (see step 20), so nothing is sent
+    /// to the carrier: the shipping agent must have a carrier and a matching rate, and the status becomes Booked.
+    /// </summary>
+    procedure Book(var TrackingHeader: Record "CRF Shipment Tracking Header")
+    var
+        NotOpenErr: Label 'Shipment tracking %1 cannot be booked because its status is %2.', Comment = '%1 = shipment tracking number, %2 = status';
+    begin
+        if TrackingHeader.Status <> TrackingHeader.Status::Open then
+            Error(NotOpenErr, TrackingHeader."No.", TrackingHeader.Status);
+        GetRate(TrackingHeader); // fails without a shipping agent, without a carrier on it or without a matching rate
+        TrackingHeader.Validate(Status, TrackingHeader.Status::Booked);
+        TrackingHeader.Modify(true);
+    end;
+
     [TryFunction]
     local procedure TryGetStatus(TrackingHeader: Record "CRF Shipment Tracking Header"; var NewStatus: Enum "CRF Tracking Status")
     var

@@ -71,7 +71,7 @@ When an object is built, change its status here and nowhere else. An id is never
 | 50106 | CRF Shipment Tracking Line API | API | 24 | built |
 | 50107 | CRF Shipping Agent Rates | List | 16 | built |
 | 50108 | CRF Freight Activities | CardPart | 17 | built |
-| 50109 | CRF Tracking Status API | API, read-only | 25 | planned |
+| 50109 | CRF Tracking Status API | API, read-only | 25 | built |
 
 ## Page extensions
 
