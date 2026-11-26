@@ -1,15 +1,45 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 21: Keep the API key out of the table
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that follows shipments with freight carriers for the fictional distributor Cronus. It extends the standard shipping agents with the carrier settings and keeps its own shipment tracking records (Danish: fragtbreve). It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Build the solution › Carriers and the outbound API
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`, and its `README.md` is the task description for that step (see `STEPS.md` for links). The branches are stacked: a branch starts from the previous step's code, so the compare view between two neighbouring steps shows what the step adds, plus the swapped README. `main` holds the finished solution (the last step's code) and this project README.
+> DHL has sent us a password for their system. It must not sit somewhere that anyone can find it, and it must
+> not show in clear text on the screen if someone looks over my shoulder. But I need to be able to change it
+> myself on the shipping agent when they send a new one. And when FedEx gets a system too, they will send us
+> their own password.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+**What you hand in:** Two sentences for Mette on why the key isn't a field in the Shipping Agent table. The storage itself is AL code.
+
+Store each shipping agent's API key in isolated storage, not in a table field, and send it to the fictional service as a header.
+
+**Do this**
+
+1. Add procedures to the table extension CRF Shipping Agent (50100 from step 13) that set, get and check the key: SetEncrypted with DataScope::Company to store it, Get into a SecretText to read it, Delete to clear it, and Contains to tell the page whether a key is stored.
+2. Build the storage key from a fixed prefix and the shipping agent's Code, so every shipping agent has its own key.
+3. Add an API Key field to the page extension CRF Shipping Agents (50101) that is bound to a page variable, not to a table field. It uses ExtendedDatatype = Masked, saves the key through the table procedure when it is validated and shows only a placeholder afterwards.
+4. In CRF Carrier A, read the key of the record's shipping agent, fail with a clear error when none is stored, and send it to the fictional service as a header with HttpHeaders.Add(Text, SecretText).
+5. Against the mock service from the previous step, enter the key cronus-demo-key on the DHL shipping agent and run Update Status on a DHL record again.
+6. Tell Mette in two sentences why the key isn't a field in the Shipping Agent table.
+
+## Checklist
+
+- [ ] Neither Shipping Agent nor CRF Freight Setup has an API key field; the key is stored with IsolatedStorage.SetEncrypted and DataScope::Company under a locked prefix followed by the shipping agent's Code.
+- [ ] The table extension procedure that returns the key returns SecretText, and the key reaches the request only through HttpHeaders.Add(Text, SecretText).
+- [ ] The API Key field on the Shipping Agents page is bound to a page variable with ExtendedDatatype = Masked, and the stored key is never loaded into it.
+- [ ] Entering a new key replaces the stored one, clearing the field deletes it, the page shows whether a key is stored, and two shipping agents keep separate keys.
+- [ ] With cronus-demo-key on DHL, Update Status on a DHL record with a CA package tracking number changes its status.
+- [ ] Your note for Mette explains that a field in the table can be read by anyone who can read that table, and that masking only changes how a value is shown.
+
+## In this branch
+
+- [Notes for this step](docs/steps/21-api-key-storage.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/api-key-storage
+
+---
+
+[← Step 20](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/20-carriers-and-the-outbound-api/call-the-carrier-s-service/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 22 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/22-carriers-and-the-outbound-api/update-the-tracking-status-from-the-carrier/README.md)
