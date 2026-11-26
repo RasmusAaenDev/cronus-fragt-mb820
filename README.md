@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
+**[See what this step changed: diff against step 15](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/dc5675ac9885a5eed27c141bf1928d2be0dc46ec...2ea6b3c6c7685e7c29433caaba4f013df0be4e5d)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -39,6 +41,7 @@ Cronus needs the rates of each shipping agent in Business Central. Create a tabl
 ## In this branch
 
 - [Notes for this step](docs/steps/16-rates-xmlport.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/dc5675ac9885a5eed27c141bf1928d2be0dc46ec...2ea6b3c6c7685e7c29433caaba4f013df0be4e5d): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/rates-xmlport
 
 ---
