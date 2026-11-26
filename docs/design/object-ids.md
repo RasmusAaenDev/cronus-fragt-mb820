@@ -62,7 +62,7 @@ When an object is built, change its status here and nowhere else. An id is never
 
 | Id | Name | Type | Step | Status |
 |---|---|---|---|---|
-| 50100 | CRF Freight Setup | Card | 09 | planned |
+| 50100 | CRF Freight Setup | Card | 09 | built |
 | 50101 | CRF Shipment Tracking List | List | 14 | planned |
 | 50102 | CRF Shipment Tracking Card | Document | 14 | planned |
 | 50103 | CRF Shipment Tracking Subform | ListPart | 14 | planned |
