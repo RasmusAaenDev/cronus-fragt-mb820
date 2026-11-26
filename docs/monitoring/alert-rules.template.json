@@ -1,0 +1,69 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "description": "Two log search alert rules for Cronus Fragt. Not deployed or validated against Azure from the author's environment. Contains no secrets: the resource ids are parameters."
+  },
+  "parameters": {
+    "location": { "type": "string", "defaultValue": "[resourceGroup().location]" },
+    "environmentAppInsightsId": { "type": "string", "metadata": { "description": "Resource id of the Application Insights resource of the Business Central environment." } },
+    "extensionAppInsightsId": { "type": "string", "metadata": { "description": "Resource id of the Application Insights resource in app.json (Cronus Fragt's own telemetry)." } },
+    "actionGroupId": { "type": "string", "metadata": { "description": "Resource id of the action group that notifies the Cronus administrator (mail/Teams)." } }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Insights/scheduledQueryRules",
+      "apiVersion": "2022-06-15",
+      "name": "CRF update status entry failed",
+      "location": "[parameters('location')]",
+      "properties": {
+        "displayName": "Cronus Fragt: job queue entry CRF Update Status failed",
+        "description": "AL0000HE7 or AL0000JRG for object id 50103 in the last 15 minutes.",
+        "severity": 2,
+        "enabled": true,
+        "scopes": [ "[parameters('environmentAppInsightsId')]" ],
+        "evaluationFrequency": "PT15M",
+        "windowSize": "PT15M",
+        "criteria": {
+          "allOf": [
+            {
+              "query": "traces | where customDimensions.eventId in ('AL0000HE7', 'AL0000JRG') | where tostring(customDimensions.alJobQueueObjectId) == '50103'",
+              "timeAggregation": "Count",
+              "operator": "GreaterThan",
+              "threshold": 0,
+              "failingPeriods": { "numberOfEvaluationPeriods": 1, "minFailingPeriodsToAlert": 1 }
+            }
+          ]
+        },
+        "actions": { "actionGroups": [ "[parameters('actionGroupId')]" ] }
+      }
+    },
+    {
+      "type": "Microsoft.Insights/scheduledQueryRules",
+      "apiVersion": "2022-06-15",
+      "name": "CRF carriers failed in round",
+      "location": "[parameters('location')]",
+      "properties": {
+        "displayName": "Cronus Fragt: carriers failed in a polling round",
+        "description": "CRF-0004 with Failed above 0 in the last hour. The job queue entry itself does not fail in this case.",
+        "severity": 3,
+        "enabled": true,
+        "scopes": [ "[parameters('extensionAppInsightsId')]" ],
+        "evaluationFrequency": "PT30M",
+        "windowSize": "PT1H",
+        "criteria": {
+          "allOf": [
+            {
+              "query": "traces | where tostring(customDimensions.eventId) == 'CRF-0004' | where toint(customDimensions.alFailed) > 0",
+              "timeAggregation": "Count",
+              "operator": "GreaterThan",
+              "threshold": 0,
+              "failingPeriods": { "numberOfEvaluationPeriods": 1, "minFailingPeriodsToAlert": 1 }
+            }
+          ]
+        },
+        "actions": { "actionGroups": [ "[parameters('actionGroupId')]" ] }
+      }
+    }
+  ]
+}
