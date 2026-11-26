@@ -85,7 +85,7 @@ When an object is built, change its status here and nowhere else. An id is never
 
 | Type | Id | Name | Step | Status |
 |---|---|---|---|---|
-| Report | 50100 | CRF Warehouse Freight List | 23 | planned |
+| Report | 50100 | CRF Warehouse Freight List | 23 | built |
 | XMLport | 50100 | CRF Import Agent Rates | 16 | built |
 | Query | 50100 | CRF Tracking by Shipping Agent | 17 | built |
 | Permission set | 50100 | CRF Freight Basic | 15 | built |
