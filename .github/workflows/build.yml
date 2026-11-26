@@ -1,0 +1,69 @@
+# Compiles Cronus Fragt and Cronus Fragt Tests with the Business Central compiler and the analyzers.
+# Minimal workflow (not AL-Go): no secrets, no deployment, no publishing. See docs/runbooks/pipeline.md.
+# NOT RUN: written without access to a GitHub runner. Check the first run's log before relying on it.
+name: Build
+
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  compile:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    env:
+      ARTIFACT_TYPE: sandbox
+      ARTIFACT_COUNTRY: dk
+      # Same major version as app.json's platform/application (28.0). Keep in step with them.
+      ARTIFACT_VERSION: '28.0'
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Install BcContainerHelper
+        shell: pwsh
+        run: Install-Module BcContainerHelper -Force -Scope CurrentUser
+
+      - name: Create compiler folder (compiler and symbols, no Docker)
+        shell: pwsh
+        run: |
+          $artifactUrl = Get-BcArtifactUrl -type $env:ARTIFACT_TYPE -country $env:ARTIFACT_COUNTRY -version $env:ARTIFACT_VERSION -select Latest
+          if (-not $artifactUrl) { throw "No BC artifact found for $env:ARTIFACT_VERSION" }
+          $folder = New-BcCompilerFolder -artifactUrl $artifactUrl
+          "COMPILER_FOLDER=$folder" | Out-File -FilePath $env:GITHUB_ENV -Append
+
+      - name: Compile Cronus Fragt (CodeCop, UICop, PerTenantExtensionCop, project ruleset)
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force out | Out-Null
+          Compile-AppWithBcCompilerFolder -compilerFolder $env:COMPILER_FOLDER `
+            -appProjectFolder "$PWD/app" -appOutputFolder "$PWD/out" -appSymbolsFolder "$PWD/out/symbols" `
+            -EnableCodeCop -EnableUICop -EnablePerTenantExtensionCop `
+            -rulesetFile "$PWD/app/cronusfragt.ruleset.json" -failOn error
+
+      - name: Compile Cronus Fragt Tests
+        shell: pwsh
+        run: |
+          # the test app needs the symbols of Cronus Fragt
+          New-Item -ItemType Directory -Force "$PWD/out/symbols" | Out-Null
+          Copy-Item "$PWD/out/Cronus_Cronus Fragt_*.app" "$PWD/out/symbols/"
+          Compile-AppWithBcCompilerFolder -compilerFolder $env:COMPILER_FOLDER `
+            -appProjectFolder "$PWD/test" -appOutputFolder "$PWD/out" -appSymbolsFolder "$PWD/out/symbols" `
+            -EnableCodeCop -EnableUICop -EnablePerTenantExtensionCop `
+            -rulesetFile "$PWD/test/cronusfragt.ruleset.json" -failOn error
+
+      - name: Keep the compiled apps for download (14 days)
+        uses: actions/upload-artifact@v4
+        with:
+          name: cronus-fragt-apps
+          path: out/*.app
+          retention-days: 14
+          if-no-files-found: error
