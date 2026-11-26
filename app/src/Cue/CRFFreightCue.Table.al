@@ -12,14 +12,14 @@ table 50104 "CRF Freight Cue"
         }
         field(2; "Open Shipments"; Integer)
         {
-            Caption = 'Open Shipments';
+            Caption = 'Open Shipment Tracking';
             FieldClass = FlowField;
-            CalcFormula = count("CRF Shipment Header" where(Status = const(Open)));
+            CalcFormula = count("CRF Shipment Tracking Header" where(Status = const(Open)));
             Editable = false;
         }
-        field(3; "Open Default Carrier"; Integer)
+        field(3; "Open Default Agent"; Integer)
         {
-            Caption = 'Open with Default Carrier';
+            Caption = 'Open with Default Shipping Agent';
             DataClassification = SystemMetadata;
         }
     }

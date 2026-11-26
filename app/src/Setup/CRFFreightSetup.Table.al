@@ -10,20 +10,15 @@ table 50100 "CRF Freight Setup"
             Caption = 'Primary Key';
             DataClassification = SystemMetadata;
         }
-        field(2; "Default Carrier"; Enum "CRF Carrier")
+        field(2; "Default Shipping Agent Code"; Code[10])
         {
-            Caption = 'Default Carrier';
+            Caption = 'Default Shipping Agent Code';
             DataClassification = CustomerContent;
+            TableRelation = "Shipping Agent";
         }
-        field(3; "API Base URL"; Text[250])
+        field(3; "Shipment Tracking Nos."; Code[20])
         {
-            Caption = 'API Base URL';
-            DataClassification = CustomerContent;
-            ExtendedDatatype = URL;
-        }
-        field(4; "Shipment Nos."; Code[20])
-        {
-            Caption = 'Shipment Nos.';
+            Caption = 'Shipment Tracking Nos.';
             DataClassification = CustomerContent;
             TableRelation = "No. Series";
         }
@@ -36,37 +31,4 @@ table 50100 "CRF Freight Setup"
             Clustered = true;
         }
     }
-
-    /// <summary>
-    /// Stores the carrier API key in isolated storage (encrypted, per company). An empty key deletes the stored one.
-    /// </summary>
-    procedure SetApiKey(NewApiKey: SecretText)
-    begin
-        if NewApiKey.IsEmpty() then begin
-            if IsolatedStorage.Contains(ApiKeyStorageKeyTok, DataScope::Company) then
-                IsolatedStorage.Delete(ApiKeyStorageKeyTok, DataScope::Company);
-            exit;
-        end;
-        IsolatedStorage.SetEncrypted(ApiKeyStorageKeyTok, NewApiKey, DataScope::Company);
-    end;
-
-    /// <summary>
-    /// Returns the stored API key as a SecretText, or an empty one if no key is stored.
-    /// </summary>
-    procedure GetApiKey() ApiKey: SecretText
-    begin
-        if IsolatedStorage.Get(ApiKeyStorageKeyTok, DataScope::Company, ApiKey) then
-            exit(ApiKey);
-    end;
-
-    /// <summary>
-    /// Tells whether an API key is stored, without reading it.
-    /// </summary>
-    procedure HasApiKey(): Boolean
-    begin
-        exit(IsolatedStorage.Contains(ApiKeyStorageKeyTok, DataScope::Company));
-    end;
-
-    var
-        ApiKeyStorageKeyTok: Label 'CRF-CarrierApiKey', Locked = true;
 }

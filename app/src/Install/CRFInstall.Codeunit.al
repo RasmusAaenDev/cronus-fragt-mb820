@@ -9,9 +9,9 @@ codeunit 50108 "CRF Install"
         UpgradeTags: Codeunit "CRF Upgrade Tags";
     begin
         InitFreightSetup();
-        // A fresh installation has no 1.0.0.0 data, so the default carrier backfill is already done
-        if not UpgradeTag.HasUpgradeTag(UpgradeTags.GetDefaultCarrierTag()) then
-            UpgradeTag.SetUpgradeTag(UpgradeTags.GetDefaultCarrierTag());
+        // A fresh installation has no 1.0.0.0 data, so the default shipping agent backfill is already done
+        if not UpgradeTag.HasUpgradeTag(UpgradeTags.GetDefaultShippingAgentTag()) then
+            UpgradeTag.SetUpgradeTag(UpgradeTags.GetDefaultShippingAgentTag());
     end;
 
     // OnInstallAppPerCompany only runs for the companies that exist now; companies created later get the record here.

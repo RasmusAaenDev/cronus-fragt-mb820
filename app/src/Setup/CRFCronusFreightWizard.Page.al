@@ -48,20 +48,20 @@ page 50104 "CRF Cronus Freight Wizard"
                     group(Group18)
                     {
                         ShowCaption = false;
-                        InstructionalText = 'This guide sets up the default carrier and the numbering of shipments.';
+                        InstructionalText = 'This guide sets up the default shipping agent and the numbering of shipment tracking.';
                     }
                 }
                 group(StepCarrier)
                 {
-                    Caption = 'Default carrier';
+                    Caption = 'Default shipping agent';
                     group(Group22)
                     {
                         ShowCaption = false;
-                        InstructionalText = 'Select the carrier that you want to use on shipments, when there is no other carriers selected.';
+                        InstructionalText = 'Select the shipping agent that you want to use on shipment tracking, when the customer has none of its own.';
 
-                        field("Default Carrier"; Rec."Default Carrier")
+                        field("Default Shipping Agent Code"; Rec."Default Shipping Agent Code")
                         {
-                            ToolTip = 'Specifies the carrier that new shipments get by default.';
+                            ToolTip = 'Specifies the shipping agent that new shipment tracking records get by default.';
                         }
                     }
                 }
@@ -73,13 +73,13 @@ page 50104 "CRF Cronus Freight Wizard"
                 Visible = Step2Visible;
                 group(Group35)
                 {
-                    Caption = 'Shipment numbers';
-                    InstructionalText = 'Select the number series you want to use, when you create new shipments';
+                    Caption = 'Shipment tracking numbers';
+                    InstructionalText = 'Select the number series you want to use, when you create new shipment tracking';
                     Visible = Step2Visible;
 
-                    field("Shipment Nos."; Rec."Shipment Nos.")
+                    field("Shipment Tracking Nos."; Rec."Shipment Tracking Nos.")
                     {
-                        ToolTip = 'Specifies the number series that is used to number new shipments.';
+                        ToolTip = 'Specifies the number series that is used to number new shipment tracking records.';
                     }
                 }
             }

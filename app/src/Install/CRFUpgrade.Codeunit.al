@@ -8,27 +8,26 @@ codeunit 50109 "CRF Upgrade"
         UpgradeTag: Codeunit "Upgrade Tag";
         UpgradeTags: Codeunit "CRF Upgrade Tags";
     begin
-        if UpgradeTag.HasUpgradeTag(UpgradeTags.GetDefaultCarrierTag()) then
+        if UpgradeTag.HasUpgradeTag(UpgradeTags.GetDefaultShippingAgentTag()) then
             exit;
-        FillDefaultCarrierFromShipments();
-        UpgradeTag.SetUpgradeTag(UpgradeTags.GetDefaultCarrierTag());
+        FillDefaultShippingAgentFromTracking();
+        UpgradeTag.SetUpgradeTag(UpgradeTags.GetDefaultShippingAgentTag());
     end;
 
-    // Customers without a default carrier get the carrier of their latest shipment (highest number).
-    local procedure FillDefaultCarrierFromShipments()
+    // A setup without a default shipping agent gets the shipping agent of the latest shipment tracking record (highest number).
+    local procedure FillDefaultShippingAgentFromTracking()
     var
-        Customer: Record Customer;
-        ShipmentHeader: Record "CRF Shipment Header";
+        FreightSetup: Record "CRF Freight Setup";
+        TrackingHeader: Record "CRF Shipment Tracking Header";
     begin
-        Customer.SetRange("CRF Default Carrier", Customer."CRF Default Carrier"::" ");
-        if Customer.FindSet(true) then
-            repeat
-                ShipmentHeader.SetRange("Customer No.", Customer."No.");
-                ShipmentHeader.SetFilter(Carrier, '<>%1', ShipmentHeader.Carrier::" ");
-                if ShipmentHeader.FindLast() then begin
-                    Customer."CRF Default Carrier" := ShipmentHeader.Carrier;
-                    Customer.Modify();
-                end;
-            until Customer.Next() = 0;
+        if not FreightSetup.Get() then
+            exit;
+        if FreightSetup."Default Shipping Agent Code" <> '' then
+            exit;
+        TrackingHeader.SetFilter("Shipping Agent Code", '<>%1', '');
+        if TrackingHeader.FindLast() then begin
+            FreightSetup."Default Shipping Agent Code" := TrackingHeader."Shipping Agent Code";
+            FreightSetup.Modify();
+        end;
     end;
 }

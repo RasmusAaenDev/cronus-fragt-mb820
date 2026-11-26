@@ -5,36 +5,37 @@ codeunit 50103 "CRF Update Status"
     // Run by a job queue entry (step 29) in a background session: no dialogs in here.
     trigger OnRun()
     var
-        ShipmentHeader: Record "CRF Shipment Header";
-        ShipmentToUpdate: Record "CRF Shipment Header";
+        TrackingHeader: Record "CRF Shipment Tracking Header";
+        TrackingToUpdate: Record "CRF Shipment Tracking Header";
         FreightMgt: Codeunit "CRF Freight Mgt";
         ErrorText: Text;
         Succeeded: Integer;
         Failed: Integer;
     begin
-        ShipmentHeader.SetFilter(Status, '%1|%2', ShipmentHeader.Status::Booked, ShipmentHeader.Status::"In Transit");
-        ShipmentHeader.SetFilter("Tracking No.", '<>%1', '');
-        if ShipmentHeader.FindSet() then
+        TrackingHeader.SetFilter(Status, '%1|%2', TrackingHeader.Status::Booked, TrackingHeader.Status::"In Transit");
+        TrackingHeader.SetFilter("Package Tracking No.", '<>%1', '');
+        if TrackingHeader.FindSet() then
             repeat
                 // A second variable is updated, so the filtered set that is looped through is not changed
-                ShipmentToUpdate.Get(ShipmentHeader."No.");
-                if FreightMgt.UpdateStatusNoError(ShipmentToUpdate, ErrorText) then
+                TrackingToUpdate.Get(TrackingHeader."No.");
+                if FreightMgt.UpdateStatusNoError(TrackingToUpdate, ErrorText) then
                     Succeeded += 1
                 else begin
                     Failed += 1;
-                    LogFailure(ShipmentToUpdate);
+                    LogFailure(TrackingToUpdate);
                 end;
-            until ShipmentHeader.Next() = 0;
+            until TrackingHeader.Next() = 0;
         LogRoundFinished(Succeeded, Failed);
     end;
 
-    local procedure LogFailure(ShipmentHeader: Record "CRF Shipment Header")
+    local procedure LogFailure(TrackingHeader: Record "CRF Shipment Tracking Header")
     var
+        FreightMgt: Codeunit "CRF Freight Mgt";
         Dimensions: Dictionary of [Text, Text];
     begin
         // The number is CustomerContent, so the SystemId is logged instead; the error text is left out on purpose
-        Dimensions.Add('ShipmentSystemId', Format(ShipmentHeader.SystemId));
-        Dimensions.Add('Carrier', Format(ShipmentHeader.Carrier));
+        Dimensions.Add('TrackingSystemId', Format(TrackingHeader.SystemId));
+        Dimensions.Add('Carrier', Format(FreightMgt.CarrierOf(TrackingHeader)));
         Session.LogMessage('CRF-0002', FailureTelemetryTxt, Verbosity::Warning,
             DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, Dimensions);
     end;
@@ -55,6 +56,6 @@ codeunit 50103 "CRF Update Status"
     end;
 
     var
-        RoundFinishedTxt: Label 'Shipment status round finished', Locked = true;
-        FailureTelemetryTxt: Label 'Shipment status update from the carrier failed', Locked = true;
+        RoundFinishedTxt: Label 'Tracking status round finished', Locked = true;
+        FailureTelemetryTxt: Label 'Tracking status update from the carrier failed', Locked = true;
 }

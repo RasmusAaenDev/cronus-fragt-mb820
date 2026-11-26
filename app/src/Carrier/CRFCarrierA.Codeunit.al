@@ -2,23 +2,23 @@ codeunit 50101 "CRF Carrier A" implements "CRF ICarrier"
 {
     Access = Internal;
 
-    procedure GetRate(ShipmentHeader: Record "CRF Shipment Header"): Decimal
+    procedure GetRate(TrackingHeader: Record "CRF Shipment Tracking Header"): Decimal
     var
-        CarrierRate: Record "CRF Carrier Rate";
-        NoRateErr: Label 'Carrier A has no rate for a shipment of %1 kg.', Comment = '%1 = total weight';
+        CarrierRate: Record "CRF Shipping Agent Rate";
+        NoRateErr: Label 'Shipping agent %1 has no rate for a shipment of %2 kg.', Comment = '%1 = shipping agent code, %2 = total weight';
     begin
         // Carrier A prices the shipment as a whole, by its total weight
-        ShipmentHeader.CalcFields("Total Weight");
-        CarrierRate.SetRange(Carrier, "CRF Carrier"::"Carrier A");
-        CarrierRate.SetFilter("Weight Limit", '>=%1', ShipmentHeader."Total Weight");
+        TrackingHeader.CalcFields("Total Weight");
+        CarrierRate.SetRange("Shipping Agent Code", TrackingHeader."Shipping Agent Code");
+        CarrierRate.SetFilter("Weight Limit", '>=%1', TrackingHeader."Total Weight");
         if not CarrierRate.FindFirst() then
-            Error(NoRateErr, ShipmentHeader."Total Weight");
+            Error(NoRateErr, TrackingHeader."Shipping Agent Code", TrackingHeader."Total Weight");
         exit(CarrierRate.Price);
     end;
 
-    procedure GetStatus(ShipmentHeader: Record "CRF Shipment Header"): Enum "CRF Shipment Status"
+    procedure GetStatus(TrackingHeader: Record "CRF Shipment Tracking Header"): Enum "CRF Tracking Status"
     var
-        FreightSetup: Record "CRF Freight Setup";
+        ShippingAgent: Record "Shipping Agent";
         Client: HttpClient;
         Response: HttpResponseMessage;
         ApiKey: SecretText;
@@ -27,17 +27,17 @@ codeunit 50101 "CRF Carrier A" implements "CRF ICarrier"
         StatusToken: JsonToken;
         ServiceStatusErr: Label 'The carrier service answered %1 %2.', Comment = '%1 = HTTP status code, %2 = reason phrase';
         InvalidResponseErr: Label 'The carrier service sent an answer that Cronus Fragt cannot read.';
-        MissingApiKeyErr: Label 'No API key for the carrier service is stored. Enter it on the Cronus Freight Setup page.';
+        MissingApiKeyErr: Label 'No API key for the carrier service is stored. Enter it on the Shipping Agents page.';
     begin
-        // Setup is read before the call; nothing is written while waiting for the service
-        FreightSetup.Get();
-        FreightSetup.TestField("API Base URL");
-        ShipmentHeader.TestField("Tracking No.");
-        if not FreightSetup.HasApiKey() then
+        // The shipping agent is read before the call; nothing is written while waiting for the service
+        ShippingAgent.Get(TrackingHeader."Shipping Agent Code");
+        ShippingAgent.TestField("CRF API Base URL");
+        TrackingHeader.TestField("Package Tracking No.");
+        if not ShippingAgent.CRFHasApiKey() then
             Error(MissingApiKeyErr);
-        ApiKey := FreightSetup.GetApiKey();
+        ApiKey := ShippingAgent.CRFGetApiKey();
         Client.Timeout := 30000; // milliseconds
-        SendWithRetry(Client, StatusUrl(FreightSetup."API Base URL", ShipmentHeader."Tracking No."), ApiKey, Response);
+        SendWithRetry(Client, StatusUrl(ShippingAgent."CRF API Base URL", TrackingHeader."Package Tracking No."), ApiKey, Response);
         if not Response.IsSuccessStatusCode() then
             Error(ServiceStatusErr, Response.HttpStatusCode(), Response.ReasonPhrase());
         Response.Content().ReadAs(ResponseText);
@@ -52,7 +52,7 @@ codeunit 50101 "CRF Carrier A" implements "CRF ICarrier"
 
     local procedure StatusUrl(BaseUrl: Text; TrackingNo: Text): Text
     begin
-        // GET {API Base URL}/shipments/{Tracking No.}/status
+        // GET {API Base URL}/shipments/{Package Tracking No.}/status
         exit(BaseUrl.TrimEnd('/') + '/shipments/' + TrackingNo + '/status');
     end;
 
@@ -103,17 +103,17 @@ codeunit 50101 "CRF Carrier A" implements "CRF ICarrier"
             DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, Dimensions);
     end;
 
-    internal procedure StatusFromText(StatusText: Text): Enum "CRF Shipment Status"
+    internal procedure StatusFromText(StatusText: Text): Enum "CRF Tracking Status"
     var
         UnknownStatusErr: Label 'The carrier service reported the unknown status %1.', Comment = '%1 = status text';
     begin
         case LowerCase(StatusText) of
             'booked':
-                exit("CRF Shipment Status"::Booked);
+                exit("CRF Tracking Status"::Booked);
             'in_transit':
-                exit("CRF Shipment Status"::"In Transit");
+                exit("CRF Tracking Status"::"In Transit");
             'delivered':
-                exit("CRF Shipment Status"::Delivered);
+                exit("CRF Tracking Status"::Delivered);
             else
                 Error(UnknownStatusErr, StatusText);
         end;

@@ -21,17 +21,17 @@ The standard application tests belong in the container because there are thousan
 
 ## What I expect, and what the code already does
 
-The workbook predicts one failure: in a company where nobody has run the setup guide, `CRF Freight Setup."Shipment Nos."` is empty, the subscriber on `OnAfterPostSalesDoc` would create a shipment and the `OnInsert` trigger of `CRF Shipment Header` would fail on `TestField("Shipment Nos.")`, which breaks every standard test that posts a shipment.
+The workbook predicts one failure: in a company where nobody has run the setup guide, `CRF Freight Setup."Shipment Tracking Nos."` is empty, the subscriber on `OnAfterPostSalesDoc` would create shipment tracking and the `OnInsert` trigger of `CRF Shipment Tracking Header` would fail on `TestField("Shipment Tracking Nos.")`, which breaks every standard test that posts a shipment.
 
-This repository does not have that defect: `CRF Freight Mgt.CreateShipmentFromSalesShipment` returns early when the setup record is missing or `Shipment Nos.` is empty (step 27), and `CRF Install` creates the setup record. Test `PostingWithoutShipmentNumberSeriesCreatesNoShipment` in codeunit 50140 now covers it (added in this step; compiled, not run). The decision for Mette: with no number series the freight solution silently skips the shipment, so posting works but no shipment appears until the setup guide has been run.
+This repository does not have that defect: `CRF Freight Mgt.CreateTrackingFromSalesShipment` returns early when the setup record is missing or `Shipment Tracking Nos.` is empty (step 27), and `CRF Install` creates the setup record. Test `PostingWithoutNumberSeriesCreatesNoTracking` in codeunit 50140 now covers it (added in this step; compiled, not run). The decision for Mette: with no number series the freight solution silently skips the shipment tracking, so posting works but no tracking record appears until the setup guide has been run.
 
-Other things the standard run could still reveal, which I cannot rule out here: the `Customer.Validate` path in a test company without a default carrier (step 26), and the telemetry/log calls in a tests-run (no external calls are made by the posting subscriber).
+Other things the standard run could still reveal, which I cannot rule out here: the validation of `Customer No.` on `CRF Shipment Tracking Header`, which copies the customer's shipping agent and falls back to the setup's default, in a test company where neither has one (step 27), and the telemetry/log calls in a tests-run (no external calls are made by the posting subscriber).
 
 ## Checklist from the workbook
 
 | Item | Status |
 |---|---|
-| Codeunit 50140 SUCCESS for its tests | Not run here. Compiles. Three tests now. |
+| Codeunit 50140 SUCCESS for its tests | Not run here. Compiles. Four tests now. |
 | Container with Test Toolkit | Script written; no container created here |
 | Standard tests with and without Cronus Fragt | Script written; no results exist |
 | Failures only with Cronus Fragt: cause and fix | The one predicted failure is already prevented in code and covered by a test; real failures are unknown until the run |

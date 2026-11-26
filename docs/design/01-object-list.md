@@ -6,19 +6,19 @@ Every object of the extension. Names carry the `CRF` affix, ids are in 50100-501
 
 | Type | Id | Name | Purpose |
 |---|---|---|---|
-| Table | 50100 | CRF Freight Setup | Setup table, one record: default carrier, API base URL, shipment number series. The API key is not stored here (step 20, isolated storage). |
-| Table | 50101 | CRF Shipment Header | One record per shipment: No., customer, ship-to name and address, carrier, status, tracking no., posting date, Sales Shipment No., No. Series, FlowField Total Weight. |
-| Table | 50102 | CRF Shipment Line | One package of a shipment: Shipment No., Line No., description, weight, length, width, height. |
-| Table | 50103 | CRF Carrier Rate | Price per carrier and weight limit, filled by the rate import. |
-| Table | 50104 | CRF Freight Cue | Cue table for the Role Center: FlowField Open Shipments and a normal field Open Default Carrier. |
-| Table extension | 50100 | CRF Customer | Adds `CRF Default Carrier` to Customer. |
+| Table | 50100 | CRF Freight Setup | Setup table, one record: default shipping agent and the number series for shipment tracking. Nothing about a carrier's web service is stored here: the address is on the shipping agent and the API key is in isolated storage (step 21). |
+| Table | 50101 | CRF Shipment Tracking Header | One record per shipment: No., customer, ship-to name and address, shipping agent, status, package tracking no., posting date, Sales Shipment No., No. Series, FlowField Total Weight. |
+| Table | 50102 | CRF Shipment Tracking Line | One package of a shipment: Document No., Line No., description, weight, length, width, height. |
+| Table | 50103 | CRF Shipping Agent Rate | Price per shipping agent and weight limit, filled by the rate import. |
+| Table | 50104 | CRF Freight Cue | Cue table for the Role Center: FlowField Open Shipments (caption Open Shipment Tracking) and a normal field Open Default Agent. |
+| Table extension | 50100 | CRF Shipping Agent | Extends the standard Shipping Agent table with `CRF Carrier` and `CRF API Base URL`, and procedures for the API key (kept in isolated storage, one key per shipping agent). |
 
 ## Enums and interface
 
 | Type | Id | Name | Purpose |
 |---|---|---|---|
-| Enum | 50100 | CRF Carrier | One value per carrier plus a blank value; implements `CRF ICarrier`; extensible. |
-| Enum | 50101 | CRF Shipment Status | Open, Booked, In Transit, Delivered; extensible. |
+| Enum | 50100 | CRF Carrier | One value per carrier implementation plus a blank value; implements `CRF ICarrier`; extensible. Chosen on the shipping agent. |
+| Enum | 50101 | CRF Tracking Status | Open, Booked, In Transit, Delivered; extensible. |
 | Enum extension | 50100 | CRF Event Category | Extends the standard `EventCategory` enum with `CRF Freight`, the category of the external business event (step 38). |
 | Interface | - | CRF ICarrier | The carrier contract: `GetRate`, `GetStatus`. |
 
@@ -26,15 +26,15 @@ Every object of the extension. Names carry the `CRF` affix, ids are in 50100-501
 
 | Type | Id | Name | Purpose |
 |---|---|---|---|
-| Codeunit | 50100 | CRF Freight Mgt | Public facade: picks the carrier of a shipment through the interface, rates, status update (failing and non-failing), booking, creating a shipment from a posted sales shipment. Publishes the extension events. |
-| Codeunit | 50101 | CRF Carrier A | Implements `CRF ICarrier`; calls Carrier A's status service over HTTP. Internal. |
-| Codeunit | 50102 | CRF Carrier B | Implements `CRF ICarrier` with its own rate calculation. Internal. |
+| Codeunit | 50100 | CRF Freight Mgt | Public facade: finds the carrier through the record's shipping agent, rates, status update (failing and non-failing), booking, creating shipment tracking from a posted sales shipment. Publishes the extension events. |
+| Codeunit | 50101 | CRF Carrier A | Implements `CRF ICarrier`; rate by total weight, status from Carrier A's web service over HTTP. Internal. |
+| Codeunit | 50102 | CRF Carrier B | Implements `CRF ICarrier` with its own rate calculation (per package) and no web service. Internal. |
 | Codeunit | 50106 | CRF No Carrier | Implements `CRF ICarrier` for the blank carrier value: a clear error. Internal. |
-| Codeunit | 50103 | CRF Update Status | Run by the job queue: updates booked and in-transit shipments, one failure does not stop the round. |
-| Codeunit | 50104 | CRF Sales Post Subs | Event subscriber on Sales-Post; creates a shipment from a posted sales shipment. |
+| Codeunit | 50103 | CRF Update Status | Run by the job queue: updates booked and in-transit shipment tracking, one failure does not stop the round. |
+| Codeunit | 50104 | CRF Sales Post Subs | Event subscriber on Sales-Post; creates shipment tracking from a posted sales shipment. |
 | Codeunit | 50105 | CRF Assisted Setup Subs | Registers the setup guide in the Assisted Setup list. |
 | Codeunit | 50108 | CRF Install | Install code: creates the setup record, also for new companies. |
-| Codeunit | 50109 | CRF Upgrade | Upgrade code: fills `CRF Default Carrier` for existing customers. |
+| Codeunit | 50109 | CRF Upgrade | Upgrade code: fills the setup's default shipping agent from the latest shipment tracking record. |
 | Codeunit | 50110 | CRF Upgrade Tags | Defines and registers the upgrade tag. |
 | Codeunit | 50140 | CRF Freight Tests | Test codeunit, lives in the test app (step 30). |
 
@@ -42,60 +42,62 @@ Every object of the extension. Names carry the `CRF` affix, ids are in 50100-501
 
 | Type | Id | Name | Purpose |
 |---|---|---|---|
-| Page (Card) | 50100 | CRF Freight Setup | Setup card; creates the record on open; no insert or delete; searchable. |
-| Page (List) | 50101 | CRF Shipment List | Read-only list of shipments; opens the card; searchable. |
-| Page (Document) | 50102 | CRF Shipment Card | Shipment header with the lines part; Update Status action (added with the facade, step 18). |
-| Page (ListPart) | 50103 | CRF Shipment Subform | Lines of the shipment. |
+| Page (Card) | 50100 | CRF Freight Setup | Setup card; creates the record on open; no insert or delete; searchable; an action opens the Shipping Agents. |
+| Page (List) | 50101 | CRF Shipment Tracking List | Read-only list of shipment tracking; opens the card; searchable. |
+| Page (Document) | 50102 | CRF Shipment Tracking Card | Shipment tracking header with the lines part; Update Status action (added with the facade, step 19). |
+| Page (ListPart) | 50103 | CRF Shipment Tracking Subform | Lines of the shipment tracking. |
 | Page (NavigatePage) | 50104 | CRF Cronus Freight Wizard | Assisted setup guide that writes the setup record on Finish. |
-| Page (List) | 50107 | CRF Carrier Rates | Rates list with an Import Rates action. |
+| Page (List) | 50107 | CRF Shipping Agent Rates | Rates list with an Import Rates action. |
 | Page (CardPart) | 50108 | CRF Freight Activities | Cues on the Role Center. |
-| Page (API) | 50105 | CRF Shipment API | Webshop: shipments, with the lines as a part; bound action `bookShipment`. |
-| Page (API) | 50106 | CRF Shipment Line API | Webshop: shipment lines. |
-| Page (API) | 50109 | CRF Shipment Status API | Read-only status lookups (`DataAccessIntent = ReadOnly`). |
+| Page (API) | 50105 | CRF Shipment Tracking API | Webshop: shipment tracking (`shipmentTrackings`), with the lines as a part; bound action `book`. |
+| Page (API) | 50106 | CRF Shipment Tracking Line API | Webshop: shipment tracking lines (`shipmentTrackingLines`). |
+| Page (API) | 50109 | CRF Tracking Status API | Read-only status lookups (`DataAccessIntent = ReadOnly`). |
 | Page extension | 50100 | CRF Customer List | Hello action (step 03). |
-| Page extension | 50101 | CRF Customer Card | Shows `CRF Default Carrier`. |
+| Page extension | 50101 | CRF Shipping Agents | Shows `CRF Carrier` and `CRF API Base URL` on the Shipping Agents page, and a masked API Key field. |
 | Page extension | 50102 | CRF Order Processor RC | Adds the activities part to the Role Center. |
 
 ## Other objects
 
 | Type | Id | Name | Purpose |
 |---|---|---|---|
-| Report | 50100 | CRF Warehouse Shipment List | Printable warehouse list with a Word or RDLC layout. |
-| XMLport | 50100 | CRF Import Carrier Rates | Import-only XMLport for carrier rates. |
-| Query | 50100 | CRF Shipments by Carrier | Number of shipments per carrier, status filter settable by code. |
-| Permission set | 50100 | CRF Freight Basic | Assignable set for daily work: shipments, lines, cues, report and API pages; setup and carrier rates read-only. |
-| Permission set | 50101 | CRF Freight Admin | Assignable set that includes CRF Freight Basic and adds setup, carrier rates, the setup guide, the rate import and install/upgrade code. |
+| Report | 50100 | CRF Warehouse Freight List | Printable freight list for the warehouse with a Word or RDLC layout. |
+| XMLport | 50100 | CRF Import Agent Rates | Import-only XMLport for shipping agent rates. |
+| Query | 50100 | CRF Tracking by Shipping Agent | Number of shipment tracking records per shipping agent, status filter settable by code. |
+| Permission set | 50100 | CRF Freight Basic | Assignable set for daily work: shipment tracking, lines, cues, report and API pages; setup and shipping agent rates read-only; reads Shipping Agent. |
+| Permission set | 50101 | CRF Freight Admin | Assignable set that includes CRF Freight Basic and adds setup, shipping agent rates, modify permission on Shipping Agent (the carrier settings), the setup guide, the rate import and install/upgrade code. |
 
-Counts: 5 tables, 1 table extension, 2 enums, 1 interface, 11 codeunits (10 in the app, 1 in the test app), 10 pages, 3 page extensions, 1 report, 1 XMLport, 1 query, 1 permission set.
+Counts: 5 tables, 1 table extension, 2 enums, 1 interface, 11 codeunits (10 in the app, 1 in the test app), 10 pages, 3 page extensions, 1 report, 1 XMLport, 1 query, 2 permission sets.
 
 ## Relations
 
 ```text
-CRF Shipment Line."Shipment No."   -> CRF Shipment Header."No."     many lines per header (document pattern)
-CRF Shipment Header."Customer No." -> Customer."No."                 table relation, validated
-CRF Shipment Header.Carrier        -> enum CRF Carrier -> codeunit implementing CRF ICarrier
-CRF Shipment Header."Sales Shipment No." -> Sales Shipment Header."No."   which posting created it (blank for webshop shipments)
-CRF Shipment Header."No. Series"   -> No. Series                     number series chosen in CRF Freight Setup
-Customer."CRF Default Carrier"     -> enum CRF Carrier               copied to a new shipment; falls back to CRF Freight Setup
-CRF Freight Setup."Default Carrier"-> enum CRF Carrier               used when the customer has none
-CRF Carrier Rate.Carrier           -> enum CRF Carrier               key: Carrier + Weight Limit
-CRF Freight Cue                    -> counts CRF Shipment Header (FlowField) and the query CRF Shipments by Carrier
+CRF Shipment Tracking Line."Document No."          -> CRF Shipment Tracking Header."No."   many lines per header (document pattern)
+CRF Shipment Tracking Header."Customer No."        -> Customer."No."                        table relation, validated
+CRF Shipment Tracking Header."Shipping Agent Code" -> Shipping Agent.Code                   table relation to the standard table
+Shipping Agent."CRF Carrier"                       -> enum CRF Carrier -> codeunit implementing CRF ICarrier
+Shipping Agent."CRF API Base URL"                  -> the address of that shipping agent's carrier service
+CRF Shipment Tracking Header."Sales Shipment No."  -> Sales Shipment Header."No."           which posting created it (blank for webshop records)
+CRF Shipment Tracking Header."No. Series"          -> No. Series                            number series chosen in CRF Freight Setup
+Customer."Shipping Agent Code" (standard)          -> Shipping Agent.Code                   copied to new shipment tracking; falls back to CRF Freight Setup
+CRF Freight Setup."Default Shipping Agent Code"    -> Shipping Agent.Code                   used when the customer has none
+CRF Shipping Agent Rate."Shipping Agent Code"      -> Shipping Agent.Code                   key: Shipping Agent Code + Weight Limit
+CRF Freight Cue                                    -> counts CRF Shipment Tracking Header (FlowField) and, for the default shipping agent, by code
 ```
 
-The customer's default carrier lives on the Customer table (table extension), because it is one value per customer that belongs on the customer card. Everything else about a shipment lives in tables of its own. The reasoning is in part 2.
+The carrier is found through the shipping agent: the facade reads the shipping agent of the tracking record and its `CRF Carrier`. The customer's regular shipping agent is the standard `Shipping Agent Code` on Customer, so Customer is not extended. Everything about the tracking itself lives in tables of its own. The reasoning is in part 2.
 
-Interface and enum: `CRF Carrier` implements `CRF ICarrier`, each value names its codeunit. A new carrier is a new enum value plus a new codeunit; nothing existing changes.
+Interface and enum: `CRF Carrier` implements `CRF ICarrier`, each value names its codeunit. A new kind of carrier service is a new enum value plus a new codeunit; nothing existing changes. A new shipping agent that uses an existing service is only data.
 
 ## Coverage of Mette's wishes
 
 | Wish | Objects |
 |---|---|
-| Shipment with address, carrier, status, tracking, packages | 50101, 50102, enums 50100/50101, pages 50101-50103 |
-| One place for regular carrier and carrier access | 50100 setup table and page, assisted setup 50104, 50105 |
-| Warehouse list | Report 50100 |
-| Webshop sees and creates shipments | API pages 50105, 50106, 50109 |
+| Shipment tracking with address, shipping agent, status, package tracking number, packages | 50101, 50102, enums 50100/50101, pages 50101-50103 |
+| One place for the regular shipping agent, and address and access for each shipping agent's system | 50100 setup table and page, assisted setup 50104, 50105; table extension 50100 and page extension 50101 on Shipping Agent |
+| Freight list for the warehouse | Report 50100 |
+| Webshop sees and creates shipment tracking | API pages 50105, 50106, 50109 |
 | Status updates itself | 50103 run by a job queue entry, facade 50100, interface and carriers |
-| Delivery posting creates the shipment | Subscriber 50104 |
-| Every customer has a regular carrier | Table extension 50100, page extensions 50101 |
-| More carriers later | Interface, extensible enum |
-| Rates, overview, access, setup of the system | 50103/XMLport/50107, query and cue 50104/50108/50102, permission set, install/upgrade |
+| Delivery posting creates the tracking | Subscriber 50104 |
+| Every customer has a regular shipping agent | Standard `Shipping Agent Code` on Customer, nothing to build |
+| More shipping agents later | Shipping agent is data; a new carrier service is interface, extensible enum |
+| Rates, overview, access, setup of the system | 50103/XMLport/50107, query and cue 50104/50108/50102, permission sets, install/upgrade |

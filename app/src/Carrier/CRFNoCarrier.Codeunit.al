@@ -2,16 +2,16 @@ codeunit 50106 "CRF No Carrier" implements "CRF ICarrier"
 {
     Access = Internal;
 
-    procedure GetRate(ShipmentHeader: Record "CRF Shipment Header"): Decimal
+    procedure GetRate(TrackingHeader: Record "CRF Shipment Tracking Header"): Decimal
     begin
-        Error(NoCarrierErr, ShipmentHeader."No.");
+        Error(NoCarrierErr, TrackingHeader."Shipping Agent Code", TrackingHeader."No.");
     end;
 
-    procedure GetStatus(ShipmentHeader: Record "CRF Shipment Header"): Enum "CRF Shipment Status"
+    procedure GetStatus(TrackingHeader: Record "CRF Shipment Tracking Header"): Enum "CRF Tracking Status"
     begin
-        Error(NoCarrierErr, ShipmentHeader."No.");
+        Error(NoCarrierErr, TrackingHeader."Shipping Agent Code", TrackingHeader."No.");
     end;
 
     var
-        NoCarrierErr: Label 'Shipment %1 has no carrier. Choose a carrier on the shipment first.', Comment = '%1 = shipment number';
+        NoCarrierErr: Label 'Shipping agent %1 on shipment tracking %2 has no carrier. Choose a carrier on the shipping agent first.', Comment = '%1 = shipping agent code, %2 = shipment tracking number';
 }

@@ -6,12 +6,12 @@ Two ways the polling can stop, two levels of alert:
 
 | | Level 1: the entry fails | Level 2: carriers fail inside a round |
 |---|---|---|
-| What happens | An error escapes `OnRun` of `CRF Update Status` (50103); the entry goes to Error, is retried up to Maximum No. of Attempts | `UpdateStatusNoError` catches each shipment's error; the entry stays green |
+| What happens | An error escapes `OnRun` of `CRF Update Status` (50103); the entry goes to Error, is retried up to Maximum No. of Attempts | `UpdateStatusNoError` catches the error of each shipment tracking record; the entry stays green |
 | Who is told | Cronus administrator (job queue notification) and the alert | The Azure alert, to the action group (a person at Cronus; Sekvens if they run the support) |
-| Telemetry | Environment's Application Insights: AL0000HE7 (failed, might be retried), AL0000JRG (failed the last time) | Resource in `app.json`: CRF-0004 (round finished) with `alFailed` above 0, in addition CRF-0002 per failed shipment |
+| Telemetry | Environment's Application Insights: AL0000HE7 (failed, might be retried), AL0000JRG (failed the last time) | Resource in `app.json`: CRF-0004 (round finished) with `alFailed` above 0, in addition CRF-0002 per failed record |
 | Query | `docs/monitoring/job-queue-entry-failed.kql` | `docs/monitoring/carriers-failed-in-round.kql` |
 
-Correction against the workbook text: it names the round event CRF-0003. In this repository CRF-0003 is "shipment created from a sales shipment" and the round event is CRF-0004 (see `telemetry.md`), so the level 2 query uses CRF-0004.
+Correction against the workbook text: it names the round event CRF-0003. In this repository CRF-0003 is "shipment tracking created from a sales shipment" and the round event is CRF-0004 (see `telemetry.md`), so the level 2 query uses CRF-0004.
 
 ## Level 1 in Business Central
 

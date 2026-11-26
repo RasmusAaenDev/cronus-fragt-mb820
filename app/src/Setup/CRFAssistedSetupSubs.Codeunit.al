@@ -10,7 +10,7 @@ codeunit 50105 "CRF Assisted Setup Subs"
         VideoCategory: Enum "Video Category";
         TitleTxt: Label 'Set up Cronus Freight';
         ShortTitleTxt: Label 'Cronus Freight';
-        DescriptionTxt: Label 'Choose the default carrier and the number series for shipments.';
+        DescriptionTxt: Label 'Choose the default shipping agent and the number series for shipment tracking.';
     begin
         if GuidedExperience.Exists("Guided Experience Type"::"Assisted Setup", ObjectType::Page, Page::"CRF Cronus Freight Wizard") then
             exit;

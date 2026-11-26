@@ -12,7 +12,7 @@ Needs a sandbox and an Azure subscription; neither exists here. Delivered:
 | Guide completed, notification enabled on My Notifications | Not done (needs Business Central); steps in the runbook |
 | Forced failure: Error log entry and notification | Not done; the test code is not in the repository (it must be removed again anyway) |
 | KQL for AL0000HE7 / AL0000JRG, id 50103, and an alert rule | Query and rule template written; not run |
-| KQL for the carrier events with failures, and an alert rule | Query and rule template written; uses CRF-0004 because CRF-0003 is a different event here (the workbook's numbering differs, see step 28) |
+| KQL for the carrier events with failures, and an alert rule | Query and rule template written; uses CRF-0004 because CRF-0003 is a different event here ("tracking created"); the workbook says CRF-0003 (see step 28) |
 | Test error removed, entry Ready, note for Mette | Nothing to remove; note in the runbook |
 
-`app.json` still has a placeholder connection string, so level 2 sends nothing until a real resource is configured.
+`app.json` still has a placeholder connection string, so level 2 sends nothing until a real resource is configured. The only change to the app in this step is the wording of the ruleset justification; the code is unchanged from step 38.

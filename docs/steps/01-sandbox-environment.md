@@ -10,3 +10,5 @@ Delivers a runbook, `docs/runbooks/create-sandbox.md`, for creating the `CRONUS-
 | Update window noted and shared with Mette | Not done. Runbook step 8 and the draft message. |
 
 What remains for a person: run the runbook, fill in the table and send Mette the message. The name `CRONUS-DEV` is used by the launch configurations from step 02 on.
+
+The later steps use the demo shipping agents of the Cronus company (DHL and FEDEX). If the sandbox company lacks them, step 13 says to create them on the Shipping Agents page.
