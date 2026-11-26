@@ -1,15 +1,41 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 25: An OData action and read scale-out
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that follows shipments with freight carriers for the fictional distributor Cronus. It extends the standard shipping agents with the carrier settings and keeps its own shipment tracking records (Danish: fragtbreve). It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Build the solution › Report and API pages
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`, and its `README.md` is the task description for that step (see `STEPS.md` for links). The branches are stacked: a branch starts from the previous step's code, so the compare view between two neighbouring steps shows what the step adds, plus the swapped README. `main` holds the finished solution (the last step's code) and this project README.
+> When the webshop has registered a shipment, it should also be able to say "book it now" by itself, without
+> anyone here having to go in and press anything. And the webshop asks about the shipments very often. The
+> warehouse must not notice the system getting slow just because the webshop is constantly looking.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Add a bound action that books an open shipment tracking record, and give the webshop's frequent status lookups their own read-only API page.
+
+**Do this**
+
+1. Add a bound action book to CRF Shipment Tracking API that books an open record.
+2. Put the logic in a new public procedure Book in CRF Freight Mgt: it accepts only records with status Open, gets the price through GetRate, so a record without a shipping agent, a shipping agent without a carrier or a missing rate fails with the existing errors, and then sets Status to Booked.
+3. Booking doesn't send anything to the carrier, because the fictional carrier service from module 3c defines no booking call.
+4. Give the status lookups their own read-only API page, CRF Tracking Status API (page 50109), with the entity trackingStatus, the entity set trackingStatuses and DataAccessIntent = ReadOnly.
+5. Find out on Learn what that property does and doesn't promise.
+6. Add the page to CRF Freight Basic, publish, and book a test record with a POST from a REST client.
+
+## Checklist
+
+- [ ] CRF Shipment Tracking API has a [ServiceEnabled] procedure book(var ActionContext: WebServiceActionContext) that calls CRF Freight Mgt and sets a result code.
+- [ ] Book in CRF Freight Mgt rejects a record that isn't Open, fails with a clear error without a shipping agent, carrier or rate, and sets Status to Booked.
+- [ ] A POST to .../shipmentTrackings({id})/Microsoft.NAV.book books the test record, and a GET shows status Booked.
+- [ ] Page 50109 CRF Tracking Status API has PageType = API, Editable = false and DataAccessIntent = ReadOnly, and a GET on trackingStatuses returns the status, the shipping agent code and the tracking number.
+- [ ] The new page is in the CRF Freight Basic permission set.
+
+## In this branch
+
+- [Notes for this step](docs/steps/25-bound-action-and-scale-out.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/bound-action-and-scale-out
+
+---
+
+[← Step 24](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/24-report-and-api-pages/api-pages-for-the-webshop/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 26 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/26-report-and-api-pages/tell-the-webshop-when-the-tracking-status-changes/README.md)
