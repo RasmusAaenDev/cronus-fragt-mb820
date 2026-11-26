@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Quality and deploy
 
+**[See what this step changed: diff against step 33](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/7eca96e423be0076373020531ea758cb6e7b3ce3...627a228145cb3def7a04487176d6ec7f251009c5)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -39,6 +41,7 @@ Run your own tests again, and then run them together with a selection of Microso
 ## In this branch
 
 - [Notes for this step](docs/steps/34-run-standard-tests.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/7eca96e423be0076373020531ea758cb6e7b3ce3...627a228145cb3def7a04487176d6ec7f251009c5): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/run-standard-tests
 
 ---
