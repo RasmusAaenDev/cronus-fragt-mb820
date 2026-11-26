@@ -19,6 +19,15 @@
       "environmentType": "Sandbox",
       "environmentName": "CRONUS-DEV",
       "breakOnNext": "WebClient"
+    },
+    {
+      "name": "Snapshot Cronus Fragt sandbox",
+      "type": "al",
+      "request": "snapshotInitialize",
+      "environmentType": "Sandbox",
+      "environmentName": "CRONUS-DEV",
+      "breakOnNext": "WebClient",
+      "userId": "<user security ID of the colleague, from the Users page>"
     }
   ]
 }
