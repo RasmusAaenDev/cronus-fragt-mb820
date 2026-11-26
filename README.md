@@ -1,15 +1,45 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 19: A facade codeunit
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that follows shipments with freight carriers for the fictional distributor Cronus. It extends the standard shipping agents with the carrier settings and keeps its own shipment tracking records (Danish: fragtbreve). It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Build the solution › Carriers and the outbound API
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`, and its `README.md` is the task description for that step (see `STEPS.md` for links). The branches are stacked: a branch starts from the previous step's code, so the compare view between two neighbouring steps shows what the step adds, plus the swapped README. `main` holds the finished solution (the last step's code) and this project README.
+> When the warehouse presses a button to get the latest status on a shipment, the system must know by itself
+> which shipping agent to ask, and how. And if something goes wrong, I want a message the warehouse can
+> understand, not a long technical text they have to call you about. If you need the details, they're welcome
+> to sit behind it.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Create one public entry point to the carriers, a facade codeunit, that finds the carrier through the shipping agent and handles carrier errors cleanly.
+
+**Do this**
+
+1. Create CRF Freight Mgt (codeunit 50100) as the one public entry point to the carriers.
+2. Give it GetCarrier, which takes a shipment tracking record, looks up its shipping agent in the Shipping Agent table and returns the CRF ICarrier implementation of the agent's CRF Carrier field. A record without a shipping agent gets a clear error that says so.
+3. Give it GetRate, which returns the price of the shipment from that carrier.
+4. Give it UpdateStatus(var TrackingHeader: Record "CRF Shipment Tracking Header"), which asks the carrier for the status and saves it on the record when it has changed.
+5. Wrap the carrier lookup and the carrier call so that an error is caught: offer a second procedure, UpdateStatusNoError, that returns false and the error text instead of stopping, which the job queue codeunit in step 22 will use.
+6. Let UpdateStatus raise one clear error built with ErrorInfo, with a message for the warehouse and the technical details in the detailed message.
+7. Keep database writes out of the part that can fail.
+8. Add an Update Status action to CRF Shipment Tracking Card (page 50102) that calls UpdateStatus, and add the codeunit to CRF Freight Basic.
+
+## Checklist
+
+- [ ] Codeunit 50100 CRF Freight Mgt has Access = Public, and its GetCarrier reads the record's shipping agent and returns the agent's CRF Carrier value as an Interface "CRF ICarrier".
+- [ ] GetCarrier raises an error that names the shipment tracking record when its Shipping Agent Code is blank.
+- [ ] The call to GetCarrier and the call to GetStatus sit in a local procedure with the [TryFunction] attribute that doesn't write to the database, and the caller uses its return value.
+- [ ] UpdateStatus raises one error through an ErrorInfo with Message and DetailedMessage, using GetLastErrorText for the details.
+- [ ] The non-failing variant returns false and the error text, and the status is modified only after the carrier call succeeded.
+- [ ] Running Update Status on a record whose shipping agent has a blank Carrier shows the facade's ErrorInfo message, with the error from CRF No Carrier in the details.
+
+## In this branch
+
+- [Notes for this step](docs/steps/19-carrier-facade.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/carrier-facade
+
+---
+
+[← Step 18](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/18-carriers-and-the-outbound-api/one-interface-for-every-carrier/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 20 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/20-carriers-and-the-outbound-api/call-the-carrier-s-service/README.md)
