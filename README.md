@@ -1,15 +1,43 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 36: Put it in Git and build it in a pipeline
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that follows shipments with freight carriers for the fictional distributor Cronus. It extends the standard shipping agents with the carrier settings and keeps its own shipment tracking records (Danish: fragtbreve). It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Bonus: CI/CD and notifications · bonus
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`, and its `README.md` is the task description for that step (see `STEPS.md` for links). The branches are stacked: a branch starts from the previous step's code, so the compare view between two neighbouring steps shows what the step adds, plus the swapped README. `main` holds the finished solution (the last step's code) and this project README.
+> I understand the whole freight solution is sitting on your own computer right now. What happens if it
+> breaks, or if a new colleague joins one day? I'd like there to always be a safe copy in a shared place, and
+> for everything to be checked automatically every time someone has made a change, before it gets anywhere
+> near our books.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+**What you hand in:** A short note for Mette and for the next developer: where the code lives, how a change reaches main, and where the build result can be read.
+
+Move Cronus Fragt and Cronus Fragt Tests (module 3e) into one GitHub repository and let a pipeline build and test them on every change.
+
+**Do this**
+
+1. Put both apps in one GitHub repository.
+2. Let a pipeline compile both apps and run CRF Freight Tests (codeunit 50140) on every change. Learn points to AL-Go for GitHub for this: create the repository from the template for per-tenant extensions, and follow the AL-Go documentation in its GitHub repository to add your two projects and run the CI/CD workflow.
+3. Work on a branch and merge to main through a pull request that the build must pass.
+4. Keep secrets and generated files out of the repository.
+5. Write the note.
+
+## Checklist
+
+- [ ] The repository was created from the AL-Go template for per-tenant extensions and holds both Cronus Fragt and Cronus Fragt Tests.
+- [ ] A change was made on a branch and reached main through a pull request after the build had passed.
+- [ ] The latest workflow run on main is green, and its output shows that both apps compiled and that the tests in codeunit 50140 passed.
+- [ ] The repository contains no passwords, API keys or downloaded symbol packages (.alpackages), and your note says where the pipeline's secrets are kept according to the AL-Go documentation.
+- [ ] Your note names the AL-Go repository documentation as the source for its settings and workflows.
+
+## In this branch
+
+- [Notes for this step](docs/steps/36-git-and-pipeline.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/git-and-pipeline
+
+---
+
+[← Step 35](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/35-quality-and-deploy/prepare-for-appsource-and-release/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 37 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/37-bonus-ci-cd-and-notifications/version-and-sign-the-app/README.md)
