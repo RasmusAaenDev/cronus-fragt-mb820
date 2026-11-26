@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Setup and assisted setup
 
+**[See what this step changed: diff against step 9](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/61461981a9a6846b47ce7c169e3aaf289c6ac468...dc939b10ab4ea8e1990fdc881050df16f5f8cfe8)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -32,6 +34,7 @@ Build an assisted setup guide for the freight setup and register it on the Assis
 ## In this branch
 
 - [Notes for this step](docs/steps/10-assisted-setup.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/61461981a9a6846b47ce7c169e3aaf289c6ac468...dc939b10ab4ea8e1990fdc881050df16f5f8cfe8): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/assisted-setup
 
 ---
