@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Solution design
 
+**[See what this step changed: diff against step 6](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/53d8625bb09ad0f030bc9b91c189769b38d7f4a6...fa02e23f551d928b484e9d7635e7734df0a94fae)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -44,6 +46,7 @@ Draw or describe the architecture of Cronus Fragt on one page, so that Mette can
 ## In this branch
 
 - [Notes for this step](docs/steps/07-architecture-sketch.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/53d8625bb09ad0f030bc9b91c189769b38d7f4a6...fa02e23f551d928b484e9d7635e7734df0a94fae): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/architecture-sketch
 
 ---
