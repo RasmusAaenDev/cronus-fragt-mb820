@@ -1,0 +1,15 @@
+# Step 17: A query for shipment tracking per shipping agent
+
+Delivers query 50100 `CRF Tracking by Shipping Agent` (`app/src/Cue/CRFTrackingByShippingAgent.Query.al`), cue table 50104 `CRF Freight Cue` (`CRFFreightCue.Table.al`), CardPart 50108 `CRF Freight Activities` (`CRFFreightActivities.Page.al`) and page extension 50102 `CRF Order Processor RC` (`CRFOrderProcessorRC.PageExt.al`), all in `app/src/Cue/`. The query, table and part are in the `CRF Freight Basic` permission set (the page extension needs no entry).
+
+| Checklist item | Where |
+|---|---|
+| Query: Shipping Agent Code column, Status filter, Count column without source field | Query file: `column(ShippingAgentCode; "Shipping Agent Code")`, `filter(Status; Status)`, `column(NoOfShipments) { Method = Count; }`. |
+| Cue table: Primary Key, Integer FlowField counting open shipment tracking records, Integer normal field | `CRFFreightCue.Table.al`, fields 1-3: `Open Shipments` (FlowField, `count("CRF Shipment Tracking Header" where(Status = const(Open)))`) and `Open Default Agent`. |
+| CardPart with cuegroup, fills the normal field from the query, action tile to `CRF Shipment Tracking List` | `CRFFreightActivities.Page.al`: `OnAfterGetRecord` reads the setup, sets Status = Open and `ShippingAgentCode` = the setup's `Default Shipping Agent Code`, then `Open`, `Read`, `Close`; action `AllTracking` runs `CRF Shipment Tracking List`. |
+| Page extension adds the part to Order Processor Role Center, cues show the right numbers | `addfirst(rolecenter)` in `CRFOrderProcessorRC.PageExt.al`. The numbers on the Role Center are not seen, see below. |
+| Query, cue table, cue page in the permission set | `CRFFreightBasic.PermissionSet.al`: `table "CRF Freight Cue" = X`, tabledata RIMD, `page "CRF Freight Activities" = X`, `query "CRF Tracking by Shipping Agent" = X`. |
+
+Choices: the second cue counts open tracking records for the setup's default shipping agent (field `Default Shipping Agent Code` in the freight setup), not for a carrier implementation, because the shipping agent is what the record points to. The drill-down on Open Shipments opens the shipment tracking list (not filtered to open ones, which a FlowField drill-down on this table does not do by itself; a filtered drill-down is a later refinement). Open with Default Shipping Agent has no drill-down, because it would show all records and mislead. If the setup record is missing, the second cue is 0. If the setup has no default shipping agent, the query filters on a blank code and counts open records without a shipping agent; that is only a number, not an error. The field names `Open Shipments` and `NoOfShipments` are kept from the first version of the design; their captions say shipment tracking.
+
+Compile: with the Business Central 28 compiler, 0 errors (`scripts/compile.sh app`). Not verified: the cues under Activities on the Role Center with real numbers, since that needs a sandbox and a few shipment tracking records. `docs/design/object-ids.md`: query 50100, table 50104, page 50108 and page extension 50102 built.
