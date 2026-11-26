@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
+**[See what this step changed: diff against step 16](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/2ea6b3c6c7685e7c29433caaba4f013df0be4e5d...28f743178b3d46ac7a4cfbf75853ff756389b6a9)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -34,6 +36,7 @@ Create a query that counts shipment tracking records per shipping agent and use 
 ## In this branch
 
 - [Notes for this step](docs/steps/17-tracking-per-shipping-agent-query.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/2ea6b3c6c7685e7c29433caaba4f013df0be4e5d...28f743178b3d46ac7a4cfbf75853ff756389b6a9): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/shipments-per-carrier-query
 
 ---
