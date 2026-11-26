@@ -1,15 +1,39 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 3: Publish a first extension and attach the debugger
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that follows shipments with freight carriers for the fictional distributor Cronus. It extends the standard shipping agents with the carrier settings and keeps its own shipment tracking records (Danish: fragtbreve). It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Environment and tools
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`, and its `README.md` is the task description for that step (see `STEPS.md` for links). The branches are stacked: a branch starts from the previous step's code, so the compare view between two neighbouring steps shows what the step adds, plus the swapped README. `main` holds the finished solution (the last step's code) and this project README.
+> I'd really like to see something running before I report back to management on Friday. It can be dead
+> simple, just a button on the customer list that says hello. And show me that you can work out what the code
+> is doing if something acts up.
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Write a page extension for the Customer List with an action that shows a greeting from Cronus Fragt, publish it to the sandbox, and then use the debugger on it.
+
+**Do this**
+
+1. Write a page extension for the Customer List with an action that shows a greeting from Cronus Fragt.
+2. Publish it to the sandbox and check that the action works.
+3. Add an attach configuration to launch.json.
+4. Set a breakpoint in the action and attach the debugger to the next web client session.
+5. Run the action and inspect the variables when the breakpoint is hit.
+
+## Checklist
+
+- [ ] The page extension compiles and is published to the sandbox.
+- [ ] The new action appears on the Customer List and shows the greeting.
+- [ ] launch.json has an attach configuration that breaks on the next web client session.
+- [ ] The debugger stops at your breakpoint and you can read the greeting variable.
+
+## In this branch
+
+- [Notes for this step](docs/steps/03-first-extension.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/first-extension
+
+---
+
+[← Step 2](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/02-environment-and-tools/set-up-the-al-development-environment/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 4 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/04-solution-design/design-document-part-1-the-object-list/README.md)
