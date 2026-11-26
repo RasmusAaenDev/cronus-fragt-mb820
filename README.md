@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Bonus: CI/CD and notifications · bonus
 
+**[See what this step changed: diff against step 37](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/04ac4d324b2c17ce478d97fcd4140b6f7aff78e7...2063e9928a916ecb03505cf8bbdce99589332fe8)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -46,6 +48,7 @@ Build two Power Automate flows on Cronus Fragt's API from module 3d, so that cus
 ## In this branch
 
 - [Notes for this step](docs/steps/38-power-automate-flow.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/04ac4d324b2c17ce478d97fcd4140b6f7aff78e7...2063e9928a916ecb03505cf8bbdce99589332fe8): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/power-automate-flow
 
 ---
