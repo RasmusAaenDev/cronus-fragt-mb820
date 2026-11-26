@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Link to standard Business Central
 
+**[See what this step changed: diff against step 26](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/6c16001e6aee8c6547ae461e2eca7116933b7f90...0239a52684bc13da616add7499bb2acea687cfd6)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -40,6 +42,7 @@ Create a shipment tracking record automatically when a sales shipment is posted,
 ## In this branch
 
 - [Notes for this step](docs/steps/27-tracking-from-sales-shipment.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/6c16001e6aee8c6547ae461e2eca7116933b7f90...0239a52684bc13da616add7499bb2acea687cfd6): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/shipment-event
 
 ---
