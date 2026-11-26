@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Setup and assisted setup
 
+**[See what this step changed: diff against step 7](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/fa02e23f551d928b484e9d7635e7734df0a94fae...89e88c2f7a8078dae13d543e6826686acd6b35a3)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -31,6 +33,7 @@ Mette needs one place for the default shipping agent and the numbering of shipme
 ## In this branch
 
 - [Notes for this step](docs/steps/08-setup-table.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/fa02e23f551d928b484e9d7635e7734df0a94fae...89e88c2f7a8078dae13d543e6826686acd6b35a3): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/setup-table
 
 ---
