@@ -122,7 +122,19 @@ codeunit 50100 "CRF Freight Mgt"
                 TrackingHeader."Shipping Agent Code" := SalesShipmentHeader."Shipping Agent Code";
         TrackingHeader."Sales Shipment No." := SalesShipmentNo;
         TrackingHeader.Modify(true);
+        LogTrackingCreated(TrackingHeader);
         OnAfterCreateTrackingFromSalesShipment(TrackingHeader, SalesShipmentNo);
+    end;
+
+    local procedure LogTrackingCreated(TrackingHeader: Record "CRF Shipment Tracking Header")
+    var
+        Dimensions: Dictionary of [Text, Text];
+    begin
+        // The number and the shipping agent code are CustomerContent, so the SystemId and the carrier are logged instead
+        Dimensions.Add('TrackingSystemId', Format(TrackingHeader.SystemId));
+        Dimensions.Add('Carrier', Format(CarrierOf(TrackingHeader)));
+        Session.LogMessage('CRF-0003', TrackingCreatedTxt, Verbosity::Normal,
+            DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, Dimensions);
     end;
 
     /// <summary>
@@ -145,6 +157,7 @@ codeunit 50100 "CRF Freight Mgt"
     end;
 
     var
+        TrackingCreatedTxt: Label 'Shipment tracking created from sales shipment', Locked = true;
         UpdateFailedTitleLbl: Label 'The tracking status was not updated';
         UpdateFailedErr: Label 'Cronus Fragt could not get the status of shipment tracking %1 from the carrier. Try again later.', Comment = '%1 = shipment tracking number';
 }

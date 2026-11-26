@@ -9,6 +9,8 @@ codeunit 50103 "CRF Update Status"
         TrackingToUpdate: Record "CRF Shipment Tracking Header";
         FreightMgt: Codeunit "CRF Freight Mgt";
         ErrorText: Text;
+        Succeeded: Integer;
+        Failed: Integer;
     begin
         TrackingHeader.SetFilter(Status, '%1|%2', TrackingHeader.Status::Booked, TrackingHeader.Status::"In Transit");
         TrackingHeader.SetFilter("Package Tracking No.", '<>%1', '');
@@ -16,9 +18,14 @@ codeunit 50103 "CRF Update Status"
             repeat
                 // A second variable is updated, so the filtered set that is looped through is not changed
                 TrackingToUpdate.Get(TrackingHeader."No.");
-                if not FreightMgt.UpdateStatusNoError(TrackingToUpdate, ErrorText) then
+                if FreightMgt.UpdateStatusNoError(TrackingToUpdate, ErrorText) then
+                    Succeeded += 1
+                else begin
+                    Failed += 1;
                     LogFailure(TrackingToUpdate);
+                end;
             until TrackingHeader.Next() = 0;
+        LogRoundFinished(Succeeded, Failed);
     end;
 
     local procedure LogFailure(TrackingHeader: Record "CRF Shipment Tracking Header")
@@ -33,6 +40,22 @@ codeunit 50103 "CRF Update Status"
             DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, Dimensions);
     end;
 
+    local procedure LogRoundFinished(Succeeded: Integer; Failed: Integer)
     var
+        Dimensions: Dictionary of [Text, Text];
+        RoundVerbosity: Verbosity;
+    begin
+        // Counts only: no customer data
+        Dimensions.Add('Succeeded', Format(Succeeded, 0, 9));
+        Dimensions.Add('Failed', Format(Failed, 0, 9));
+        RoundVerbosity := Verbosity::Normal;
+        if Failed > 0 then
+            RoundVerbosity := Verbosity::Warning;
+        Session.LogMessage('CRF-0004', RoundFinishedTxt, RoundVerbosity,
+            DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, Dimensions);
+    end;
+
+    var
+        RoundFinishedTxt: Label 'Tracking status round finished', Locked = true;
         FailureTelemetryTxt: Label 'Tracking status update from the carrier failed', Locked = true;
 }
