@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Report and API pages
 
+**[See what this step changed: diff against step 25](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/bf19057565fa848aad1aa01059e0e0824b26d254...6c16001e6aee8c6547ae461e2eca7116933b7f90)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -36,6 +38,7 @@ Let the webshop subscribe to changes on CRF Shipment Tracking API with an API su
 ## In this branch
 
 - [Notes for this step](docs/steps/26-webhooks.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/bf19057565fa848aad1aa01059e0e0824b26d254...6c16001e6aee8c6547ae461e2eca7116933b7f90): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/webhooks-and-business-events
 
 ---
