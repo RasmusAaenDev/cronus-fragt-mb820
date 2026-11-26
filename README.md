@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
+**[See what this step changed: diff against step 13](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/80140b6ec74c13480c40f6242d23cc4ecb07ceb5...e49ff9b61fe3afee63e50bcb36a3b62e00229f14)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -34,6 +36,7 @@ Create the pages for the shipment tracking document: a list, a card and a lines 
 ## In this branch
 
 - [Notes for this step](docs/steps/14-shipment-tracking-pages.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/80140b6ec74c13480c40f6242d23cc4ecb07ceb5...e49ff9b61fe3afee63e50bcb36a3b62e00229f14): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/shipment-pages
 
 ---
