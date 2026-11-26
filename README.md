@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Environment and tools
 
+**[See what this step changed: diff against step 1](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/69b0adff2ffec7060f6fa1af1b4ea20b4534aecd...824f8407663f4d9cbf4805370d2852598d4e3c68)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -36,6 +38,7 @@ Set up the AL development environment for Cronus Fragt, so that you have a proje
 ## In this branch
 
 - [Notes for this step](docs/steps/02-dev-environment.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/69b0adff2ffec7060f6fa1af1b4ea20b4534aecd...824f8407663f4d9cbf4805370d2852598d4e3c68): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/dev-environment
 
 ---
