@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Report and API pages
 
+**[See what this step changed: diff against step 22](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/8cbbf5c9136447e59de719f2a3c5e011bbd61813...419d0b10429d76d9a2c7e9eaa672f83ebe1ea499)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -36,6 +38,7 @@ Create the freight list for the warehouse, a printable list of shipment tracking
 ## In this branch
 
 - [Notes for this step](docs/steps/23-freight-list-report.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/8cbbf5c9136447e59de719f2a3c5e011bbd61813...419d0b10429d76d9a2c7e9eaa672f83ebe1ea499): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/shipment-report
 
 ---
