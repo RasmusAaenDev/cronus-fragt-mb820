@@ -33,6 +33,10 @@ page 50102 "CRF Shipment Tracking Card"
                 {
                     ToolTip = 'Specifies the tracking number that the carrier gave the shipment.';
                 }
+                field("Sales Shipment No."; Rec."Sales Shipment No.")
+                {
+                    ToolTip = 'Specifies the posted sales shipment that this shipment was created from. It is blank for shipments created by hand.';
+                }
                 field("Posting Date"; Rec."Posting Date")
                 {
                     ToolTip = 'Specifies the date of the shipment.';

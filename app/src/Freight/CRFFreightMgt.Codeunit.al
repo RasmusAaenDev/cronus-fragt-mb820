@@ -91,6 +91,48 @@ codeunit 50100 "CRF Freight Mgt"
         TrackingHeader.Modify(true);
     end;
 
+    /// <summary>
+    /// Creates a shipment tracking record for a posted sales shipment, with the customer's address and the shipping
+    /// agent of the posted sales shipment (or, if it has none, the customer's or the freight setup's).
+    /// Does nothing when a record for that posted sales shipment already exists, or when the freight setup has no
+    /// number series (posting a sales shipment must not fail because freight is not set up).
+    /// </summary>
+    procedure CreateTrackingFromSalesShipment(CustomerNo: Code[20]; SalesShipmentNo: Code[20])
+    var
+        ExistingTracking: Record "CRF Shipment Tracking Header";
+        TrackingHeader: Record "CRF Shipment Tracking Header";
+        FreightSetup: Record "CRF Freight Setup";
+        SalesShipmentHeader: Record "Sales Shipment Header";
+    begin
+        if (CustomerNo = '') or (SalesShipmentNo = '') then
+            exit;
+        ExistingTracking.SetRange("Sales Shipment No.", SalesShipmentNo);
+        if not ExistingTracking.IsEmpty() then
+            exit;
+        if not FreightSetup.Get() then
+            exit;
+        if FreightSetup."Shipment Tracking Nos." = '' then
+            exit;
+        TrackingHeader.Init();
+        TrackingHeader.Insert(true); // OnInsert takes the number from the number series
+        TrackingHeader.Validate("Customer No.", CustomerNo); // ship-to fields and shipping agent
+        // The shipping agent on the posted sales shipment is the one that was chosen for this delivery
+        if SalesShipmentHeader.Get(SalesShipmentNo) then
+            if SalesShipmentHeader."Shipping Agent Code" <> '' then
+                TrackingHeader."Shipping Agent Code" := SalesShipmentHeader."Shipping Agent Code";
+        TrackingHeader."Sales Shipment No." := SalesShipmentNo;
+        TrackingHeader.Modify(true);
+        OnAfterCreateTrackingFromSalesShipment(TrackingHeader, SalesShipmentNo);
+    end;
+
+    /// <summary>
+    /// Raised after a shipment tracking record was created and saved from a posted sales shipment.
+    /// </summary>
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterCreateTrackingFromSalesShipment(var CRFTrackingHeader: Record "CRF Shipment Tracking Header"; SalesShipmentNo: Code[20])
+    begin
+    end;
+
     [TryFunction]
     local procedure TryGetStatus(TrackingHeader: Record "CRF Shipment Tracking Header"; var NewStatus: Enum "CRF Tracking Status")
     var
