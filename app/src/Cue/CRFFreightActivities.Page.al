@@ -22,17 +22,21 @@ page 50108 "CRF Freight Activities"
                 {
                     ToolTip = 'Specifies the number of open shipment tracking records that go with the default shipping agent of the freight setup.';
                 }
+            }
+        }
+    }
 
-                actions
-                {
-                    action(AllTracking)
-                    {
-                        Caption = 'All Shipment Tracking';
-                        ToolTip = 'Opens the list of all shipment tracking records.';
-                        RunObject = page "CRF Shipment Tracking List";
-                        Image = TileNew;
-                    }
-                }
+    actions
+    {
+        area(Processing)
+        {
+            action(AllTracking)
+            {
+                ApplicationArea = All;
+                Caption = 'All Shipment Tracking';
+                ToolTip = 'Opens the list of all shipment tracking records.';
+                RunObject = page "CRF Shipment Tracking List";
+                Image = List;
             }
         }
     }

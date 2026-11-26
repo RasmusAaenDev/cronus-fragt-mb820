@@ -1,6 +1,8 @@
 #!/bin/bash
 # Compile the AL project in ./app (or ./test) with the Business Central 28 compiler, natively on Linux.
-#   scripts/compile.sh [app|test] [--codecop]
+#   scripts/compile.sh [app|test] [--codecop | --appsource]
+#   --codecop   CodeCop, UICop, PerTenantExtensionCop and the project's cronusfragt.ruleset.json (as in .vscode/settings.json)
+#   --appsource trial build: PerTenantExtensionCop is swapped for AppSourceCop (reads AppSourceCop.json in the project); not the normal build
 # Needs the symbol cache and compiler in ~/.bc-tools/28.0.46665.51486 (see the README).
 set -u
 BC=${BC:-/home/rasmus/.bc-tools/28.0.46665.51486}
@@ -13,8 +15,11 @@ ln -sf "$BC"/packagecache/*.app "$CACHE"/ 2>/dev/null
 ALC="$BC/alext/extension/bin/linux/alc"
 ANALYZE=""
 for a in "$@"; do
-  if [ "$a" = "--codecop" ]; then
-    for d in CodeCop UICop PerTenantExtensionCop; do
+  if [ "$a" = "--codecop" ] || [ "$a" = "--appsource" ]; then
+    COPS="CodeCop UICop PerTenantExtensionCop"
+    [ "$a" = "--appsource" ] && COPS="CodeCop UICop AppSourceCop"
+    [ -f "$REPO/$PROJ/cronusfragt.ruleset.json" ] && ANALYZE="$ANALYZE /ruleset:$REPO/$PROJ/cronusfragt.ruleset.json"
+    for d in $COPS; do
       dll=$(find "$BC/alext/extension/bin" -name "Microsoft.Dynamics.Nav.$d.dll" | head -1)
       [ -n "$dll" ] && ANALYZE="$ANALYZE /analyzer:$dll"
     done

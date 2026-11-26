@@ -60,6 +60,7 @@ table 50102 "CRF Shipment Tracking Line"
         key(PK; "Document No.", "Line No.")
         {
             Clustered = true;
+            SumIndexFields = Weight;
         }
     }
 }

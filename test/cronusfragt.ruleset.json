@@ -1,0 +1,26 @@
+{
+  "name": "Cronus Fragt ruleset",
+  "description": "Code analysis rules for Cronus Fragt. The test project has its own copy (cronusfragt.ruleset.json in test/) with the same content.",
+  "rules": [
+    {
+      "id": "AA0218",
+      "action": "Error",
+      "justification": "Every field and action that users see needs a tooltip, so a missing tooltip stops the build."
+    },
+    {
+      "id": "AA0215",
+      "action": "Error",
+      "justification": "Mette wants tooltips written as 'Specifies ...'; a wrong start of a tooltip stops the build."
+    },
+    {
+      "id": "PTE0012",
+      "action": "Info",
+      "justification": "internalsVisibleTo only opens internals to Cronus Fragt Tests (id 31e3580c-855a-4f98-a6f4-3627af1be009). Access modifiers are not a security boundary here: the CRF Freight Basic and CRF Freight Admin permission sets protect the data, and the test app is never installed in production."
+    },
+    {
+      "id": "AA0247",
+      "action": "Hidden",
+      "justification": "The project does not use namespaces: all 37 objects carry the CRF affix, which already isolates them, and the extension is installed for Cronus only. Moving everything into a namespace is a rename of every object reference and has to be done together with the AppSource decision (step 35)."
+    }
+  ]
+}
