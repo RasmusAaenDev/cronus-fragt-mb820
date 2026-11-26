@@ -20,6 +20,7 @@ permissionset 50100 "CRF Freight Basic"
         page "CRF Shipping Agent Rates" = X,
         page "CRF Freight Activities" = X,
         query "CRF Tracking by Shipping Agent" = X,
+        codeunit "CRF Freight Mgt" = X,
         codeunit "CRF Carrier A" = X,
         codeunit "CRF Carrier B" = X,
         codeunit "CRF No Carrier" = X,

@@ -71,4 +71,32 @@ page 50102 "CRF Shipment Tracking Card"
             }
         }
     }
+
+    actions
+    {
+        area(Processing)
+        {
+            action(UpdateStatus)
+            {
+                Caption = 'Update Status';
+                ToolTip = 'Asks the carrier for the latest status of the shipment and saves it.';
+                Image = Refresh;
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    FreightMgt: Codeunit "CRF Freight Mgt";
+                begin
+                    FreightMgt.UpdateStatus(Rec);
+                    CurrPage.Update(false);
+                end;
+            }
+        }
+        area(Promoted)
+        {
+            actionref(UpdateStatus_Promoted; UpdateStatus)
+            {
+            }
+        }
+    }
 }
