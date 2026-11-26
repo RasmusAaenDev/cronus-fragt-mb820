@@ -2,6 +2,8 @@
 
 Cronus Fragt · MB-820 workbook · Build the solution › Shipment
 
+**[See what this step changed: diff against step 11](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/5337abfa822b62764c2a3f2132f009279378d812...ba2976ce046edc763582491f9ec8eee724ab4ba5)**
+
 This page is the task description for the step. The code and documents on this branch are the model solution.
 
 ## What Mette says
@@ -38,6 +40,7 @@ Finish the tracking status enum and give the shipment tracking header its number
 ## In this branch
 
 - [Notes for this step](docs/steps/12-enums-and-numbers.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- [Diff for this step](https://github.com/RasmusAaenDev/cronus-fragt-mb820/compare/5337abfa822b62764c2a3f2132f009279378d812...ba2976ce046edc763582491f9ec8eee724ab4ba5): exactly the code and documents this step adds, without the README.
 - Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/enums-and-numbers
 
 ---
