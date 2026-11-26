@@ -37,4 +37,43 @@ codeunit 50140 "CRF Freight Tests"
         // [THEN] The error from the shipment tracking line table is raised
         Assert.AreEqual('The weight of a package must be greater than zero.', GetLastErrorText(), 'Unexpected error message');
     end;
+
+    [Test]
+    [TransactionModel(TransactionModel::AutoRollback)]
+    procedure PostingWithoutNumberSeriesCreatesNoTracking()
+    var
+        FreightSetup: Record "CRF Freight Setup";
+        TrackingHeader: Record "CRF Shipment Tracking Header";
+        FreightMgt: Codeunit "CRF Freight Mgt";
+    begin
+        // [SCENARIO] Posting a sales shipment must not fail in a company where the freight setup wizard has not been run
+        // [GIVEN] A freight setup without a number series for shipment tracking
+        if not FreightSetup.Get() then
+            FreightSetup.Insert();
+        FreightSetup."Shipment Tracking Nos." := '';
+        FreightSetup.Modify();
+        // [WHEN] The posted sales shipment is handed to Cronus Fragt
+        FreightMgt.CreateTrackingFromSalesShipment('10000', 'CRF-TEST-SHPT');
+        // [THEN] No error is raised and no shipment tracking record exists for it
+        TrackingHeader.SetRange("Sales Shipment No.", 'CRF-TEST-SHPT');
+        Assert.RecordIsEmpty(TrackingHeader);
+    end;
+
+    [Test]
+    [TransactionModel(TransactionModel::AutoRollback)]
+    procedure TrackingWithoutShippingAgentHasNoCarrier()
+    var
+        TrackingHeader: Record "CRF Shipment Tracking Header";
+        FreightMgt: Codeunit "CRF Freight Mgt";
+        Carrier: Interface "CRF ICarrier";
+    begin
+        // [SCENARIO] The carrier is found through the shipping agent, so a record without one can't be sent anywhere
+        // [GIVEN] A shipment tracking record without a shipping agent
+        TrackingHeader.Init();
+        TrackingHeader."No." := 'CRF-TEST-NOAGENT';
+        // [WHEN] The facade is asked for the carrier
+        asserterror Carrier := FreightMgt.GetCarrier(TrackingHeader);
+        // [THEN] The error names the record and asks for a shipping agent
+        Assert.ExpectedError('Shipment tracking CRF-TEST-NOAGENT has no shipping agent.');
+    end;
 }
