@@ -1,15 +1,43 @@
-# Cronus Fragt (MB-820 model solution)
+# Step 2: Set up the AL development environment
 
-A worked solution to the MB-820 workbook in [Sekvens CertPractice](https://learn.sekvens.tools): an AL extension for Business Central that follows shipments with freight carriers for the fictional distributor Cronus. It extends the standard shipping agents with the carrier settings and keeps its own shipment tracking records (Danish: fragtbreve). It includes the design document the workbook asks for.
+Cronus Fragt · MB-820 workbook · Environment and tools
 
-- `docs/design/` is the design document (object list, extend-or-build decisions, events, architecture).
-- `app/` is the AL extension (object ids 50100-50149, affix `CRF`).
-- `STEPS.md` lists the steps and their branches.
+This page is the task description for the step. The code and documents on this branch are the model solution.
 
-## Branches
+## What Mette says
 
-Each of the 39 workbook steps has its own branch, named `<number>-<topic>/<step name>`, and its `README.md` is the task description for that step (see `STEPS.md` for links). The branches are stacked: a branch starts from the previous step's code, so the compare view between two neighbouring steps shows what the step adds, plus the swapped README. `main` holds the finished solution (the last step's code) and this project README.
+> We start tomorrow morning, and I'd like you to be able to start coding right away instead of spending the
+> morning installing things. Can you get the development environment ready today, pointing at our new test
+> environment?
 
-## What is verified
+## Your task
 
-The AL code is compiled with the Business Central 28 compiler (`alc`) on Linux. Steps that need a running sandbox (creating the environment, publishing, attaching the debugger, running tests, AppSource, signing, pipelines, Power Automate) cannot be executed from here. Their branches contain the written outcome and what you do in the sandbox, and each says so.
+Set up the AL development environment for Cronus Fragt, so that you have a project that compiles against your sandbox.
+
+**Do this**
+
+1. Install Visual Studio Code and the AL Language extension.
+2. Create a new AL project for Cronus Fragt.
+3. Configure app.json: name, publisher, the object ID range, and the platform, application and runtime versions.
+4. Configure launch.json so that it publishes to the sandbox you created in the previous step.
+5. Download the symbols.
+
+**You are done when**
+
+- The project compiles without errors.
+
+## Checklist
+
+- [ ] Visual Studio Code has the AL Language extension installed.
+- [ ] The project's app.json has the Cronus Fragt name and publisher and an object ID range for the extension.
+- [ ] The project's launch.json points to the sandbox environment by type and name.
+- [ ] Symbols are downloaded and the project builds without errors.
+
+## In this branch
+
+- [Notes for this step](docs/steps/02-dev-environment.md): what it delivers, how each checklist item is met, and what could not be verified without a sandbox.
+- Workbook page: https://learn.sekvens.tools/workbook/mb-820/step/dev-environment
+
+---
+
+[← Step 1](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/01-environment-and-tools/create-a-sandbox-environment/README.md) · [Project overview](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/main/README.md) · [Step 3 →](https://github.com/RasmusAaenDev/cronus-fragt-mb820/blob/03-environment-and-tools/publish-a-first-extension-and-attach-the-debugger/README.md)
